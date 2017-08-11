@@ -1,9 +1,10 @@
 //Colors
-$color__grey: #f1f1f1;
-$color__highlight: #92bb2f;
-$color__primary: #92bb2f;
-$color__secondary: #5e7683;
-$color__tertiary: #1c2a30;
+$color__grey--light: #f6f6f6;
+$color__grey--dark: #102e37;
+$color__highlight: #2689a6;
+$color__primary: #2689a6;
+$color__secondary: #3fbfae;
+$color__tertiary: #0f4c5d;
 $color__quaternary: #22343c;
 $color__header: #22343c;
 $color__background-body: #fff;
@@ -32,7 +33,8 @@ $color__border-abbr: #666;
 $breakpoint__mobile-menu: rem(1190);
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
-$size__site-container: rem(1300);
+$size__site-container: rem(1142);
+$size__site-padding: 2.5%;
 
 //Z-indices
 $z-sticky: 4;
