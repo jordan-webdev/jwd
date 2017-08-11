@@ -1,11 +1,11 @@
 //Colors
-$color__grey--light: #f6f6f6;
+$color__grey: #f6f6f6;
 $color__grey--dark: #102e37;
 $color__highlight: #2689a6;
-$color__primary: #2689a6;
-$color__secondary: #3fbfae;
-$color__tertiary: #0f4c5d;
-$color__quaternary: #22343c;
+$color__primary: #3fbfae;
+$color__secondary: #2689a6;
+$color__tertiary: #102e37;
+$color__quaternary: #102e37;
 $color__header: #22343c;
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
@@ -42,9 +42,12 @@ $z-popup: 5;
 $z-fade-banner: 6;
 $z-popup-form: 20;
 
-//Fonts
-$font__primary: Verdana, sans-serif;
+//Font Families
+$font__primary: "Poppins", sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.15;
 $font__line-height-pre: 1.6;
+
+//Font Sizes
+$font__header: rem(40);
