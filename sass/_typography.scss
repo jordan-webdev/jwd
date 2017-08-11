@@ -12,24 +12,15 @@ textarea {
   line-height: $font__line-height-body;
 }
 
-//Headings
-h1, .header-fluid-size, .entry-title, .title {
+// Headings
+.header, .entry-title {
   font-size: px-to(rem, 22);
 
-  $map: (320px: 22px, 620px: 28px, 950px: 30px);
+  $map: (320px: 22px, 620px: 27px, 950px: 32px);
 
   @include poly-fluid-sizing("font-size", $map);
 
   font-weight: bold;
-}
-
-h2 {
-  font-size: px-to(rem, 24);
-  font-weight: bold;
-}
-
-h3 {
-  font-size: px-to(rem, 16);
 }
 
 h1, h2, h3, h4, h5, h6 {
