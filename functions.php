@@ -170,7 +170,6 @@ require get_template_directory() . '/inc/customizer.php';
 //Remove wp admin bar
 add_filter('show_admin_bar', '__return_false');
 
-
 //Extra theme functions
 require get_template_directory() . '/inc/functions/theme-functions.php';
 
@@ -179,26 +178,3 @@ require get_template_directory() . '/inc/functions/taxonomies.php';
 
 //Custom Post Types
 require get_template_directory() . '/inc/functions/custom_post_types.php';
-
-//Theme Options
-if (function_exists('acf_add_options_page')) {
-    acf_add_options_page(array(
-        'page_title'    => 'Theme General Settings',
-        'menu_title'    => 'Theme Settings',
-        'menu_slug'    => 'theme-general-settings',
-        'capability'    => 'edit_posts',
-        'redirect'        => false
-    ));
-
-    acf_add_options_sub_page(array(
-        'page_title'    => 'Theme Header Settings',
-        'menu_title'    => 'Header',
-        'parent_slug'    => 'theme-general-settings',
-    ));
-
-    acf_add_options_sub_page(array(
-        'page_title'    => 'Theme Footer Settings',
-        'menu_title'    => 'Footer',
-        'parent_slug'    => 'theme-general-settings',
-    ));
-}
