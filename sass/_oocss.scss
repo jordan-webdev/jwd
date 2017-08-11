@@ -110,6 +110,14 @@
   }
 }
 
+.color-dark-grey {
+  color: $color__grey--dark;
+
+  &--bg {
+    background-color: $color__grey--dark;
+  }
+}
+
 .color-red {
   color: #c12424;
 }
@@ -179,6 +187,10 @@
   font-size: rem(14);
 }
 
+.font-15 {
+  font-size: rem(15);
+}
+
 .font-16 {
   font-size: rem(16);
 }
@@ -193,6 +205,10 @@
 
 .font-24 {
   font-size: rem(24);
+}
+
+.font-header {
+  font-size: $font__header;
 }
 
 .font-primary {
