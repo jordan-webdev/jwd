@@ -26,12 +26,27 @@ $images = $template . '/images';
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'jwd'); ?></a>
 
-	<header id="masthead" class="site-header">
+	<div class="padding-site color-grey--bg">
+		<header id="masthead" class="site-header container-site flex">
 
-    <?php get_template_part('template-parts/header/part', 'header-mobile'); ?>
+			<!-- Logo -->
+			<?php if (is_front_page()): ?>
+			  <h1 class="desktop-logo">
+			<?php endif; ?>
+			  <a href="<?php echo get_home_url(); ?>" rel="home" class="block pad-t-15 pad-b-15">
+			    <img src="<?php echo get_header_image(); ?>" alt="<?php bloginfo( "title" ); ?>">
+			    <span class="screen-reader-text"><?php bloginfo( "name" ); ?></span>
+			  </a>
+			<?php if (is_front_page()): ?>
+			  </h1>
+			<?php endif; ?>
 
-    <?php get_template_part('template-parts/header/part', 'nav-desktop'); ?>
+			<?php get_template_part('template-parts/header/part', 'top-bar'); ?>
 
-	</header><!-- #masthead -->
+	    <?php get_template_part('template-parts/header/part', 'nav-desktop'); ?>
+			<?php get_template_part('template-parts/header/part', 'header-mobile'); ?>
+
+		</header><!-- #masthead -->
+	</div>
 
 	<div id="content" class="site-content">
