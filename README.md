@@ -1,4 +1,4 @@
-jwd
+### jwd
 ===
 
 This is a custom WordPress starter theme I have created, based on underscores (http://underscores.me/)
