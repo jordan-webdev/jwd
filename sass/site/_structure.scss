@@ -1,0 +1,33 @@
+.contained {
+  max-width: px-to(rem, 1200);
+  padding-left: 50 / 1200 * 100%;
+  padding-right: 50 / 1200 * 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebar-layout {
+  &:last-child {
+    flex-grow: 1;
+  }
+}
+
+// Sticky footer
+@media screen and (max-width: rem(669)) {
+  body {
+    @include flexbox;
+  }
+
+  .site {
+    @include flexbox;
+
+    @include flex-direction(column);
+
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .site-content {
+    @include flex-grow(1);
+  }
+}

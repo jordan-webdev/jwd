@@ -1,0 +1,27 @@
+.nav-desktop {
+  border-top: 3px solid $color__highlight;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: rem(-40);
+  margin-bottom: rem(-34);
+  padding-left: rem(34);
+  padding-right: rem(34);
+  position: relative;
+  z-index: 2;
+  background-color: white;
+  display: none;
+
+  @media screen and (min-width: $breakpoint__mobile-menu) {
+    @include flexbox;
+  }
+
+  li {
+    margin-right: 5%;
+    padding-top: rem(25);
+    padding-bottom: rem(25);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

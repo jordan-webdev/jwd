@@ -1,0 +1,135 @@
+$side_slider_link_primary: black;
+$side_slider_link_secondary: white;
+$menu_width: rem(285);
+
+.mobile-navigation {
+  //background-color: $side_slider_link_secondary;
+  .wp-nav-menu {
+    @include flex-direction(column);
+
+    height: 100vh;
+
+    @include justify-content(flex-start);
+
+    width: $menu_width;
+    background-color: $side_slider_link_secondary;
+    position: fixed;
+    top: 0;
+    color: $side_slider_link_primary;
+    left: -$menu_width;
+    transition: left 0.35s ease-out;
+    overflow-y: scroll;
+    z-index: 26;
+
+    //stack on top of fade banner
+    padding-bottom: px-to(rem, 66);
+
+    & > .menu-item {
+      padding-left: 15px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-top: 1px solid $side_slider_link_primary;
+      text-transform: uppercase;
+    }
+  }
+
+  .sub-menu {
+    width: $menu_width;
+    background-color: $side_slider_link_secondary;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    left: -$menu_width;
+    transition: left 0.35s ease-out;
+
+    @include flexbox;
+
+    @include flex-direction(column);
+
+    border-right: 1px solid $side_slider_link_secondary;
+
+    .sub-menu-header {
+      @include flex-grow(0);
+
+      align-items: center;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 15px;
+      padding-right: 17px;
+      color: $side_slider_link_secondary;
+      background-color: $color__highlight;
+      font-size: px-to(em, 20);
+    }
+
+    .sub-menu-back-button {
+      margin-right: 15px;
+      color: $side_slider_link_secondary;
+    }
+
+    .menu-item {
+      width: 100%;
+      background-color: $side_slider_link_secondary;
+      color: $side_slider_link_primary;
+      border-top: 1px solid $side_slider_link_primary;
+      text-transform: uppercase;
+
+      &:last-child {
+        border-bottom: 1px solid $side_slider_link_primary;
+      }
+
+      a {
+        padding-top: rem(15);
+        padding-bottom: rem(15);
+        width: 100%;
+        display: block;
+        padding-left: 42px;
+        color: $side_slider_link_primary;
+      }
+    }
+  }
+
+  //Menu items with children
+  .menu-item-has-children-items-wrapper {
+    @include flexbox;
+
+    @include justify-content(space-between);
+
+    align-items: center;
+  }
+
+  .menu-item-has-children .fa-chevron-right {
+    margin-right: 17px;
+  }
+
+  .menu-logo-img {
+    margin: 15px;
+  }
+
+  //Colours
+  a {
+    color: $side_slider_link_primary;
+  }
+}
+
+//End mobile navigation
+
+.site-header {
+  position: relative;
+  z-index: 20;
+}
+
+.fade-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.js-left-0 {
+  left: 0 !important;
+}

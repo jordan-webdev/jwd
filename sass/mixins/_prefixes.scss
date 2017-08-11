@@ -1,0 +1,21 @@
+@mixin appearance($arg) {
+  -webkit-appearance: $arg;
+  -moz-appearance: $arg;
+  appearance: $arg;
+}
+
+@mixin clip-path($arg) {
+  -webkit-clip-path: $arg;
+  clip-path: $arg;
+}
+
+@mixin transform($arg) {
+  -webkit-transform: $arg;
+  -ms-transform: $arg;
+  transform: $arg;
+}
+
+@mixin transition($arg) {
+  -webkit-transition: $arg;
+  transition: $arg;
+}

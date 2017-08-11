@@ -1,0 +1,27 @@
+.owl-nav {
+  position: relative;
+  height: rem(35);
+  margin-top: rem(10);
+}
+
+.owl-prev {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+
+  &.disabled {
+    display: none;
+  }
+}
+
+.owl-next {
+  position: absolute;
+  right: 0;
+  top: 0;
+  white-space: nowrap;
+
+  &.disabled {
+    display: none;
+  }
+}

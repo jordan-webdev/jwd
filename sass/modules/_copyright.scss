@@ -1,0 +1,17 @@
+.copyright {
+  padding-top: rem(11);
+  padding-bottom: rem(10);
+  font-size: rem(11);
+  color: rgba(#728994, 0.5);
+  line-height: 1.5;
+
+  @include flexbox;
+
+  @include justify-content(space-between);
+
+  @include flex-wrap(wrap);
+
+  &__site {
+    margin-right: rem(15);
+  }
+}

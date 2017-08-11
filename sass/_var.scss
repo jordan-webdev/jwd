@@ -1,0 +1,49 @@
+//Colors
+$color__grey: #f1f1f1;
+$color__highlight: #92bb2f;
+$color__primary: #92bb2f;
+$color__secondary: #5e7683;
+$color__tertiary: #1c2a30;
+$color__quaternary: #22343c;
+$color__header: #22343c;
+$color__background-body: #fff;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: $color__highlight;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+$color__background-header-footer: #E5E0CF;
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: black;
+$color__link-visited: black;
+$color__link-hover: $color__highlight;
+$color__text-main: #404040;
+$color__border-button: black;
+$color__border-button-light: white;
+$color__border-button-light-cta: darken($color__border-button-light, 20%);
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;
+
+//Structure
+$breakpoint__mobile-menu: rem(1190);
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+$size__site-container: rem(1300);
+
+//Z-indices
+$z-sticky: 4;
+$z-popup: 5;
+$z-fade-banner: 6;
+$z-popup-form: 20;
+
+//Fonts
+$font__main: Roboto, sans-serif;
+$font__header: Verdana, sans-serif;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.15;
+$font__line-height-pre: 1.6;

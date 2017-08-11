@@ -1,0 +1,41 @@
+//$submenu_hover_bg: darken(white, 5%);
+$submenu_bg: white;
+$submenu_link_hover: white;
+
+.menu-item-has-children {
+  position: relative;
+
+  &:hover {
+    .sub-menu {
+      left: rem(-35);
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+    }
+  }
+
+  .sub-menu {
+    position: absolute;
+    left: -999rem;
+    top: 100%;
+    opacity: 0;
+    background-color: $submenu_bg;
+    border-top: 3px solid black;
+    transform: scale(1.15);
+    transition: opacity 0.6s, filter 0.6s, transform 0.6s;
+
+    .menu-item {
+      white-space: nowrap;
+      margin-right: 0;
+      padding-left: rem(35);
+      padding-right: rem(35);
+      padding-top: rem(15);
+      padding-bottom: rem(15);
+      border-bottom: 1px solid #d2d2d2;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
