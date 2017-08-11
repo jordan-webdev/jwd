@@ -41,8 +41,6 @@ $images = $template . '/images';
 			  </h1>
 			<?php endif; ?>
 
-			<?php get_template_part('template-parts/header/part', 'top-bar'); ?>
-
 	    <?php get_template_part('template-parts/header/part', 'nav-desktop'); ?>
 			<?php get_template_part('template-parts/header/part', 'header-mobile'); ?>
 
