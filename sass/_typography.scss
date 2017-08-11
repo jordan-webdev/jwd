@@ -5,7 +5,7 @@ input,
 select,
 textarea {
   color: $color__text-main;
-  font-family: $font__main;
+  font-family: $font__primary;
 
   @include font-size(1);
 
@@ -33,7 +33,7 @@ h3 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font__header;
+  font-family: $font__primary;
 }
 
 .entry-title {
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
       position: relative;
       display: block;
       height: px-to(rem, 3);
-      background-color: $color__highlight;
+      background-color: $color__primary;
       width: px-to(rem, 100);
       margin-top: 0.6em;
       margin-bottom: 0.6em;
