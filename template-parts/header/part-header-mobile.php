@@ -4,7 +4,7 @@
 */
 ?>
 
-<div class="header-mobile color-primary flex justify-between padding-site align-center width-100">
+<div class="header-mobile color-primary flex justify-between align-center width-100">
 
   <button id="js-mobile-menu-toggle" class="header-mobile__button" aria-controls="primary-menu" aria-expanded="false" data-toggles="#mobile-menu">
     <!--<img src="<?php //echo $images; ?>/hamburger-min.png" alt="Toggle menu." />-->
