@@ -59,7 +59,7 @@
   function responsiveBG() {
     $('.js-responsive-bg').each(function() {
       var that = $(this);
-      var mq = window.matchMedia('(min-width: 1050px)');
+      var mq = window.matchMedia('(min-width: 1190px)');
       if (mq.matches) {
         //Preload
         $('<img/>').attr('src', $(this).attr('data-lg-bg')).on('load',
@@ -203,12 +203,17 @@
     function doScrollEffects(win) {
       var pageBottom = win.scrollTop() + win.height();
       $.each(scrollPoints, function(index, value) {
+        var el = $('.js-scroll').eq(index);
+        var outAnim = el.attr('data-anim-out');
+        var inAnim = el.attr('data-anim-in');
+
         if (pageBottom > value) {
-          var el = $('.js-scroll').eq(index);
-          var outAnim = el.attr('data-anim-out');
-          var inAnim = el.attr('data-anim-in');
           if (outAnim && inAnim) {
             el.removeClass(outAnim).addClass(inAnim);
+          }
+        }else{
+          if (outAnim && inAnim) {
+            el.removeClass(inAnim).addClass(outAnim);
           }
         }
       });
@@ -263,9 +268,8 @@
             event.preventDefault();
 
             var endingPosition = $(this).attr('data-offset') ? parseInt(target.offset().top) + parseInt($(this).attr('data-offset')) : target.offset().top;
-            console.log(endingPosition);
             $('html, body').animate({
-              scrollTop: endingPosition
+              scrollTop: endingPosition - 150
             }, 1000, function() {
               // Callback after animation
               // Must change focus!
