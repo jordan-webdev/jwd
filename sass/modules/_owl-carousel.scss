@@ -1,14 +1,13 @@
-.owl-nav {
+.owl-carousel {
   position: relative;
-  height: rem(35);
-  margin-top: rem(10);
 }
 
 .owl-prev {
   position: absolute;
   left: 0;
-  top: 0;
-  white-space: nowrap;
+  top: 45%;
+
+  @include transform(translate(0%, -50%));
 
   &.disabled {
     display: none;
@@ -18,10 +17,12 @@
 .owl-next {
   position: absolute;
   right: 0;
-  top: 0;
-  white-space: nowrap;
+  top: 45%;
+
+  @include transform(translate(0%, -50%));
 
   &.disabled {
     display: none;
   }
 }
+
