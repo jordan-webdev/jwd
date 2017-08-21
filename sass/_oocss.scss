@@ -207,6 +207,16 @@
   font-size: rem(24);
 }
 
+.font- {
+  &26 {
+    font-size: rem(26);
+  }
+
+  &28 {
+    font-size: rem(28);
+  }
+}
+
 .font-header {
   font-size: $font__header;
 }
@@ -264,7 +274,7 @@
 }
 
 .mar-r {
-  &auto {
+  &-auto {
     margin-right: auto;
   }
 
@@ -282,6 +292,14 @@
 
   &-20 {
     margin-right: rem(20);
+  }
+
+  &-25 {
+    margin-right: rem(25);
+  }
+
+  &-35 {
+    margin-right: rem(35);
   }
 }
 
@@ -327,6 +345,14 @@
   &-20 {
     margin-bottom: rem(20);
   }
+
+  &-25 {
+    margin-bottom: rem(25);
+  }
+
+  &-35 {
+    margin-bottom: rem(35);
+  }
 }
 
 .mar-t {
@@ -334,17 +360,29 @@
     margin-top: auto;
   }
 
-  &-15 {
-    margin-top: rem(15);
+  &-5 {
+    margin-top: rem(5);
+  }
+
+  &-8 {
+    margin-top: rem(8);
   }
 
   &-10 {
     margin-top: rem(10);
   }
 
-  &-5 {
-    margin-top: rem(5);
+  &-15 {
+    margin-top: rem(15);
   }
+
+  &-25 {
+    margin-top: rem(25);
+  }
+}
+
+.med {
+  font-weight: 500;
 }
 
 .none {
@@ -367,6 +405,10 @@
   &-15 {
     padding-left: rem(15);
   }
+
+  &-25 {
+    padding-left: rem(25);
+  }
 }
 
 .pad-r {
@@ -377,11 +419,27 @@
   &-15 {
     padding-right: rem(15);
   }
+
+  &-25 {
+    padding-right: rem(25);
+  }
 }
 
 .pad-t {
   &-0 {
     padding-top: 0;
+  }
+
+  &-15 {
+    padding-top: rem(15);
+  }
+
+  &-20 {
+    padding-top: rem(20);
+  }
+
+  &-25 {
+    padding-top: rem(25);
   }
 }
 
@@ -392,6 +450,10 @@
 
   &-15 {
     padding-bottom: rem(15);
+  }
+
+  &-20 {
+    padding-bottom: rem(20);
   }
 }
 
@@ -431,11 +493,6 @@
 
 .pointer {
   cursor: pointer;
-}
-
-.site-content-wrapper {
-  padding-top: rem(35);
-  padding-bottom: rem(35);
 }
 
 .space-between {
