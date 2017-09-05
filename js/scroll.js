@@ -13,7 +13,8 @@
     });
 
     doScrollEffects($(window)); //Do on page load
-    $(window).on('scroll', function() { //Do on scroll
+    $(window).on('scroll', function() { 
+      // Scroll Animations, based on HTML data attributes that reference CSS classes
       doScrollEffects($(this));
     });
 
