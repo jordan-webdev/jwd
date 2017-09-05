@@ -1,5 +1,4 @@
 (function($) {
-
   //Close button
   closeBtn();
 
@@ -42,13 +41,15 @@
       var list = $(this).closest('.drop-down__list');
       var mq = window.matchMedia( "(max-width: 600px)" );
       if (mq.matches){
-        dropDownListToggle(list)
+        dropDownListToggle(list);
       }
 
     });
 
     function dropDownListToggle(list) {
-      list.slideToggle()
+      list.slideToggle(function(){
+        $(this).css('width', '100%');
+      });
     }
 
   } // doDDL function
@@ -155,10 +156,11 @@
         '</li>'
       );
 
-      var cart_clone = $('.top-bar__cart').clone();
-      cart_clone.addClass('block mar-l-15 mar-b-10 mar-t-10');
-      cart_clone.find('.top-bar__total').removeClass('color-black color-white--bg').addClass('color-black--bg color-white');
-      $('.menu-logo-wrapper').append(cart_clone);
+      // Add request appointment button
+      var request_appointment_btn = $('.nav-desktop__btn').clone();
+      $('.menu-logo-wrapper').append(request_appointment_btn);
+      $('.menu-logo-wrapper .nav-desktop__btn').addClass('mar-b-15 mar-l-15');
+
     }
 
   }
@@ -185,9 +187,12 @@
   });
 
   //Scroll
-  setTimeout(function() {
-    scrollEffects();
-  }, 500);
+  var mq = window.matchMedia( "(min-width: 1000px)" );
+  if (mq.matches){
+    setTimeout(function() {
+      scrollEffects();
+    }, 500);
+  }
 
   function scrollEffects() {
     var scrollPoints = [];
@@ -206,6 +211,8 @@
         var el = $('.js-scroll').eq(index);
         var outAnim = el.attr('data-anim-out');
         var inAnim = el.attr('data-anim-in');
+        var offset = el.data('offset');
+        value = offset ? value - offset : value;
 
         if (pageBottom > value) {
           if (outAnim && inAnim) {
@@ -221,25 +228,29 @@
   }
 
   //Scroll Blocker
-  $('body').on('click', '.js-scroll-blocker', function(event) {
-    //CSS popup click event. The label might accidentally get selected rather than clicked, so
-    //we must check for that
-    var element = event.target.nodeName;
-    if (element == 'LABEL') {
-      var input = $(this).attr('for');
-      var sel = getSelection().toString();
-      //Only create the scroll blocker if there's no text selection
-      if (!sel) {
-        $('body').toggleClass('scroll-blocker');
-        $('html').toggleClass('scroll-blocker');
-      }
-      return;
-    }
+  //scrollBlocker();
 
-    //Normal click event
-    $('body').toggleClass('scroll-blocker');
-    $('html').toggleClass('scroll-blocker');
-  });
+  function scrollBlocker(){
+    $('body').on('click', '.js-scroll-blocker', function(event) {
+      //CSS popup click event. The label might accidentally get selected rather than clicked, so
+      //we must check for that
+      var element = event.target.nodeName;
+      if (element == 'LABEL') {
+        var input = $(this).attr('for');
+        var sel = getSelection().toString();
+        //Only create the scroll blocker if there's no text selection
+        if (!sel) {
+          $('body').toggleClass('scroll-blocker');
+          $('html').toggleClass('scroll-blocker');
+        }
+        return;
+      }
+
+      //Normal click event
+      $('body').toggleClass('scroll-blocker');
+      $('html').toggleClass('scroll-blocker');
+    });
+  }
 
   //Smooth Scroll
   smoothScroll();
