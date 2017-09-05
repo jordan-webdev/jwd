@@ -1,5 +1,25 @@
+.blue-gradient {
+  @include linear-gradient(white 5%, #f2fdfd 100%);
+}
+
+.blue-shadow {
+  box-shadow: 0px 10px 0px -6px #3fbfae;
+}
+
 .block {
   display: block;
+}
+
+@supports (-webkit-text-stroke: 0.5px white) {
+  .knockout-text {
+    -webkit-text-stroke: 0.5px white;
+    color: transparent;
+
+    &--tertiary {
+      -webkit-text-stroke: 0.4px $color__tertiary;
+      opacity: 0.8;
+    }
+  }
 }
 
 .none {
@@ -35,3 +55,17 @@
   margin-left: rem(15);
   display: block;
 }
+
+// Lazy Loading
+/*img[data-lazy-type="image"] {
+  opacity: 0.3;
+  transition: opacity 0.3s;
+
+  &.lazy-loaded {
+    opacity: 1;
+  }
+}
+
+.lazy-hidden, .entry img.lazy-hidden, img.thumbnail.lazy-hidden {
+  background-color: transparent !important;
+}*/
