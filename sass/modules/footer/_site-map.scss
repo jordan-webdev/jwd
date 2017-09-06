@@ -1,1 +1,128 @@
+$tablet: rem(670);
+$desktop: rem(1180);
+$mobile_last_item: 6;
 
+.sitemap {
+  color: white;
+  padding-bottom: rem(25);
+  font-size: rem(14);
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 1.75;
+  display: none;
+
+  & p {
+    line-height: 1.75;
+  }
+
+  .textwidget {
+    max-width: 100%;
+  }
+
+  display: none;
+
+  &--mobile {
+    margin-left: rem(-20);
+    margin-right: rem(-20);
+  }
+
+  &--mobile &__item {
+    @include flexbox;
+
+    @include flex-direction(column);
+
+    @include align-items(center);
+
+    @include justify-content(center);
+
+    width: calc(50% - 2.5rem);
+    margin: rem(20);
+    text-align: center;
+    padding: rem(25);
+    border: 1px solid #50595D;
+
+    &:first-child {
+      max-width: none;
+    }
+
+    &:nth-child(6) {
+      @include order($mobile_last_item);
+
+      border: none;
+    }
+
+    &:last-child {
+      margin-right: rem(20);
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    @include flex-wrap(wrap);
+
+    @include justify-content(space-around);
+
+    padding-top: rem(10);
+    padding-bottom: rem(35);
+
+    &--mobile {
+      @include flexbox;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include flexbox;
+
+    @include flex-wrap(nowrap);
+
+    @include justify-content(space-between);
+
+    &--mobile {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 3%;
+    margin-top: rem(25);
+
+    &:first-child {
+      max-width: rem(230);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__item-title {
+    font-size: rem(14);
+    margin-bottom: rem(15);
+  }
+
+  & img {
+    margin-bottom: rem(15);
+
+    &:first-of-type {
+      margin-top: rem(25);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--mobile img:first-of-type {
+    margin-top: 0;
+  }
+
+  //menues
+  & div[class*="menu"]:first-of-type {
+    min-height: rem(217);
+  }
+
+  & div[class*="menu"]:first-of-type:last-of-type {
+    min-height: 0;
+  }
+}
