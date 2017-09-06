@@ -15,12 +15,6 @@
 
     }); // Button click
 
-    // Match Widths
-    $('.drop-down__list').each(function() {
-      var btn = $(this).prev('.drop-down__btn');
-      $(this).width(btn.outerWidth(true) - 2); //Account for 2px border
-    });
-
     // Close drop down list on clicking a filter, and on mobile
     $('.drop-down--filters__link').on('click', function(){
       var list = $(this).closest('.drop-down__list');
@@ -32,9 +26,7 @@
     });
 
     function dropDownListToggle(list) {
-      list.slideToggle(function(){
-        $(this).css('width', '100%');
-      });
+      list.slideToggle();
     }
 
   } // doDDL function
