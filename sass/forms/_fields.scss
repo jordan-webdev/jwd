@@ -14,18 +14,30 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea,
-select {
+select,
+.input-style,
+.date-picker {
   color: $color__text-input;
   border: 1px solid $color__border-input;
   border-radius: px-to(rem, 3);
   padding-left: px-to(rem, 15);
   padding-right: px-to(rem, 15);
-  padding-top: 0.8em;
-  padding-bottom: 0.8em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   width: 100%;
+  background-color: white;
+
+  &.btn--has-arrow {
+    padding-right: rem(53);
+  }
 
   &:focus {
     color: $color__text-input-focus;
+  }
+
+  &:hover {
+    background-color: white;
+    color: $color__text-input;
   }
 }
 
