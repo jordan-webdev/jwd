@@ -1,11 +1,11 @@
 //Colors
 $color__grey: #f6f6f6;
-$color__grey--dark: #102e37;
-$color__highlight: #2689a6;
-$color__primary: #3fbfae;
-$color__secondary: #2689a6;
-$color__tertiary: #102e37;
-$color__quaternary: #102e37;
+$color__grey--dark: #838383;
+$color__primary: #06a9ae;
+$color__highlight: $color__primary;
+$color__secondary: #1e72b9;
+$color__tertiary: #145790;
+$color__quaternary: #182c3c;
 $color__header: #22343c;
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
@@ -30,17 +30,28 @@ $color__border-input: #ccc;
 $color__border-abbr: #666;
 
 //Structure
+$breakpoint__animations: rem(1000);
 $breakpoint__mobile-menu: rem(1190);
+$breakpoint__dynamic-content: rem(730);
+$breakpoint__half-items: rem(850);
+$padding__btn: 0.8em 2em 0.9em;
+$padding__btn-left: 2em;
+$padding__btn-right: 2em;
+$padding__btn-top: 0.8em;
+$padding__btn-bot: 0.9em;
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
 $size__site-container: rem(1142);
 $size__site-padding: 2.5%;
+$size__site-padding-mobile: 7%;
 
 //Z-indices
 $z-sticky: 4;
 $z-popup: 5;
 $z-fade-banner: 6;
 $z-popup-form: 20;
+$z-site-header: 20;
+$z-site-content: 21;
 
 //Font Families
 $font__primary: "Poppins", sans-serif;
