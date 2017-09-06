@@ -1,40 +1,34 @@
 //Uses CF7 plugin
-$breakpoint__bg: rem(1100);
+$shift: rem(1100);
 $product_padding: rem(30);
 $product_content_padding: rem(35);
+$two_col: rem(500);
 
 .contact-form {
   position: relative;
-  padding-left: rem(20);
-  padding-right: rem(20);
-  padding-top: rem(15);
+  top: rem(15);
   padding-bottom: rem(25);
   position: relative;
   z-index: $z-fade-banner + 1;
-  max-width: rem(986);
+  max-width: rem(557);
   margin: auto;
 
-  // Form with a BG image
-  &:not(.contact-form--no-bg) {
-    background-color: white;
-    margin-bottom: rem(95);
+  &--is-popup {
+    // IOS
+    margin-bottom: rem(150);
 
-    @media screen and (min-width: $breakpoint__bg) {
-      background-image: url(/new_era/wp-content/themes/jwd/images/request-quote-bg.jpg);
-      background-repeat: no-repeat;
-      background-size: auto 100%;
-      padding-left: rem(340);
-      padding-right: rem(40);
-      padding-top: rem(32);
+    @media screen and (min-width: $shift) {
+      margin-bottom: auto;
     }
   }
 
   .css-popup__close {
-    top: 0;
-    right: 0;
+    top: rem(7);
+    right: rem(15);
 
-    @media screen and (min-width: $breakpoint__bg) {
-      right: rem(-36);
+    @media screen and (min-width: $shift) {
+      top: rem(-17);
+      right: rem(-17);
     }
 
     padding: 0.6em 0.8em;
@@ -43,8 +37,9 @@ $product_content_padding: rem(35);
   &__header {
     border-bottom: 1px solid darken(white, 7%);
     padding-bottom: rem(15);
+    padding-top: rem(25);
 
-    @media screen and (min-width: $breakpoint__bg) {
+    @media screen and (min-width: $shift) {
       padding-bottom: rem(20);
     }
 
@@ -60,10 +55,6 @@ $product_content_padding: rem(35);
 
     @include flex-basis(100%);
 
-    @media screen and (min-width: rem(550)) {
-      @include flex-basis(48%);
-    }
-
     margin-bottom: rem(15);
 
     &.message, &.return {
@@ -75,6 +66,10 @@ $product_content_padding: rem(35);
     display: block;
   }
 
+  &__btn[type="button"] {
+    padding-left: rem(15);
+  }
+
   &__products-btn {
     width: 100%;
   }
@@ -83,124 +78,59 @@ $product_content_padding: rem(35);
     display: none;
   }
 
-  /* ======================================================== */
-  /* Product Contact form variant */
-  /* ======================================================== */
+  &__location, &__datepicker[type="text"] {
+    width: 100%;
 
-  $shift: rem(728);
-  $load_image: rem(450);
+    @media screen and (min-width: $two_col) {
+      width: 48%;
+    }
+  }
 
-  &--product {
-    background-image: none;
-    padding-left: 0;
-    padding-right: 0;
+  &__datepicker[type="text"] {
+    display: block;
     padding-top: 0;
-    max-width: $shift;
+    padding-bottom: 0;
+    height: rem(36);
 
-    //Large margin bottom to accomodate Safari bottom bar
-    margin-bottom: rem(135);
+    @include align-self(center);
+  }
 
-    @media screen and (min-width: $shift) {
-      margin-top: rem(45);
-      margin-bottom: rem(45);
-    }
+  &__recaptcha-wrapper {
+    padding-left: calc(50% - 152px);
+  }
 
-    &__content {
-      padding-left: $product_content_padding;
-      padding-right: $product_content_padding;
-    }
+  // Wider contact form with a lower z-index
+  $two_col_wide: rem(600);
 
-    &__header {
-      padding-top: rem(12);
-      padding-bottom: rem(10);
-      padding-left: $product_padding;
-      padding-right: $product_padding;
-    }
+  &--not-popup {
+    max-width: rem(700);
+    z-index: 1;
 
-    & .css-popup__close {
-      position: relative;
-      right: 0;
-      padding: 0;
-    }
+    &__half-field {
+      width: 100%;
 
-    &__dynamic-wrapper {
-      padding-bottom: rem(25);
-
-      @media screen and (min-width: $shift) {
-        padding-bottom: rem(30);
-      }
-
-      border-bottom: 1px solid lighten($color__border-input, 10%);
-    }
-
-    &__dynamic {
-      border: 1px solid $color__border-input;
-      margin-top: rem(35);
-      padding: rem(15) rem(25);
-
-      @media screen and (min-width: $shift) {
-        padding: rem(20) rem(30);
-        margin-top: rem(20);
-
-        @include flex-direction(row);
+      @media screen and (min-width: $two_col_wide) {
+        width: 49%;
       }
     }
+  }
 
-    &__dynamic-image-wrapper {
-      margin-right: 0;
-
-      @media screen and (min-width: $shift) {
-        max-width: rem(195);
-        margin-right: rem(25);
-      }
-    }
-
-    &__dynamic-image {
-      display: none;
-
-      @media screen and (min-width: $load_image) {
-        display: block;
-      }
-    }
-
-    &__product-title {
-      margin-top: rem(10);
-      font-size: rem(20);
-    }
-
-    &__product-category {
-      margin-top: rem(20);
-      font-size: rem(20);
-    }
-
-    &__dynamic-text {
-      margin-top: rem(15);
-    }
-
-    &__dynamic-text + &__dynamic-text {
-      margin-top: rem(12);
-    }
-
-    &__subtitle {
-      font-size: rem(20);
-      margin-top: rem(25);
-      margin-bottom: rem(20);
-
-      @media screen and (min-width: $shift) {
-        margin-top: rem(30);
-        margin-bottom: rem(25);
-      }
-    }
+  &--no-pos-change {
+    top: 0;
   }
 }
 
 /* === CF7 Fixes === */
 
+.contact-form .wpcf7-list-item.none {
+  display: none;
+}
+
 div.wpcf7-response-output {
   margin: 0;
   background-color: white;
   color: white;
-  background: $color__highlight;
+  background: $color__secondary;
   position: relative;
   z-index: $z-fade-banner + 1;
   text-align: right;
@@ -212,8 +142,15 @@ div.wpcf7-response-output {
   bottom: 0;
   left: 0;
   right: 0;
+  border: none;
+  border-top: 3px solid $color__quaternary;
 }
 
 div.wpcf7-validation-errors {
   border: none;
+  border-top: 3px solid $color__quaternary;
+}
+
+.contact-form .wpcf7-form-control-wrap.services {
+  margin-bottom: 0;
 }
