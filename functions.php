@@ -131,7 +131,7 @@ function jwd_scripts()
     // Functions
     wp_enqueue_script('jwd-functions-js', get_template_directory_uri() . '/js/functions.js', array('jquery'), '', true);
     // Scroll
-    wp_enqueue_script('jwd-functions-js', get_template_directory_uri() . '/js/functions.js', array('jquery'), '', true);
+    wp_enqueue_script('jwd-scroll-js', get_template_directory_uri() . '/js/scroll.js', array('jquery'), '', true);
 
 }
 add_action('wp_enqueue_scripts', 'jwd_scripts');
@@ -169,14 +169,22 @@ require get_template_directory() . '/inc/customizer.php';
  */
 //require get_template_directory() . '/inc/jetpack.php';
 
-//Remove wp admin bar
-add_filter('show_admin_bar', '__return_false');
+/** 
+ * Extra files not included in underscores.
+ */
 
-//Extra theme functions
-require get_template_directory() . '/inc/functions/theme-functions.php';
+// ACF functions
+require $template . '/inc/functions/ACF-functions.php';
+
+//Custom Post Types
+require get_template_directory() . '/inc/functions/custom_post_types.php';
+
+//Shortcodes
+require $template . '/inc/functions/shortcodes.php';
 
 //Taxonomies
 require get_template_directory() . '/inc/functions/taxonomies.php';
 
-//Custom Post Types
-require get_template_directory() . '/inc/functions/custom_post_types.php';
+//Remove wp admin bar
+add_filter('show_admin_bar', '__return_false');
+
