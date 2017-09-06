@@ -1,4 +1,7 @@
-//Scroll
+  // Smooth Scroll
+  smoothScroll();
+
+  // Set off all scroll events after a timer, only for desktop
   var mq = window.matchMedia( "(min-width: 1000px)" );
   if (mq.matches){
     setTimeout(function() {
@@ -7,18 +10,24 @@
   }
 
   function scrollEffects() {
+    
+    // Store the top positions of all scroll elements in an array, to be referenced against the window scroll
     var scrollPoints = [];
     $('.js-scroll').each(function() {
       scrollPoints.push($(this).offset().top + ($(this).height() / 1.25));
     });
 
-    doScrollEffects($(window)); //Do on page load
+    // Scroll Animations, based on HTML data attributes that reference CSS classes (done on page load after timer set above)
+    doScrollEffects($(window), scrollPoints);
+    
     $(window).on('scroll', function() { 
       // Scroll Animations, based on HTML data attributes that reference CSS classes
-      doScrollEffects($(this));
+      doScrollEffects($(this), scrollPoints);
+      
+      // *** ADD OTHER FUNCTIONS HERE **** //
     });
 
-    function doScrollEffects(win) {
+    function doScrollEffects(win, scrollPoints ) {
       var pageBottom = win.scrollTop() + win.height();
       $.each(scrollPoints, function(index, value) {
         var el = $('.js-scroll').eq(index);
@@ -64,9 +73,6 @@
       $('html').toggleClass('scroll-blocker');
     });
   }
-
-  //Smooth Scroll
-  smoothScroll();
 
   function smoothScroll() {
     // Select all links with hashes
