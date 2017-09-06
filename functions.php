@@ -110,10 +110,17 @@ function jwd_scripts()
     //wp_enqueue_script('jwd-js-cookie-js', get_template_directory_uri() . '/js/js-cookie.js', array(), '', true);
 
     // Main js
-    wp_register_script('jwd-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true);
+    wp_enqueue_script('jwd-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true);
 
+    /* ****** Other JS ****** */
+
+    // Functions
+    wp_enqueue_script('jwd-functions-js', get_template_directory_uri() . '/js/functions.js', array('jquery'), '', true);
+    
+    // Side Slider
+    wp_register_script('jwd-side-slider-js', get_template_directory_uri() . '/js/side-slider.js', array('jquery'), '', true);
     // Variables to script
-    $handle = 'jwd-main-js';
+    $handle = 'jwd-side-slider-js';
     $name = 'localizedVar';
     $data = array(
         'templateDirectory' => get_template_directory_uri(),
@@ -121,15 +128,8 @@ function jwd_scripts()
         'headerImage' => get_header_image(),
         'blogTitle' => get_bloginfo('title'),
     );
-
     wp_localize_script($handle, $name, $data);
-
-    wp_enqueue_script('jwd-main-js');
-
-    // Other JS
-
-    // Functions
-    wp_enqueue_script('jwd-functions-js', get_template_directory_uri() . '/js/functions.js', array('jquery'), '', true);
+    
     // Scroll
     wp_enqueue_script('jwd-scroll-js', get_template_directory_uri() . '/js/scroll.js', array('jquery'), '', true);
 
