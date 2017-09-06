@@ -14,8 +14,8 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-    <?php get_template_part('template-parts/part', 'site-map'); ?>
-    <?php get_template_part('template-parts/part', 'copyright'); ?>
+    <?php get_template_part('template-parts/footer/part', 'site-map'); ?>
+    <?php get_template_part('template-parts/footer/part', 'copyright'); ?>
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->
