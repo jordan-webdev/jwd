@@ -91,7 +91,7 @@ add_action('after_setup_theme', 'jwd_content_width', 0);
 function jwd_scripts()
 {
     wp_enqueue_style('jwd-style', get_stylesheet_uri());
-    
+
     /* ****** ASSETS ****** */
 
     // Owl Carousel 2.2.1
@@ -112,16 +112,16 @@ function jwd_scripts()
     //wp_enqueue_script('jwd-js-cookie-js', get_template_directory_uri() . '/js/js-cookie.js', array(), '', true);
 
     /* ****** Non-Asset JS ****** */
-    
+
     // Functions
     wp_enqueue_script('jwd-functions-js', get_template_directory_uri() . '/js/functions.js', array('jquery'), '', true);
-    
+
     // Main js
     wp_enqueue_script('jwd-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true);
-    
+
     // Drop Down
-    wp_enqueue_script('jwd-drop-down-js', get_template_directory_uri() . '/js/drop-down.js', array('jquery'), '', true); 
-    
+    wp_enqueue_script('jwd-drop-down-js', get_template_directory_uri() . '/js/drop-down.js', array('jquery'), '', true);
+
     // Side Slider
     wp_register_script('jwd-side-slider-js', get_template_directory_uri() . '/js/side-slider.js', array('jquery'), '', true);
     // Variables to script
@@ -134,47 +134,48 @@ function jwd_scripts()
         'blogTitle' => get_bloginfo('title'),
     );
     wp_localize_script($handle, $name, $data);
-    
+
     // Scroll
     wp_enqueue_script('jwd-scroll-js', get_template_directory_uri() . '/js/scroll.js', array('jquery'), '', true);
 
 }
 add_action('wp_enqueue_scripts', 'jwd_scripts');
 
+$template = get_template_directory();
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-require get_template_directory() .'/inc/widgets.php';
+require $template .'/inc/widgets.php';
 
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require $template . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require $template . '/inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require $template . '/inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require $template . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
 //require get_template_directory() . '/inc/jetpack.php';
 
-/** 
+/**
  * Extra files not included in underscores.
  */
 
@@ -182,14 +183,13 @@ require get_template_directory() . '/inc/customizer.php';
 require $template . '/inc/functions/ACF-functions.php';
 
 //Custom Post Types
-require get_template_directory() . '/inc/functions/custom_post_types.php';
+require $template . '/inc/functions/custom_post_types.php';
 
 //Shortcodes
 require $template . '/inc/functions/shortcodes.php';
 
 //Taxonomies
-require get_template_directory() . '/inc/functions/taxonomies.php';
+require $template . '/inc/functions/taxonomies.php';
 
 //Remove wp admin bar
 add_filter('show_admin_bar', '__return_false');
-
