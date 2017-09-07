@@ -134,6 +134,7 @@ function jwd_scripts()
         'blogTitle' => get_bloginfo('title'),
     );
     wp_localize_script($handle, $name, $data);
+    wp_enqueue_script('jwd-side-slider-js');
 
     // Scroll
     wp_enqueue_script('jwd-scroll-js', get_template_directory_uri() . '/js/scroll.js', array('jquery'), '', true);
