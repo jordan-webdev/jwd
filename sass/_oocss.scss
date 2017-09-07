@@ -24,10 +24,6 @@
   @include appearance(none);
 }
 
-.bg-white {
-  background-color: white;
-}
-
 .bold {
   font-weight: bold;
 }
@@ -155,23 +151,23 @@
 }
 
 .color-white {
-  color: white;
+  color: $color__white;
 
   &:visited {
-    color: white;
+    color: $color__white;
   }
 
   &--bg {
-    background-color: white;
+    background-color: $color__white;
   }
 
   &--bor {
     &-l {
-      border-left: 1px solid white;
+      border-left: 1px solid $color__white;
     }
 
     &-r {
-      border-right: 1px solid white;
+      border-right: 1px solid $color__white;
     }
   }
 }
@@ -268,15 +264,11 @@
 }
 
 .font-primary {
-  font-family: 'Roboto', sans-serif;
+  font-family: $font__primary;
 }
 
 .font-secondary {
-  font-family: 'Verdana', sans-serif;
-
-  &--bold {
-    font-weight: bold;
-  }
+  font-family: $font__secondary;
 }
 
 .height-100 {
