@@ -1,6 +1,4 @@
-//$submenu_hover_bg: darken(white, 5%);
-$submenu_bg: white;
-$submenu_link_hover: white;
+$submenu_bg: $color__primary;
 
 .menu-item-has-children {
   position: relative;
