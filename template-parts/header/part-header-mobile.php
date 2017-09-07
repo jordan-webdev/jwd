@@ -6,9 +6,9 @@
 
 <div class="header-mobile color-primary flex justify-between align-center width-100">
 
-  <button id="js-mobile-menu-toggle" class="header-mobile__button" aria-controls="primary-menu" aria-expanded="false" data-toggles="#mobile-menu">
+  <button id="js-mobile-menu-toggle" class="header-mobile__button header-mobile__icon color-white" aria-controls="primary-menu" aria-expanded="false" data-toggles="#mobile-menu">
     <!--<img src="<?php //echo $images; ?>/hamburger-min.png" alt="Toggle menu." />-->
-    <span class="fa fa-bars header-mobile__hamburger header-mobile__icon pointer color-primary" aria-hidden="true"></span>
+    <span class="fa fa-bars header-mobile__hamburger" aria-hidden="true"></span>
     <span class="screen-reader-text">Click to toggle the navigation menu.</span>
   </button>
 
@@ -18,7 +18,8 @@
     </span>
   </a>
 
-  <span class="fa fa-phone header-mobile__phone header-mobile__icon pointer" aria-hidden="true"></span>
+  <!-- Phone -->
+  <a class="header-mobile__phone header-mobile__icon color-white" href="tel:<?php echo esc_attr(get_field("site_phone", "options")); ?>"><span class="fa fa-phone" aria-hidden="true"></span></a>
 
 </div>
 
