@@ -1,5 +1,5 @@
 (function($) {
-  
+
   //Side Slider Mobile menu
   sideSliderMenu(true, true); //parameters (bool $add_logo, bool $fade_banner)
   function sideSliderMenu(logo, fadeBanner) {
@@ -86,5 +86,5 @@
       $('#menu-fade-banner').remove();
     }
   }
-  
+
 })(jQuery)
