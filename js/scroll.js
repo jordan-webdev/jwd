@@ -1,16 +1,18 @@
+(function($) {
+
   // Smooth Scroll
   smoothScroll();
 
   // Set off all scroll events after a timer, only for desktop
-  var mq = window.matchMedia( "(min-width: 1000px)" );
-  if (mq.matches){
+  var mq = window.matchMedia("(min-width: 1000px)");
+  if (mq.matches) {
     setTimeout(function() {
       scrollEffects();
     }, 500);
   }
 
   function scrollEffects() {
-    
+
     // Store the top positions of all scroll elements in an array, to be referenced against the window scroll
     var scrollPoints = [];
     $('.js-scroll').each(function() {
@@ -19,15 +21,15 @@
 
     // Scroll Animations, based on HTML data attributes that reference CSS classes (done on page load after timer set above)
     doScrollEffects($(window), scrollPoints);
-    
-    $(window).on('scroll', function() { 
+
+    $(window).on('scroll', function() {
       // Scroll Animations, based on HTML data attributes that reference CSS classes
       doScrollEffects($(this), scrollPoints);
-      
+
       // *** ADD OTHER FUNCTIONS HERE **** //
     });
 
-    function doScrollEffects(win, scrollPoints ) {
+    function doScrollEffects(win, scrollPoints) {
       var pageBottom = win.scrollTop() + win.height();
       $.each(scrollPoints, function(index, value) {
         var el = $('.js-scroll').eq(index);
@@ -40,7 +42,7 @@
           if (outAnim && inAnim) {
             el.removeClass(outAnim).addClass(inAnim);
           }
-        }else{
+        } else {
           if (outAnim && inAnim) {
             el.removeClass(inAnim).addClass(outAnim);
           }
@@ -52,7 +54,7 @@
   //Scroll Blocker
   //scrollBlocker();
 
-  function scrollBlocker(){
+  function scrollBlocker() {
     $('body').on('click', '.js-scroll-blocker', function(event) {
       //CSS popup click event. The label might accidentally get selected rather than clicked, so
       //we must check for that
@@ -116,3 +118,5 @@
         }
       });
   }
+
+})(jQuery)
