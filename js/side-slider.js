@@ -1,4 +1,4 @@
-  (function($) {
+(function($) {
   
   //Side Slider Mobile menu
   sideSliderMenu(true, true); //parameters (bool $add_logo, bool $fade_banner)
@@ -87,4 +87,4 @@
     }
   }
   
-  })(jQuery)
+})(jQuery)
