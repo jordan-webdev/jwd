@@ -108,6 +108,9 @@ function jwd_scripts()
 
     wp_enqueue_script('jwd-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
+    // Google Font
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:400,500|Quattrocento:700');
+
     // JS Cookie
     //wp_enqueue_script('jwd-js-cookie-js', get_template_directory_uri() . '/js/js-cookie.js', array(), '', true);
 
@@ -180,17 +183,26 @@ require $template . '/inc/customizer.php';
  * Extra files not included in underscores.
  */
 
-// ACF functions
+// ACF Functions
 require $template . '/inc/functions/ACF-functions.php';
 
-//Custom Post Types
+// Custom Functions
+require $template . '/inc/functions/custom_functions.php';
+
+// Custom Post Types
 require $template . '/inc/functions/custom_post_types.php';
 
-//Shortcodes
+// Schema
+require $template . '/inc/functions/schema.php';
+
+// Search Filters
+require $template . '/inc/functions/search-filters.php';
+
+// Shortcodes
 require $template . '/inc/functions/shortcodes.php';
 
-//Taxonomies
+// Taxonomies
 require $template . '/inc/functions/taxonomies.php';
 
-//Remove wp admin bar
+// Remove wp admin bar
 add_filter('show_admin_bar', '__return_false');
