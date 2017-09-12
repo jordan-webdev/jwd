@@ -7,7 +7,6 @@
     //Slide in on menu click
     $('#js-mobile-menu-toggle').on('click', function() {
       var menu = $(this).attr('data-toggles');
-      console.log(menu);
       $(menu).toggleClass('js-left-0');
       $('.sub-menu.js-left-0').removeClass('js-left-0');
 
