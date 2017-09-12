@@ -1,12 +1,12 @@
 //Colors
 $color__grey: #f6f6f6;
-$color__grey--dark: #838383;
-$color__white: #efebe4;
-$color__primary: #06a9ae;
+$color__dark-grey: #838383;
+$color__white: white;
+$color__primary: #711923;
 $color__highlight: $color__primary;
-$color__secondary: #1e72b9;
-$color__tertiary: #145790;
-$color__quaternary: #182c3c;
+$color__secondary: #f7e8c9;
+$color__tertiary: #52181f;
+$color__quaternary: #3e1016;
 $color__header: #22343c;
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
@@ -32,7 +32,7 @@ $color__border-abbr: #666;
 
 //Structure
 $breakpoint__animations: rem(1000);
-$breakpoint__mobile-menu: rem(1190);
+$breakpoint__mobile-menu: rem(1170);
 $breakpoint__dynamic-content: rem(730);
 $breakpoint__half-items: rem(850);
 $padding__btn: 0.8em 2em 0.9em;
@@ -42,8 +42,8 @@ $padding__btn-top: 0.8em;
 $padding__btn-bot: 0.9em;
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
-$size__site-container: rem(1142);
-$size__site-padding: 2.5%;
+$size__site-container: rem(1100);
+$size__site-padding: 7%;
 $size__site-padding-mobile: 7%;
 
 //Z-indices
@@ -56,6 +56,7 @@ $z-site-content: 21;
 
 //Font Families
 $font__primary: "Poppins", sans-serif;
+$font__secondary: "Quattrocento", serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.15;
