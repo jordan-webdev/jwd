@@ -50,15 +50,6 @@ $is_blog_category = $tax == "blog_category" ? true : false;
         </section>
       </div>
 
-			<!-- CTA -->
-			<?php
-			/*$title = get_field('cta_thin_title', $tax.'_'.$tax_id);
-			$text = get_field('cta_thin_text', $tax.'_'.$tax_id);
-			$link = get_field('cta_thin_link', $tax.'_'.$tax_id);
-			$link_text = get_field('cta_thin_link_text', $tax.'_'.$tax_id);
-			include(locate_template("template-parts/part-cta-thin.php"));*/
-			?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
