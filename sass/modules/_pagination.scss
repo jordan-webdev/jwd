@@ -1,0 +1,41 @@
+$shift: rem(450);
+
+.pagination-wrapper {
+  margin-top: 35px;
+  margin-bottom: 80px;
+
+  @media screen and (min-width: $shift) {
+    & .dots {
+      margin-right: rem(10);
+    }
+  }
+}
+
+.page-numbers.current,
+.pagination-wrapper li.current a {
+  color: $color__primary;
+
+  @media screen and (min-width: $shift) {
+    color: white;
+    background-color: $color__secondary;
+  }
+}
+
+.page-numbers, .pagination-wrapper a {
+  padding-left: rem(13);
+  padding-right: rem(13);
+
+  @media screen and (min-width: $shift) {
+    padding-top: rem(8.5);
+    padding-bottom: rem(8.5);
+    background-color: #f1f1f1;
+    margin-right: 10px;
+    border-radius: 7px;
+  }
+
+  @include flexbox;
+
+  @include align-items(center);
+
+  @include justify-content(center);
+}
