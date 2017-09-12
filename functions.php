@@ -123,7 +123,7 @@ function jwd_scripts()
     wp_enqueue_script('jwd-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true);
 
     // Ajax Index
-    if (is_singular('blog_posts') || is_tax('blog_category')){
+    if (is_singular('blog_posts') || is_tax()){
       wp_enqueue_script('jwd-ajax-index', get_template_directory_uri() . '/js/ajax-index.js', array('jquery'), '', true);
     }
 
