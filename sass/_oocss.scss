@@ -127,21 +127,21 @@
 }
 
 .color-dark-grey {
-  color: $color__grey--dark;
+  color: $color__dark-grey;
 
   &--bg {
-    background-color: $color__grey--dark;
+    background-color: $color__dark-grey;
   }
 
   &--bor {
-    border: 1px solid $color__grey--dark;
+    border: 1px solid $color__dark-grey;
 
     &-t {
-      border-top: 1px solid $color__grey--dark;
+      border-top: 1px solid $color__dark-grey;
     }
 
     &-b {
-      border-bottom: 1px solid $color__grey--dark;
+      border-bottom: 1px solid $color__dark-grey;
     }
   }
 }
