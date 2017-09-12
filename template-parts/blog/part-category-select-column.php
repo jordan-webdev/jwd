@@ -20,16 +20,16 @@ $all_term_id = $all_term->term_id;
 
 ?>
 
-<div id="category-wrapper">
+<div id="category-wrapper" class="category-selector">
 
-	<h2 id="js-category-wrapper-title" class="font-16 bold color-secondary js-categories-wrapper-toggle">
+	<h2 id="js-category-wrapper-title" class="font-16 bold color-secondary js-categories-wrapper-toggle category-selector__toggler mar-b-10">
     CATEGORIES
     <span class="screen-reader-text">Click to expand categories</span>
   </h2>
 
-	<div id="categories-wrapper">
+	<div id="categories-wrapper" class="category-selector__categories-wrapper">
 
-		<div id="categories">
+		<div id="categories" class="category-selector__categories">
 
       <?php
         $args = array(
@@ -40,16 +40,15 @@ $all_term_id = $all_term->term_id;
 			$categories = get_categories($args); ?>
 
 			<!-- All -->
-				<a href="<?php echo get_term_link($all_term_id); ?>" data-slug="all" class="js-category-selector-link">
-					<span
-            class="block all-categories-selector sub-header <?php echo ($term_name == "All" ? "color-primary js-selected-category" : ""); ?>"
-            data-slug="all"
-          >
-            All
-            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        </span>
-				</a>
-
+			<a href="<?php echo get_term_link($all_term_id); ?>" data-slug="all" class="js-category-selector-link category-selector__category-wrapper flex space-between align-center">
+				<span
+          class="block all-categories-selector category-selector__category color-white--bg <?php echo ($term_name == "All" ? "color-primary js-selected-category" : ""); ?>"
+          data-slug="all"
+        >
+          All
+      	</span>
+				<i class="fa fa-chevron-right category-selector__chevron" aria-hidden="true"></i>
+			</a>
 
 			<!-- Categories -->
 			<?php foreach ($categories as $category) :
@@ -61,14 +60,14 @@ $all_term_id = $all_term->term_id;
 
         $is_listing_match = $term_name == $label ? true : false;
       ?>
-  			<a href="<?php echo get_term_link($id); ?>" data-slug="<?php echo $slug; ?>" class="js-category-selector-link">
+  			<a href="<?php echo get_term_link($id); ?>" data-slug="<?php echo $slug; ?>" class="js-category-selector-link category-selector__category-wrapper flex space-between align-center">
   				<span
-            class="block sub-header <?php echo ($is_listing_match ? "color-primary js-selected-category" : ""); ?>"
+            class="block category-selector__category color-white--bg <?php echo ($is_listing_match ? "color-primary js-selected-category" : ""); ?>"
             data-slug="<?php echo $data_category; ?>"
           >
             <?php echo $label; ?>
-            <i class="fa fa-chevron-right black" aria-hidden="true"></i>
           </span>
+					<i class="fa fa-chevron-right black category-selector__chevron" aria-hidden="true"></i>
   			</a>
 
 			<?php endforeach; ?>
