@@ -8,7 +8,7 @@
 <div class="copyright__wrapper padding-site color-tertiary--bg">
   <p class="copyright container-site">
     <span class="copyright__site">
-      Copyright &copy; <?php Date('Y'); ?>. All Rights Reserved <?php bloginfo('title'); ?>
+      Copyright &copy; <?php echo Date('Y'); ?>. All Rights Reserved <?php bloginfo('title'); ?>
     </span>
     <span class="copyright__dolce">
       Designed and developed by
