@@ -122,6 +122,11 @@ function jwd_scripts()
     // Main js
     wp_enqueue_script('jwd-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true);
 
+    // Ajax Index
+    if (is_singular('blog_posts') || is_tax('blog_category')){
+      wp_enqueue_script('jwd-ajax-index', get_template_directory_uri() . '/js/ajax-index.js', array('jquery'), '', true);
+    }
+
     // Drop Down
     wp_enqueue_script('jwd-drop-down-js', get_template_directory_uri() . '/js/drop-down.js', array('jquery'), '', true);
 
