@@ -30,7 +30,7 @@ $is_blog_category = $tax == "blog_category" ? true : false;
     				</div>
 
             <!-- Results -->
-    				<div id="js-blog-listing-results" class="two-column-item flex-grow-1 js-ajax-content-container">
+    				<div id="js-ajax-scroll-to" class="two-column-item flex-grow-1 js-ajax-content-container">
 							<div class="height-100 js-category-results">
 	              <?php
 								while ( have_posts() ) : the_post();
@@ -49,6 +49,15 @@ $is_blog_category = $tax == "blog_category" ? true : false;
           </div>
         </section>
       </div>
+
+			<!-- CTA -->
+			<?php
+			/*$title = get_field('cta_thin_title', $tax.'_'.$tax_id);
+			$text = get_field('cta_thin_text', $tax.'_'.$tax_id);
+			$link = get_field('cta_thin_link', $tax.'_'.$tax_id);
+			$link_text = get_field('cta_thin_link_text', $tax.'_'.$tax_id);
+			include(locate_template("template-parts/part-cta-thin.php"));*/
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
