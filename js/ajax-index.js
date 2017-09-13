@@ -25,7 +25,7 @@
     target.fadeTo(300, 0.3, function() {
       // Show Ajax loader
       $('.two-column-item__ajax-loader').addClass('active');
-      target.load(href + ' .js-category-results', function(data) {
+      target.load(href + ' .js-ajax-results', function(data) {
         // Hide Ajax loader
         $('.two-column-item__ajax-loader').removeClass('active');
         //var newURL = singleSlug ? '/new_era/blog/' + slug + '/' + singleSlug:  '/new_era/blog/' + slug + '/';
