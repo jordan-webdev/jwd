@@ -31,7 +31,7 @@ $is_blog_category = $tax == "blog_category" ? true : false;
 
             <!-- Results -->
     				<div id="js-ajax-scroll-to" class="two-column-item flex-grow-1 js-ajax-content-container">
-							<div class="height-100 js-category-results">
+							<div class="height-100 js-ajax-results">
 	              <?php
 								while ( have_posts() ) : the_post();
 										if ($is_blog_category){
