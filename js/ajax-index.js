@@ -7,7 +7,7 @@
   // Ajax load content on link click
   $('body').on('click', '#categories a, .js-blog-ajax-link, .js-ajax-link, .pagination-wrapper a', function(e) {
 
-    if ($(this).parent('li').hasClass('not-clickable')){
+    if ($(this).parent('li').hasClass('not-clickable')) {
       return false;
     }
 
@@ -22,7 +22,7 @@
     $('.drop-down--filters__sub-item, .drop-down__all').addClass('not-clickable');
 
     // Results
-    target.fadeTo(300, 0.3, function(){
+    target.fadeTo(300, 0.3, function() {
       // Show Ajax loader
       $('.two-column-item__ajax-loader').addClass('active');
       target.load(href + ' .js-category-results', function(data) {
@@ -39,9 +39,9 @@
         clickedLink.prev('.js-filter-box').toggleClass('is-active');
 
         //Remove the colour toggle for all if all was not selected, or remove it from every other one if all was selected
-        if ( ! (clickedLink.hasClass('js-filter-link-all') || clickedLink.hasClass('js-pagination-link')) ) {
+        if (!(clickedLink.hasClass('js-filter-link-all') || clickedLink.hasClass('js-pagination-link'))) {
           $('.js-filter-box-all.is-active').removeClass('is-active');
-        }else{
+        } else {
           $('.js-filter-box.is-active').not('.js-filter-box-all').removeClass('is-active');
         }
 
@@ -51,11 +51,11 @@
         //Give phones some extra time to load
         let mq = window.matchMedia("(max-width: 450px)");
         if (mq.matches) {
-          target.fadeTo(300, 1, function(){
+          target.fadeTo(300, 1, function() {
             scroll_to_results();
           });
         } else {
-          target.fadeTo(300, 1, function(){
+          target.fadeTo(300, 1, function() {
             scroll_to_results();
           });
         }
@@ -63,12 +63,12 @@
         // Allow clicking again
         $('.drop-down--filters__sub-item.not-clickable, .drop-down__all.not-clickable').removeClass('not-clickable');
 
-        if (typeof a2a !== "undefined"){
+        if (typeof a2a !== "undefined") {
           a2a.init('page');
         }
 
         // Add height to the image loaded with AJAX, to accomodate for Safari issue with AJAX-loaded images that have srcset
-        setTimeout(function(){
+        setTimeout(function() {
           add_height_to_thumbnail();
         }, 50);
 
@@ -77,13 +77,13 @@
 
 
     // Add height to the image loaded with AJAX, to accomodate for Safari issue with AJAX-loaded images that have srcset
-    $(window).on('resize', function(){
+    $(window).on('resize', function() {
       add_height_to_thumbnail();
     });
 
     //Pagination
     var paginationTarget = $('.ajax-pagination');
-    paginationTarget.fadeTo(300, 0.3, function(){
+    paginationTarget.fadeTo(300, 0.3, function() {
       paginationTarget.load(href + ' .js-ajax-pagination', function() {
         paginationTarget.fadeTo(300, 1);
       });
@@ -120,10 +120,10 @@
     });
   }
 
-  function add_height_to_thumbnail(){
+  function add_height_to_thumbnail() {
     var images = [$('.js-blog-single-thumb')];
-    $.each(images, function(){
-      $(this).each(function(i, v){
+    $.each(images, function() {
+      $(this).each(function(i, v) {
         var width = $(v).attr('width');
         var height = $(v).attr('height');
         var ratio = height / width;
@@ -135,9 +135,9 @@
 
   }
 
-  function scroll_to_results(){
+  function scroll_to_results() {
     //Scroll page
-    var el_to_scroll = $('#js-blog-listing-results');
+    var el_to_scroll = $('#js-ajax-scroll-to');
     $('html,body').animate({
       scrollTop: (el_to_scroll.offset().top - 150)
     }, 'slow');
@@ -192,7 +192,7 @@
       var updatedHref = hrefBeforeGETQueries + "?";
 
       var finalIteration = Object.keys(uniqueGETQueriesArray).length - 1;
-      $.each(uniqueGETQueriesArray, function(index, value){
+      $.each(uniqueGETQueriesArray, function(index, value) {
         updatedHref = index == finalIteration ? updatedHref + value : updatedHref + value + "&";
       })
       //var updatedHref = href.replace(/#038;/g, "&");
