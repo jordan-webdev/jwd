@@ -2,7 +2,7 @@
   display: inline-block;
   border: none;
   background-color: $color__background-button;
-  color: white;
+  color: $color__white;
   font-size: rem(15);
   line-height: 1;
   padding: 1em 2em;
@@ -12,7 +12,7 @@
   @include flex-shrink(0);
 
   &:visited {
-    color: white;
+    color: $color__white;
   }
 
   &:hover {
@@ -32,7 +32,7 @@
 
   &--reversed {
     color: $color__primary;
-    background-color: white;
+    background-color: $color__white;
 
     &:visited {
       color: $color__primary;
@@ -56,7 +56,7 @@
 
     &:hover {
       background-color: $color__primary;
-      color: white;
+      color: $color__white;
     }
   }
 
@@ -66,7 +66,7 @@
     &:hover, &:active,
     &:focus {
       background-color: $color__primary;
-      color: white;
+      color: $color__white;
     }
   }
 }
