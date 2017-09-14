@@ -1,3 +1,8 @@
+@mixin animation-delay($arg) {
+  -webkit-animation-delay: $arg;
+  animation-delay: $arg;
+}
+
 @mixin animation-direction($arg) {
   -webkit-animation-direction: $arg;
   animation-direction: $arg;
