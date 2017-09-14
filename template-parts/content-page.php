@@ -13,7 +13,7 @@
 <?php get_template_part('template-parts/part', 'intro'); ?>
 
 <div class="padding-site">
-	<article id="post-<?php the_ID(); ?>" <?php body_class('container-site mar-t-15 mar-b-15'); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php body_class('container-site mar-t-35 mar-b-35 clear'); ?>>
 
 		<div class="entry-content">
 			<?php the_content(); ?>
