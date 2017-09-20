@@ -10,8 +10,11 @@
 
 
 $query_obj = get_queried_object();
+$id = $query_obj->ID;
 
 $term_name = $query_obj->name;
+$term_name = $term_name ? $term_name : get_the_terms($id, 'blog_category')[0]->name;
+
 $taxonomy = $query_obj->taxonomy;
 // If it's a single blog post, the query object will not contain data about the taxonomy, so it's specified here
 $taxonomy = $taxonomy ? $taxonomy : 'blog_category';
@@ -22,7 +25,7 @@ $all_term_id = $all_term->term_id;
 
 <div id="category-wrapper" class="category-selector">
 
-	<h2 id="js-category-wrapper-title" class="font-16 bold color-secondary js-categories-wrapper-toggle category-selector__toggler mar-b-10">
+	<h2 id="js-category-wrapper-title" class="font-16 bold color-primary js-categories-wrapper-toggle category-selector__toggler mar-b-10">
     CATEGORIES
     <span class="screen-reader-text">Click to expand categories</span>
   </h2>
