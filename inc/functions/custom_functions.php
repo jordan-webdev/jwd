@@ -1,6 +1,6 @@
 <?php
 
-//Archive pagination (derived from http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/)
+// Archive pagination (derived from http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/)
 function ajax_archive_pagination()
 {
     if (is_singular()) {
@@ -76,7 +76,16 @@ function ajax_archive_pagination()
     echo '</ul></nav>' . "\n";
 }
 
-//Get excerpt function
+// Category has parent https://stackoverflow.com/questions/19064875/how-to-check-if-a-category-has-a-parent-category
+function category_has_parent($catid){
+    $category = get_category($catid);
+    if ($category->category_parent > 0){
+        return true;
+    }
+    return false;
+}
+
+// Get excerpt function
 function get_excerpt($limit)
 {
     global $post;
