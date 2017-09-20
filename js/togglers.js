@@ -1,18 +1,18 @@
 (function($) {
 
-  $('.js-toggler').each(function() {
-    var toggler = $(this);
-    var toggle_item = toggler.attr("data-toggles");
-    var return_toggler = toggler.attr('data-return-toggler');
-    toggler.on('click', function() {
-      slide_toggler(toggler, toggle_item, return_toggler);
-    });
-  })
+  $('.tax-accordions__pullout').slideUp(1);
+  $('body').on('click', '.tax-accordions__toggler', function() {
+    var arrow = $(this);
+    var pullout = $(this).next('.tax-accordions__pullout');
 
-  function slide_toggler(toggler, toggle_item, return_toggler) {
-    toggler.toggleClass('is-active');
-    $('.' + return_toggler).toggleClass('is-shown');
-    $('#' + toggle_item).slideToggle();
-  }
+    $('.tax-accordions__accordion').not($(this).parent()).removeClass('active');
+    $(this).parent('.tax-accordions__accordion').toggleClass('active');
+    $('.tax-accordions__pullout').not(pullout).slideUp().toggleClass('active');
+    pullout.slideToggle();
+
+    // Rotate the arrow
+    $('.tax-accordions__accordion .tax-accordions__arrow').css('transform', 'rotate(180deg)');
+    $('.tax-accordions__accordion.active .tax-accordions__arrow').css('transform', 'rotate(0)');
+  });
 
 })(jQuery)
