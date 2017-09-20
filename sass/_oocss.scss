@@ -83,14 +83,44 @@
 }
 
 .color-black {
-  color: black;
+  color: $color__black;
 
   &:visited {
-    color: black;
+    color: $color__black;
   }
 
   &--bg {
-    background-color: black;
+    background-color: $color__black;
+  }
+}
+
+.color-light-brown {
+  color: $color__light-brown;
+
+  &--bg {
+    background-color: $color__light-brown;
+  }
+}
+
+.color-dark-brown {
+  color: $color__dark-brown;
+
+  &--bg {
+    background-color: $color__dark-brown;
+  }
+
+  &--bor {
+    &-b {
+      border-bottom: 1px solid $color__dark-brown;
+    }
+  }
+}
+
+.color-green {
+  color: $color__green;
+
+  &--bg {
+    background-color: $color__green;
   }
 }
 
@@ -122,6 +152,38 @@
 
     &-r {
       border-right: 1px solid $color__grey;
+    }
+  }
+}
+
+.color-med-grey {
+  color: $color__med-grey;
+
+  &:visited {
+    color: $color__med-grey;
+  }
+
+  &--bg {
+    background-color: $color__med-grey;
+  }
+
+  &--bor {
+    border: 1px solid $color__med-grey;
+
+    &-t {
+      border-top: 1px solid $color__med-grey;
+    }
+
+    &-b {
+      border-bottom: 1px solid $color__med-grey;
+    }
+
+    &-l {
+      border-left: 1px solid $color__med-grey;
+    }
+
+    &-r {
+      border-right: 1px solid $color__med-grey;
     }
   }
 }
@@ -259,8 +321,12 @@
   }
 }
 
-.font-header {
-  font-size: $font__header;
+.font-subheader {
+  font-size: rem(22);
+
+  @media screen and (min-width: rem(450)) {
+    font-size: rem(36);
+  }
 }
 
 .font-primary {
@@ -508,6 +574,14 @@
     padding-left: rem(25);
   }
 
+  &-30 {
+    padding-left: rem(30);
+  }
+
+  &-35 {
+    padding-left: rem(35);
+  }
+
   &-40 {
     padding-left: rem(40);
   }
@@ -536,6 +610,14 @@
 
   &-25 {
     padding-right: rem(25);
+  }
+
+  &-30 {
+    padding-right: rem(30);
+  }
+
+  &-35 {
+    padding-right: rem(35);
   }
 }
 
@@ -588,6 +670,14 @@
 
   &-20 {
     padding-bottom: rem(20);
+  }
+
+  &-25 {
+    padding-bottom: rem(25);
+  }
+
+  &-30 {
+    padding-bottom: rem(30);
   }
 }
 
