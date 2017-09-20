@@ -146,6 +146,14 @@ function jwd_scripts()
 
     // Scroll
     wp_enqueue_script('jwd-scroll-js', get_template_directory_uri() . '/js/scroll.js', array('jquery'), '', true);
+    
+    // Tax Accordions
+    if (is_tax()){
+      wp_enqueue_script('jwd-tax-accordions', get_template_directory_uri() . '/js/tax-accordions.js', array('jquery'), '', true);
+    }
+    
+    // Togglers
+    wp_enqueue_script('jwd-togglers', get_template_directory_uri() . '/js/togglers.js', array('jquery'), '', true);
 
 }
 add_action('wp_enqueue_scripts', 'jwd_scripts');
