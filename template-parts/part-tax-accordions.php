@@ -9,9 +9,9 @@
 
 ?>
 
-<article class="tax-accordions__accordion two-column-item-wrapper clear <?php echo get_the_category()[0]->category_nicename; ?>">
+<article class="tax-accordions__accordion two-column-item-wrapper clear">
 	<header class="tax-accordions__toggler flex align-center space-between color-grey--bg pointer">
-		<h3 class="color-secondary normal font-16"><?php echo get_the_title(); ?></h3>
+		<h3 class="color-primary normal font-16"><?php echo get_the_title(); ?></h3>
     <img class="tax-accordions__arrow" src="<?php echo get_template_directory_uri(); ?>/images/faq-arrow-min.png" alt="click to expand the answer" />
 	</header>
 	<div class="tax-accordions__pullout pad-l-15">
