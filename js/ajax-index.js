@@ -72,6 +72,9 @@
           add_height_to_thumbnail();
         }, 50);
 
+        // Create a trigger for use in other scripts
+        $(document).trigger('ajax-index-complete');
+
       }); // End load
     });
 
@@ -99,16 +102,10 @@
   }); // End link/button click
 
   // Color highlighting
-  $('#categories span').click(function() {
+  $('body').on('click', '#categories span', function() {
     $('#categories span.color-primary').removeClass('color-primary');
     $(this).addClass('color-primary');
   });
-
-  $('body').on('click', '.js-ajax-link', function() {
-    var slug = $(this).attr('data-slug');
-    $('#categories span.color-primary').removeClass('color-primary');
-    $('#categories span[data-slug="' + slug + '"]').addClass('color-primary');
-  })
 
   //Categories dropdown
   var mq = window.matchMedia("(max-width: 1086px)");
