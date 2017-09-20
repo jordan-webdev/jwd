@@ -1,7 +1,15 @@
 (function($) {
   //Close button
   closeBtn();
+  
+  // Not Clickable
+  $('.not-clickable').on('click', function() {
+    return false;
+  });
 
+  //Responsive BG images
+  responsiveBG();
+  
   function closeBtn() {
     $('.close-btn').on('click', function() {
       var target = $(this).attr('data-closes');
@@ -14,9 +22,6 @@
       $(target).removeClass('active');
     });
   }
-
-  //Responsive BG images
-  responsiveBG();
 
   function responsiveBG() {
     $('.js-responsive-bg').each(function() {
@@ -54,10 +59,5 @@
       }
     });
   }
-
-  // Not Clickable
-  $('.not-clickable').on('click', function() {
-    return false;
-  });
 
 })(jQuery)
