@@ -16,8 +16,6 @@
     $('#js-our-services__drop-list').slideToggle();
   });
 
-  // Location dropdown button
-  active_toggle('.appointment-filters__location-btn');
 
   function slide_toggler(toggler, toggle_item, return_toggler) {
     toggler.toggleClass('is-active');
@@ -25,9 +23,4 @@
     $('#' + toggle_item).slideToggle();
   }
 
-  function active_toggle(el) {
-    $(el).on('click', function() {
-      $(this).toggleClass("is-active");
-    })
-  }
 })(jQuery)
