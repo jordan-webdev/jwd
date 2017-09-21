@@ -4,24 +4,33 @@
   font-size: px-to(rem, 15);
   line-height: 1.7;
 
-  ul:not([class]), ol:not([class]) {
+  & ul:not([class]), ol:not([class]) {
     padding-left: px-to(em, 40);
     margin: 1em 0;
   }
 
-  li:not([class]) {
+  & li:not([class]) {
     display: list-item;
   }
 
-  a:not([class]) {
+  & a:not([class]) {
     text-decoration: underline;
   }
 
-  p:not([class]) {
-    padding-bottom: 1em;
+  /*& > p {
+    max-width: rem(930);
+  }*/
+
+  & h2:not([class]) {
+    font-size: rem(22);
+    color: $color__primary;
   }
 
-  address:not([class]) {
+  & p:not([class]) {
+    margin-bottom: 1em;
+  }
+
+  & address:not([class]) {
     margin: 0 0 1.5em;
     font-style: italic;
   }
