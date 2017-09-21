@@ -1,0 +1,13 @@
+.careers {
+  &__pdf-wrapper {
+    border-radius: rem(5);
+    padding-left: rem(7);
+    padding-right: rem(7);
+  }
+
+  &__list-item {
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
