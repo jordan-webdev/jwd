@@ -3,6 +3,23 @@
 // Template shortcodes
 require get_template_directory() . '/inc/functions/template-shortcodes/template-shortcodes.php';
 
+// Center shortcode
+function generate_center_shortcode( $atts , $content = null ) {
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'type' => '',
+		),
+		$atts,
+		'center'
+	);
+
+	$type = $atts['type'];
+
+	return '<'.$type.' class="text-center mar-l-auto mar-r-auto">' .$content .'</'.$type.'>';
+}
+add_shortcode( 'center', 'generate_center_shortcode' );
+
 // Add half-items Shortcode
 function generate_half_items_shortcode( $atts , $content = null ) {
 	// Attributes
@@ -11,7 +28,7 @@ function generate_half_items_shortcode( $atts , $content = null ) {
 			'show-p' => '',
 		),
 		$atts,
-		'half'
+		'half-items'
 	);
 	$show_p = $atts['show-p'] ? "show-p" : "";
 	return '<div class="half-items flex flex-wrap space-between '.$show_p.'">' .do_shortcode($content) .'</div>';
@@ -26,7 +43,7 @@ add_shortcode( 'half', 'generate_half_shortcode' );
 
 // Add Text Highlight shortcode
 function highlight_shortcode( $atts , $content = null ) {
-	return '<span class="text-highlight">' . $content . '</span>';
+	return '<span class="color-primary">' . $content . '</span>';
 }
 add_shortcode( 'highlight', 'highlight_shortcode' );
 
@@ -55,12 +72,6 @@ function big_shortcode( $atts , $content = null ) {
 }
 add_shortcode( 'big', 'big_shortcode' );
 
-// Width
-function fix_width_shortcode( $atts , $content = null ) {
-	return '<span class="fixed-width">' . $content . '</span>';
-}
-add_shortcode( 'fix_width', 'fix_width_shortcode' );
-
 // Quote
 function quote_shortcode( $atts , $content = null ) {
 
@@ -70,7 +81,7 @@ function quote_shortcode( $atts , $content = null ) {
 			'author' => '',
 		),
 		$atts,
-		'big'
+		'quote'
 	);
 
 	$author =  $atts['author'];
