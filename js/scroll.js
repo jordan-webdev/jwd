@@ -101,7 +101,7 @@
 
             var endingPosition = $(this).attr('data-offset') ? parseInt(target.offset().top) + parseInt($(this).attr('data-offset')) : target.offset().top;
             $('html, body').animate({
-              scrollTop: endingPosition - 150
+              scrollTop: endingPosition
             }, 1000, function() {
               // Callback after animation
               // Must change focus!
