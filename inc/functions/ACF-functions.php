@@ -49,7 +49,7 @@ function acf_load_social_media_choices($field)
     return $field;
 }
 //add_filter('acf/load_field/name=social_media_choices', 'acf_load_social_media_choices');
-add_filter('acf/load_field/name=header_social_media', 'acf_load_social_media_choices');
+add_filter('acf/load_field/name=social_media_to_use', 'acf_load_social_media_choices');
 
 //Dynamic product filter options
 function acf_dynamic_select_from_textarea($field)
