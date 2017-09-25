@@ -103,7 +103,7 @@ $two_col: rem(500);
 
     @media screen and (min-width: $two_col) {
       max-width: 0;
-      overflow: inherit;
+      overflow: visible;
       border-top-right-radius: 0;
       border-top-left-radius: 0;
       border-right: 0;
