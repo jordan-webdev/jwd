@@ -47,7 +47,6 @@ $two_col: rem(500);
 
   .wpcf7-form-control-wrap {
     display: block;
-    overflow: hidden;
 
     @include flex-basis(100%);
 
@@ -96,7 +95,19 @@ $two_col: rem(500);
   }
 
   &__recaptcha-wrapper {
-    padding-left: calc(50% - 152px);
+    max-width: rem(158);
+    overflow: hidden;
+    border-top-right-radius: rem(5);
+    border-top-left-radius: rem(5);
+    border-right: 1px solid $color__border-input;
+
+    @media screen and (min-width: $two_col) {
+      max-width: 0;
+      overflow: inherit;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+      border-right: 0;
+    }
   }
 
   // Wider contact form with a lower z-index
