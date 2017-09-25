@@ -1,9 +1,15 @@
 .btn, input[type="submit"].btn {
   display: inline-block;
-  border: none;
+  border: 1px solid $color__primary;
   background-color: $color__background-button;
+  min-width: rem(170);
+  text-align: center;
+
+  @include red-gradient;
+
   color: $color__white;
   font-size: rem(15);
+  font-family: $font__secondary;
   line-height: 1;
   padding: 1em 2em;
   transition: color 0.3s, background-color 0.3s;
@@ -18,12 +24,13 @@
   &:hover {
     border-color: $color__border-button-hover;
     background-color: $color__secondary;
-    color: $color__highlight;
+    color: $color__white;
   }
 
   &:active,
   &:focus {
     border-color: $color__border-button-focus;
+    color: $color__white;
   }
 
   &--block {
@@ -32,7 +39,7 @@
 
   &--reversed {
     color: $color__primary;
-    background-color: $color__white;
+    background-color: white;
 
     &:visited {
       color: $color__primary;
@@ -56,17 +63,23 @@
 
     &:hover {
       background-color: $color__primary;
-      color: $color__white;
+      color: white;
     }
   }
 
   &--grey {
-    background-color: darken(white, 30%);
+    border: 1px solid $color__med-grey;
 
-    &:hover, &:active,
+    @include grey-gradient;
+
+    color: $color__black;
+
+    &:visited, &:hover, &:active,
     &:focus {
-      background-color: $color__primary;
-      color: $color__white;
+      @include grey-gradient;
+
+      border: 1px solid $color__med-grey;
+      color: $color__black;
     }
   }
 }
