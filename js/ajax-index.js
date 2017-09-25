@@ -96,7 +96,7 @@
     //Document title
     $('title').load(href + ' title', function(data) {
       document.title = $(this).text();
-    })
+    });
 
     return false;
   }); // End link/button click
