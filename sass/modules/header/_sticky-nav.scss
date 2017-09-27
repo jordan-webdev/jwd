@@ -1,0 +1,24 @@
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: -999rem;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s, left 0s 0.3s;
+  padding-left: rem(30);
+  padding-right: rem(30);
+  z-index: $z-sticky;
+  height: rem(65);
+  display: none;
+
+  @media screen and (min-width: $breakpoint__mobile-menu) {
+    display: block;
+  }
+
+  &.active {
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s, left 0s;
+  }
+}
