@@ -41,7 +41,11 @@ $images = $template . '/images';
 			  </h1>
 			<?php endif; ?>
 
+	    <!-- Desktop Nav -->
 	    <?php get_template_part('template-parts/header/part', 'nav-desktop'); ?>
+			<!-- Sticky Nav (Desktop) -->
+			<?php get_template_part('template-parts/header/part', 'sticky-nav'); ?>
+			<!-- Mobile Nav -->
 			<?php get_template_part('template-parts/header/part', 'header-mobile'); ?>
 
 		</header><!-- #masthead -->
