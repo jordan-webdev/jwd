@@ -7,7 +7,7 @@
 <div class="header-mobile color-primary flex justify-between align-center width-100">
 
   <!-- Menu -->
-  <button id="js-mobile-menu-toggle" class="header-mobile__button header-mobile__icon color-white" aria-controls="primary-menu" aria-expanded="false" data-toggles="#mobile-menu">
+  <button id="js-mobile-menu-toggle" class="header-mobile__button header-mobile__icon color-white" aria-controls="mobile-menu" aria-expanded="false" data-toggles="#mobile-menu">
     <!--<img src="<?php //echo $images; ?>/hamburger-min.png" alt="Toggle menu." />-->
     <span class="fa fa-bars header-mobile__hamburger" aria-hidden="true"></span>
     <span class="screen-reader-text">Click to toggle the navigation menu.</span>
