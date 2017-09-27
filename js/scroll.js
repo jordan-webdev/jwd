@@ -26,6 +26,9 @@
       // Scroll Animations, based on HTML data attributes that reference CSS classes
       doScrollEffects($(this), scrollPoints);
 
+      // Sticky Navigation
+      sticky_nav($(this).scrollTop());
+
       // *** ADD OTHER FUNCTIONS HERE **** //
     });
 
@@ -117,6 +120,14 @@
           }
         }
       });
+  }
+
+  function sticky_nav(scroll_top) {
+    if (scroll_top > 150) {
+      $('#sticky-navigation').addClass('active');
+    } else {
+      $('#sticky-navigation.active').removeClass('active');
+    }
   }
 
 })(jQuery)
