@@ -1,15 +1,18 @@
 (function($) {
+  // Click Banner
+  click_banner();
+
+  function click_banner() {
+    $(document).on('click-banner-added', function() {
+      $('body').on('click', function() {
+        $('.js-click-banner').remove();
+      });
+    });
+  }
+
   //Close button
   closeBtn();
-  
-  // Not Clickable
-  $('.not-clickable').on('click', function() {
-    return false;
-  });
 
-  //Responsive BG images
-  responsiveBG();
-  
   function closeBtn() {
     $('.close-btn').on('click', function() {
       var target = $(this).attr('data-closes');
@@ -22,6 +25,9 @@
       $(target).removeClass('active');
     });
   }
+
+  //Responsive BG images
+  responsiveBG();
 
   function responsiveBG() {
     $('.js-responsive-bg').each(function() {
@@ -44,11 +50,10 @@
           });
       } else {
         //Preload
-        $('<img/>').attr('src', $(this).attr('data-lg-bg')).on('load',
-          function() {
+        if ($(this).data('sm-bg')) {
+          $('<img/>').attr('src', $(this).attr('data-sm-bg')).on('load', function() {
             $(this).remove(); // prevent memory leaks as @benweet suggested
-            that.css('background-image', 'url(' + that.attr(
-              'data-sm-bg') + ')');
+            that.css('background-image', 'url(' + that.attr('data-sm-bg') + ')');
             requestAnimationFrame(function() {
               setTimeout(function() {
                 that.addClass('active');
@@ -56,8 +61,14 @@
               }, 400); //Edit this value depending on the image
             });
           });
+        }
       }
     });
   }
+
+  // Not Clickable
+  $('.not-clickable').on('click', function() {
+    return false;
+  });
 
 })(jQuery)
