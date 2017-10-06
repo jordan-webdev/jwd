@@ -1,53 +1,5 @@
 [
     {
-        "key": "group_59c9190098f68",
-        "title": "Header Options",
-        "fields": [
-            {
-                "key": "field_59c9191dd1ee4",
-                "label": "Mobile Logo",
-                "name": "mobile_logo",
-                "type": "image",
-                "value": null,
-                "instructions": "The logo to be used in the mobile top navigation bar.",
-                "required": 1,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "url",
-                "preview_size": "thumbnail",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
-            }
-        ],
-        "location": [
-            [
-                {
-                    "param": "options_page",
-                    "operator": "==",
-                    "value": "acf-options-header"
-                }
-            ]
-        ],
-        "menu_order": 0,
-        "position": "normal",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": "",
-        "active": 1,
-        "description": ""
-    },
-    {
         "key": "group_58f91c93561ca",
         "title": "Blog",
         "fields": [
@@ -202,6 +154,54 @@
         "menu_order": 0,
         "position": "normal",
         "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_59c9190098f68",
+        "title": "Header Options",
+        "fields": [
+            {
+                "key": "field_59c9191dd1ee4",
+                "label": "Mobile Logo",
+                "name": "mobile_logo",
+                "type": "image",
+                "value": null,
+                "instructions": "The logo to be used in the mobile top navigation bar.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-header"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
         "hide_on_screen": "",
@@ -915,7 +915,7 @@
                 "type": "text",
                 "value": null,
                 "instructions": "",
-                "required": 1,
+                "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -935,7 +935,7 @@
                 "type": "text",
                 "value": null,
                 "instructions": "",
-                "required": 1,
+                "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -955,7 +955,7 @@
                 "type": "text",
                 "value": null,
                 "instructions": "",
-                "required": 1,
+                "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -975,7 +975,7 @@
                 "type": "email",
                 "value": null,
                 "instructions": "",
-                "required": 1,
+                "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
@@ -1081,31 +1081,6 @@
                     "id": ""
                 },
                 "return_format": "url",
-                "preview_size": "thumbnail",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
-            },
-            {
-                "key": "field_59cbc996d1bd0",
-                "label": "Seal Image",
-                "name": "seal_image",
-                "type": "image",
-                "value": null,
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "id",
                 "preview_size": "thumbnail",
                 "library": "all",
                 "min_width": "",
