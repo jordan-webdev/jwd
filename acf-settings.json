@@ -909,6 +909,31 @@
         "title": "Theme Options",
         "fields": [
             {
+                "key": "field_59d7e05526885",
+                "label": "Logo",
+                "name": "logo",
+                "type": "image",
+                "value": null,
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
                 "key": "field_59b1b74718405",
                 "label": "Address",
                 "name": "site_address",
