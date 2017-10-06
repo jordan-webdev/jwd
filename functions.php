@@ -98,7 +98,7 @@ function jwd_scripts()
     //wp_enqueue_script('jwd-owl-js', get_template_directory_uri() . '/inc/owl-carousel-2.2.1/owl.carousel.min.js', array('jquery'), '', true);
 
     // Slick Slider 1.6.0
-    //wp_enqueue_script('jwd-slick-js', get_template_directory_uri() . '/inc/slick-1.6.0/slick.min.js', array('jquery'), '', true);
+    //wp_enqueue_script('jwd-slick-js', get_template_directory_uri() . '/inc/slick-1.8.0/slick.min.js', array('jquery'), '', true);
 
     // Fancybox
     //wp_enqueue_script('jwd-fancybox-js', get_template_directory_uri() . '/inc/fancybox-3.0/jquery.fancybox.min.js', array('jquery'), '', true);
@@ -146,12 +146,12 @@ function jwd_scripts()
 
     // Scroll
     wp_enqueue_script('jwd-scroll-js', get_template_directory_uri() . '/js/scroll.js', array('jquery'), '', true);
-    
+
     // Tax Accordions
     if (is_tax()){
       wp_enqueue_script('jwd-tax-accordions', get_template_directory_uri() . '/js/tax-accordions.js', array('jquery'), '', true);
     }
-    
+
     // Togglers
     wp_enqueue_script('jwd-togglers', get_template_directory_uri() . '/js/togglers.js', array('jquery'), '', true);
 
