@@ -4,9 +4,6 @@
   background-color: $color__background-button;
   min-width: rem(170);
   text-align: center;
-
-  @include red-gradient;
-
   color: $color__white;
   font-size: rem(15);
   font-family: $font__secondary;
@@ -69,15 +66,10 @@
 
   &--grey {
     border: 1px solid $color__med-grey;
-
-    @include grey-gradient;
-
     color: $color__black;
 
     &:visited, &:hover, &:active,
     &:focus {
-      @include grey-gradient;
-
       border: 1px solid $color__med-grey;
       color: $color__black;
     }
