@@ -94,14 +94,14 @@ function jwd_scripts()
 
     /* ****** ASSETS ****** */
 
-    // Owl Carousel 2.2.1
-    //wp_enqueue_script('jwd-owl-js', get_template_directory_uri() . '/inc/owl-carousel-2.2.1/owl.carousel.min.js', array('jquery'), '', true);
+    // Owl Carousel
+    //wp_enqueue_script('jwd-owl-js', get_template_directory_uri() . '/inc/owl-carousel/owl.carousel.min.js', array('jquery'), '', true);
 
-    // Slick Slider 1.6.0
-    //wp_enqueue_script('jwd-slick-js', get_template_directory_uri() . '/inc/slick-1.8.0/slick.min.js', array('jquery'), '', true);
+    // Slick Slider
+    //wp_enqueue_script('jwd-slick-js', get_template_directory_uri() . '/inc/slick/slick.min.js', array('jquery'), '', true);
 
     // Fancybox
-    //wp_enqueue_script('jwd-fancybox-js', get_template_directory_uri() . '/inc/fancybox-3.0/jquery.fancybox.min.js', array('jquery'), '', true);
+    //wp_enqueue_script('jwd-fancybox-js', get_template_directory_uri() . '/inc/fancybox/jquery.fancybox.min.js', array('jquery'), '', true);
 
     // Font Awesome
     wp_enqueue_script('jwd-font-awesome', 'https://use.fontawesome.com/1562b4b0a4.js');
