@@ -29,12 +29,12 @@ $images = $template . '/images';
 	<div class="padding-site color-grey--bg">
 		<header id="masthead" class="site-header container-site flex">
 
-			<!-- Logo -->
+			<!-- Logo (place where it needs to go) -->
 			<?php if (is_front_page()): ?>
 			  <h1 class="desktop-logo">
 			<?php endif; ?>
 			  <a href="<?php echo get_home_url(); ?>" rel="home" class="block pad-t-15 pad-b-15">
-			    <img src="<?php echo get_header_image(); ?>" alt="<?php bloginfo( "title" ); ?>">
+			    <img src="<?php echo get_field('logo', 'options')['url']; ?>" alt="<?php bloginfo( "title" ); ?>">
 			    <span class="screen-reader-text"><?php bloginfo( "name" ); ?></span>
 			  </a>
 			<?php if (is_front_page()): ?>
