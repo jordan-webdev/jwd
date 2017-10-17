@@ -36,6 +36,6 @@ add_shortcode( 'side_items', 'side_items_shortcode' );
 function side_item_shortcode( $atts , $content = null ) {
 
 	$content = str_replace(array("<p></p>", "<p>&nbsp;</p>", "&nbsp;"), "", $content);
-	return '<div class="side-items__item flex-shrink-0">' .$content.'</div>';
+	return '<div class="side-items__item">' .$content.'</div>';
 }
 add_shortcode( 'side_item', 'side_item_shortcode' );
