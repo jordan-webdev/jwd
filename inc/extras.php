@@ -37,3 +37,16 @@ function jwd_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'jwd_pingback_header' );
+
+// Remove poor formatting in shortcodes
+function cleanup_shortcode_fix($content) {
+  $array = array (
+    '<p>[' => '[',
+    ']</p>' => ']', 
+    ']<br />' => ']',
+    ']<br>' => ']'
+  );
+  $content = strtr($content, $array);
+    return $content;
+}
+add_filter('the_content', 'cleanup_shortcode_fix', 10);
