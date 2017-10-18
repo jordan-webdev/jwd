@@ -22,16 +22,7 @@ add_shortcode( 'center', 'generate_center_shortcode' );
 
 // Add half-items Shortcode
 function generate_half_items_shortcode( $atts , $content = null ) {
-	// Attributes
-	$atts = shortcode_atts(
-		array(
-			'show-p' => '',
-		),
-		$atts,
-		'half-items'
-	);
-	$show_p = $atts['show-p'] ? "show-p" : "";
-	return '<div class="half-items flex flex-wrap space-between '.$show_p.'">' .do_shortcode($content) .'</div>';
+	return '<div class="half-items flex flex-wrap space-between">' .do_shortcode($content) .'</div>';
 }
 add_shortcode( 'half-items', 'generate_half_items_shortcode' );
 
