@@ -37,7 +37,7 @@ add_shortcode( 'half-items', 'generate_half_items_shortcode' );
 
 // Add half Shortcode
 function generate_half_shortcode( $atts , $content = null ) {
-	return '<div class="half-items__item">' .$content .'</div>';
+	return '<div class="half-items__item">' .do_shortcode($content). '</div>';
 }
 add_shortcode( 'half', 'generate_half_shortcode' );
 
