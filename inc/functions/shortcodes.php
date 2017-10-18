@@ -10,7 +10,6 @@ function align_center_shortcode( $atts , $content = null ) {
 		array(
 			'pad-l' => 'false',
 			'type' => 'p',
-			'strip-p' => 'true',
 		),
 		$atts,
 		'align-center'
@@ -18,8 +17,6 @@ function align_center_shortcode( $atts , $content = null ) {
 
 	$pad_l = $atts['pad-l'];
 	$type = $atts['type'];
-	$strip_p = $atts['strip-p'];
-	$content = $strip_p ? strip_p($content) : $content;
 
 	return '<'.$type.' class="flex align-center ' .( $pad_l != "false" ? 'pad-l-' .$pad_l : ''). '">' .$content .'</'.$type.'>';
 }
