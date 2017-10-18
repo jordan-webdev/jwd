@@ -20,9 +20,11 @@ function display_careers_shortcode( $atts , $content = null ) {
            $pdf = get_field('careers_pdf');
          ?>
           <li class="careers__list-item flex align-center pad-t-15 pad-b-15 mar-l-15 mar-r-15 color-med-grey--bor-b">
-            <a class="careers__pdf-wrapper mar-r-10 color-primary--bg" href="<?php echo esc_url($pdf); ?>" rel="noopener noreferrer" target="_blank">
-              <span class="careers__pdf-text color-white">PDF</span>
-            </a>
+            <?php if ($pdf): ?>
+              <a class="careers__pdf-wrapper mar-r-10 color-primary--bg" href="<?php echo esc_url($pdf); ?>" rel="noopener noreferrer" target="_blank">
+                <span class="careers__pdf-text color-white">PDF</span>
+              </a>
+            <?php endif; ?>
             <span class="careers_career-title"><?php echo esc_html($title); ?></span>
           </li>
         <?php endwhile; ?>
