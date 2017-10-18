@@ -3,6 +3,28 @@
 // Template shortcodes
 require get_template_directory() . '/inc/functions/template-shortcodes/template-shortcodes.php';
 
+// Align Center
+function align_center_shortcode( $atts , $content = null ) {
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'pad-l' => 'false',
+			'type' => 'p',
+			'strip-p' => 'true',
+		),
+		$atts,
+		'align-center'
+	);
+
+	$pad_l = $atts['pad-l'];
+	$type = $atts['type'];
+	$strip_p = $atts['strip-p'];
+	$content = $strip_p ? strip_p($content) : $content;
+
+	return '<'.$type.' class="flex align-center ' .( $pad_l != "false" ? 'pad-l-' .$pad_l : ''). '">' .$content .'</'.$type.'>';
+}
+add_shortcode( 'align-center', 'align_center_shortcode' );
+
 // Center shortcode
 function generate_center_shortcode( $atts , $content = null ) {
 	// Attributes
