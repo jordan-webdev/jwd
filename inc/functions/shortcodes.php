@@ -1,6 +1,6 @@
 <?php
 
-// Template shortcodes
+// ********** Template shortcodes ***********
 require get_template_directory() . '/inc/functions/template-shortcodes/template-shortcodes.php';
 
 // Align Center
@@ -30,7 +30,7 @@ function generate_center_shortcode( $atts , $content = null ) {
 	// Attributes
 	$atts = shortcode_atts(
 		array(
-			'type' => '',
+			'type' => 'p',
 		),
 		$atts,
 		'center'
@@ -44,13 +44,22 @@ add_shortcode( 'center', 'generate_center_shortcode' );
 
 // Add half-items Shortcode
 function generate_half_items_shortcode( $atts , $content = null ) {
-	return '<div class="half-items flex flex-wrap space-between">' .do_shortcode($content) .'</div>';
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'show-p' => '',
+		),
+		$atts,
+		'half-items'
+	);
+	$show_p = $atts['show-p'] ? "show-p" : "";
+	return '<div class="half-items flex flex-wrap space-between '.$show_p.'">' .do_shortcode($content) .'</div>';
 }
 add_shortcode( 'half-items', 'generate_half_items_shortcode' );
 
 // Add half Shortcode
 function generate_half_shortcode( $atts , $content = null ) {
-	return '<div class="half-items__item">' .do_shortcode($content). '</div>';
+	return '<div class="half-items__item">' .do_shortcode($content).'</div>';
 }
 add_shortcode( 'half', 'generate_half_shortcode' );
 
@@ -59,6 +68,27 @@ function highlight_shortcode( $atts , $content = null ) {
 	return '<span class="color-primary">' . $content . '</span>';
 }
 add_shortcode( 'highlight', 'highlight_shortcode' );
+
+// Highlight BG
+function grey_bg_shortcode($atts, $content = null ) {
+	$atts = shortcode_atts(
+		array(
+			'pad-t' => '',
+			'pad-b' => '',
+			'strip-p' => 'true',
+			'type'	=> 'div',
+		),
+		$atts,
+		'grey-bg'
+	);
+	$pad_t = $atts['pad-t'];
+	$pad_b = $atts['pad-b'];
+	$type = $atts['type'];
+	$content = $atts['strip-p'] != "false" ? str_replace(array("<p>", "</p>"), "", $content) : $content;
+
+	return '<'.$type.' class="color-grey--bg color-primary pad-t-5 pad-b-5 pad-l-15 pad-r-15 '.($pad_t ? 'pad-t-' .$pad_t : '').' '.($pad_b ? 'pad-b-' .$pad_b : '').'">' . do_shortcode($content) . '</'.$type.'>';
+}
+add_shortcode( 'grey-bg', 'grey_bg_shortcode' );
 
 // Add Text Nowrap shortcode
 function nowrap_shortcode( $atts , $content = null ) {
@@ -98,7 +128,7 @@ function quote_shortcode( $atts , $content = null ) {
 	);
 
 	$author =  $atts['author'];
-	$html = '<div class="block-quote color-secondary">';
+	$html = '<div class="block-quote color-primary">';
 	$html .= '<blockquote class="block-quote__quote mar-b-15">'.$content.'</blockquote>';
 	$html .= '<span class="block-quote__author block">'.$author.'</span>';
 	$html .= '</div>';
