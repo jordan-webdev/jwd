@@ -100,6 +100,9 @@ function jwd_scripts()
     // Slick Slider
     //wp_enqueue_script('jwd-slick-js', get_template_directory_uri() . '/inc/slick/slick.min.js', array('jquery'), '', true);
 
+    // FooTable
+    wp_enqueue_script('jwd-footable-js', get_template_directory_uri() . '/inc/footable/footable.js', array('jquery'), '', true);
+    
     // Fancybox
     //wp_enqueue_script('jwd-fancybox-js', get_template_directory_uri() . '/inc/fancybox/jquery.fancybox.min.js', array('jquery'), '', true);
 
