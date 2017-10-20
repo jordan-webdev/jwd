@@ -1,4 +1,7 @@
 .footable {
   border-collapse: collapse;
-  border: 1px solid $color__grey;
+
+  & td, &tr {
+    border: 1px solid $color__dark-grey;
+  }
 }
