@@ -99,7 +99,7 @@ $two_col: rem(500);
     overflow: hidden;
     border-top-right-radius: rem(5);
     border-bottom-right-radius: rem(5);
-    border-right: 1px solid $color__border-input;
+    border-right: 1px solid $color__med-grey;
 
     @media screen and (min-width: $two_col) {
       max-width: 0;
