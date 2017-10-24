@@ -19,14 +19,14 @@
   }
 
   &:hover {
-    border-color: $color__border-button-hover;
+    border-color: $color__secondary;
     background-color: $color__secondary;
     color: $color__white;
   }
 
   &:active,
   &:focus {
-    border-color: $color__border-button-focus;
+    border-color: $color__secondary;
     color: $color__white;
   }
 
@@ -43,7 +43,7 @@
     }
 
     &:hover {
-      border-color: $color__border-button-hover;
+      border-color: $color__secondary;
       background-color: $color__secondary;
       color: $color__highlight;
     }
