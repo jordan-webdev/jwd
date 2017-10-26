@@ -1,17 +1,3 @@
-@import "side-slider";
-
-@media screen and (min-width: $breakpoint__mobile-menu) {
-  @import "slide-out-submenus";
-
-  .mobile-navigation {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-}
-
 .menu-item {
   text-transform: uppercase;
 }
