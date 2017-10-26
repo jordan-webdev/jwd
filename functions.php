@@ -141,7 +141,7 @@ function jwd_scripts()
     $data = array(
         'templateDirectory' => get_template_directory_uri(),
         'homeURL' => home_url(),
-        'headerImage' => get_header_image(),
+        'headerImage' => esc_url(get_field("logo", "options")['url']),
         'blogTitle' => get_bloginfo('title'),
     );
     wp_localize_script($handle, $name, $data);
