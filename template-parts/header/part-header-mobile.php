@@ -6,7 +6,7 @@
 
 <div class="padding-site">
   <div class="container-site">
-    <nav class="header-mobile color-primary flex justify-between align-center width-100">
+    <nav class="header-mobile flex justify-between align-center width-100">
 
       <!-- Menu -->
       <button id="js-mobile-menu-toggle" class="header-mobile__button header-mobile__icon color-primary" aria-controls="mobile-menu" aria-expanded="false" data-toggles="#mobile-menu">
