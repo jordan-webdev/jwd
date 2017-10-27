@@ -7,8 +7,8 @@ $submenu_bg: $color__primary;
     .sub-menu {
       left: rem(-35);
       opacity: 1;
-      filter: blur(0);
-      transform: scale(1);
+      @include filter(blur(0));
+      @include transform(scale(1));
     }
   }
 
@@ -19,7 +19,7 @@ $submenu_bg: $color__primary;
     opacity: 0;
     background-color: $submenu_bg;
     border-top: 3px solid black;
-    transform: scale(1.15);
+    @include transform(scale(1.15));
     transition: opacity 0.6s, filter 0.6s, transform 0.6s;
 
     .menu-item {
