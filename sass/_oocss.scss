@@ -94,6 +94,14 @@
   }
 }
 
+.color-dark-black {
+  color: $color__dark-black;
+
+  &--bg {
+    background-color: $color__dark-black;
+  }
+}
+
 .color-light-brown {
   color: $color__light-brown;
 
@@ -275,6 +283,16 @@
   @include flex-wrap(wrap);
 }
 
+.float {
+  &-left {
+    float: left;
+  }
+
+  &-right {
+    float: right;
+  }
+}
+
 .font-12 {
   font-size: rem(12);
 }
@@ -287,36 +305,40 @@
   font-size: rem(14);
 }
 
-.font-15 {
-  font-size: rem(15);
-}
+.font {
+  &-normal {
+    font-weight: normal;
+  }
 
-.font-16 {
-  font-size: rem(16);
-}
+  &-15 {
+    font-size: rem(15);
+  }
 
-.font-18 {
-  font-size: rem(18);
-}
+  &-16 {
+    font-size: rem(16);
+  }
 
-.font-20 {
-  font-size: rem(20);
-}
+  &-18 {
+    font-size: rem(18);
+  }
 
-.font-22 {
-  font-size: rem(22);
-}
+  &-20 {
+    font-size: rem(20);
+  }
 
-.font-24 {
-  font-size: rem(24);
-}
+  &-22 {
+    font-size: rem(22);
+  }
 
-.font- {
-  &26 {
+  &-24 {
+    font-size: rem(24);
+  }
+
+  &-26 {
     font-size: rem(26);
   }
 
-  &28 {
+  &-28 {
     font-size: rem(28);
   }
 }
@@ -400,6 +422,10 @@
     margin-right: rem(5);
   }
 
+  &-8 {
+    margin-right: rem(8);
+  }
+
   &-10 {
     margin-right: rem(10);
   }
@@ -416,6 +442,10 @@
     margin-right: rem(25);
   }
 
+  &-30 {
+    margin-right: rem(30);
+  }
+
   &-35 {
     margin-right: rem(35);
   }
@@ -428,6 +458,10 @@
 
   &-5 {
     margin-left: rem(5);
+  }
+
+  &-8 {
+    margin-left: rem(8);
   }
 
   &-10 {
@@ -649,6 +683,10 @@
   &-30 {
     padding-top: rem(30);
   }
+
+  &-35 {
+    padding-top: rem(35);
+  }
 }
 
 .pad-b {
@@ -678,6 +716,10 @@
 
   &-30 {
     padding-bottom: rem(30);
+  }
+
+  &-35 {
+    padding-bottom: rem(35);
   }
 }
 
