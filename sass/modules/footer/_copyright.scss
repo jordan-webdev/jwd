@@ -2,7 +2,7 @@
   padding-top: rem(11);
   padding-bottom: rem(10);
   font-size: rem(11);
-  color: rgba(#728994, 0.5);
+  color: rgba($color__white, 0.6);
   line-height: 1.5;
 
   @include flexbox;
