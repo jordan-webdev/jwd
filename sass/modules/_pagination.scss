@@ -1,10 +1,13 @@
 $shift: rem(450);
 
 .pagination-wrapper {
-  margin-top: 35px;
-  margin-bottom: 80px;
+  margin-top: rem(20);
+  margin-bottom: rem(25);
 
   @media screen and (min-width: $shift) {
+    margin-top: rem(35);
+    margin-bottom: rem(50);
+
     & .dots {
       margin-right: rem(10);
     }
@@ -17,7 +20,7 @@ $shift: rem(450);
 
   @media screen and (min-width: $shift) {
     color: white;
-    background-color: $color__secondary;
+    background-color: $color__primary;
   }
 }
 
