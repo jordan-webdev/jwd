@@ -4,7 +4,7 @@
 */
 ?>
 
-<div class="padding-site">
+<div class="header-mobile__wrapper padding-site">
   <div class="container-site">
     <nav class="header-mobile flex justify-between align-center width-100">
 
