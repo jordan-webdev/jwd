@@ -134,7 +134,7 @@ function jwd_scripts()
     }
     
     // Carousels
-    wp_enqueue_script('jwd-carousels', get_template_directory_uri() . '/js/carousels.js', array('jquery'), '', true);
+    //wp_enqueue_script('jwd-carousels', get_template_directory_uri() . '/js/carousels.js', array('jquery'), '', true);
 
     // Drop Down
     wp_enqueue_script('jwd-drop-down-js', get_template_directory_uri() . '/js/drop-down.js', array('jquery'), '', true);
