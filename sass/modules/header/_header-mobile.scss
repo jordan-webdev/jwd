@@ -5,6 +5,12 @@
   @media screen and (min-width: $breakpoint__mobile-menu) {
     display: none;
   }
+  
+  &__wrapper {
+    @media screen and (min-width: $breakpoint__mobile-menu) {
+      display: none;
+    }
+  }
 
   &__icon.fa {
     font-size: rem(27);
