@@ -50,3 +50,9 @@ function cleanup_shortcode_fix($content) {
     return $content;
 }
 add_filter('the_content', 'cleanup_shortcode_fix', 10);
+
+function increase_postmeta_form_limit() {
+	return 200;
+}
+add_filter('postmeta_form_limit', 'increase_postmeta_form_limit');
+
