@@ -120,8 +120,11 @@ function acf_location_rule_match_category_ancestor($match, $rule, $options)
             $terms[$index] = get_term_by('id', intval($term_id), $term->taxonomy);
         }
     }
-    if (!is_array($terms) && $options['post_id']) {
-        $terms = wp_get_post_terms(intval($options['post_id']), $term->taxonomy);
+
+    if (array_key_exists('post_id', $options)){
+      if (!is_array($terms) && $options['post_id']) {
+          $terms = wp_get_post_terms(intval($options['post_id']), $term->taxonomy);
+      }
     }
     if (!is_array($terms)) {
         $terms = array($terms);
