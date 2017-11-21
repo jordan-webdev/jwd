@@ -1,7 +1,5 @@
 (function($) {
   
-  //$.fancybox.defaults.hash = false;
-  
   // Click Banner
   click_banner();
 
@@ -73,5 +71,10 @@
   $('.not-clickable').on('click', function() {
     return false;
   });
+  
+  // Remove hash URL navigation from Fancybox
+  if ($.fancybox) {
+    $.fancybox.defaults.hash = false;
+  }
 
 })(jQuery)
