@@ -1,4 +1,7 @@
 (function($) {
+  
+  //$.fancybox.defaults.hash = false;
+  
   // Click Banner
   click_banner();
 
