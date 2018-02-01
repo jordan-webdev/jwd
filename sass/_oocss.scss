@@ -1,4 +1,4 @@
-//Reusable CSS objects
+/*Reusable CSS objects*/
 
 .align-center {
   @include align-items(center);
@@ -258,7 +258,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, .7);
   cursor: pointer;
   z-index: $z-fade-banner;
 }
@@ -351,12 +351,23 @@
   }
 }
 
-.font-primary {
+.font-primary, .font-prim {
   font-family: $font__primary;
 }
 
-.font-secondary {
+.font-secondary, .font-sec {
   font-family: $font__secondary;
+  font-weight: 500;
+}
+
+.font-tertiary, .font-tert {
+  font-family: $font__tertiary;
+  font-weight: 600;
+}
+
+.font-quaternary, .font-quat {
+  font-family: $font__quaternary;
+  font-weight: 700;
 }
 
 .height-100 {
