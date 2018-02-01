@@ -1,38 +1,61 @@
-$submenu_bg: $color__primary;
+$submenu_bg: $color__white;
+$submenu_color: $color__primary;
+$submenu_border: $color__grey;
+$side_gutter: 30;
+$gutter: 16;
+$half_gutter: $gutter / 2;
 
 .menu-item-has-children {
   position: relative;
 
   &:hover {
     .sub-menu {
-      left: rem(-35);
+      left: 50%;
       opacity: 1;
       @include filter(blur(0));
-      @include transform(scale(1));
+      @include transform(scale(1) translate(-50%, 0));
     }
   }
 
   .sub-menu {
     position: absolute;
     left: -999rem;
-    top: 100%;
+    top: 79%;
+    padding-top: rem($half_gutter);
+    padding-bottom: rem($half_gutter);
     opacity: 0;
+    color: $submenu_color;
     background-color: $submenu_bg;
-    border-top: 3px solid black;
-    @include transform(scale(1.15));
-    transition: opacity 0.6s, filter 0.6s, transform 0.6s;
+    border: 1px solid $submenu_border;
+    @include transform(scale(0.9) translate(-50%, 0));
+    transition: opacity .3s, filter .3s, transform .3s;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      @include transform(translate(-8px, 0));
+      border-left: rem(8) solid transparent;
+      border-right: rem(8) solid transparent;
+      border-bottom: rem(8) solid white;
+    }
 
     .menu-item {
       white-space: nowrap;
       margin-right: 0;
-      padding-left: rem(35);
-      padding-right: rem(35);
-      padding-top: rem(15);
-      padding-bottom: rem(15);
-      border-bottom: 1px solid #d2d2d2;
+      padding-left: rem($side_gutter);
+      padding-right: rem($side_gutter);
+      padding-top: rem($half_gutter);
+      padding-bottom: rem($half_gutter);
 
       &:last-child {
         border-bottom: none;
+      }
+
+      & a:hover, & a:focus, & a:active {
+        color: $submenu_color;
       }
     }
   }
