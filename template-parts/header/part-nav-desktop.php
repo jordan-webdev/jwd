@@ -4,27 +4,33 @@
  */
 ?>
 
-<div class="nav-desktop__wrapper padding-site">
+<div class="nav-desktop__wrapper">
 
-  <div class="nav-desktop flex align-center container-site">
+  <div class="nav-desktop">
 
-    <!-- Nav menu -->
-    <nav id="site-navigation" class="nav-desktop__nav flex-grow-1">
-      <?php
-        $args = array(
-            'theme_location' => 'menu-1',
-            'menu_id' => 'primary-menu',
-            'menu_class' => 'wp-nav-menu nav-desktop__menu flex',
-        );
-        wp_nav_menu($args);
-      ?>
-    </nav>
+    <div class="padding-site top-bar__wrapper">
+      <div class="container-site">
+        <?php get_template_part('template-parts/header/part', 'top-bar'); ?>
+      </div>
+    </div>
+
+    <div class="padding-site">
+      <div class="container-site">
+        <?php get_template_part('template-parts/header/part', 'middle-bar'); ?>
+      </div>
+    </div>
+
+    <div class="padding-site color-primary--bg">
+      <div class="container-site">
+        <?php get_template_part('template-parts/header/part', 'bottom-bar'); ?>
+      </div>
+    </div>
 
     <!-- Popup toggle -->
-    <label class="btn nav-desktop__btn js-scroll-blocker" for="quote-popup">
+    <!--<label class="btn nav-desktop__btn js-scroll-blocker" for="quote-popup">
       Request a quote
       <span class="screen-reader-text">Click here to open the popup.</span>
-    </label>
+    </label>-->
 
     <!-- Request quote popup is located in the footer -->
 
