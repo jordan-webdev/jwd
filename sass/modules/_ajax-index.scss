@@ -2,8 +2,7 @@ $categories_shift: rem(1086);
 
 .two-column-wrapper {
   margin-bottom: 35px;
-
-  //min-height: 100vh;
+  /*min-height: 100vh;*/
 }
 
 .two-column-item .hentry {
@@ -75,8 +74,8 @@ $categories_shift: rem(1086);
       width: rem(18);
       height: rem(18);
       transform-origin: 41% 53%;
-      -webkit-transition: transform 0.25s;
-      transition: transform 0.25s;
+      -webkit-transition: transform .25s;
+              transition: transform .25s;
 
       @media screen and (min-width: $categories_shift) {
         display: none;
@@ -106,7 +105,7 @@ $categories_shift: rem(1086);
     border-top: 1px solid $color__dark-grey;
     position: relative;
     z-index: 2;
-    transition: top 0.5s;
+    transition: top .5s;
 
     @media screen and (min-width: $categories_shift) {
       border-left: 0;
@@ -165,10 +164,10 @@ $categories_shift: rem(1086);
 }
 
 .rotate-arrow-after::after {
-  -ms-transform: rotate(90deg) !important;
-  -moz-transform: rotate(90deg) !important;
+      -ms-transform: rotate(90deg) !important;
+     -moz-transform: rotate(90deg) !important;
   -webkit-transform: rotate(90deg) !important;
-  transform: rotate(90deg) !important;
+          transform: rotate(90deg) !important;
 }
 
 .expanded-categories {
@@ -187,9 +186,7 @@ $categories_shift: rem(1086);
   height: auto;
 }
 
-.blog-preview-item a,
-.blog-preview-item a:visited,
-.blog-preview-item a:hover {
+.blog-preview-item a, .blog-preview-item a:visited, .blog-preview-item a:hover {
   text-decoration: none;
 }
 
@@ -268,4 +265,12 @@ $categories_shift: rem(1086);
   height: rem(50);
   border-radius: 50%;
   border: 2px solid $color__grey;
+}
+
+.js-selected-category {
+  color: $color__secondary;
+
+  & + .fa-chevron-right {
+    color: $color__secondary;
+  }
 }
