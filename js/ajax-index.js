@@ -102,9 +102,9 @@
   }); // End link/button click
 
   // Color highlighting
-  $('body').on('click', '#categories span', function() {
-    $('#categories span.color-primary').removeClass('color-primary');
-    $(this).addClass('color-primary');
+  $('body').on('click', '#categories .js-category-selector-link', function() {
+    $('#categories span.js-selected-category').removeClass('js-selected-category');
+    $(this).find(".category-selector__category").addClass('js-selected-category');
   });
 
   //Categories dropdown
