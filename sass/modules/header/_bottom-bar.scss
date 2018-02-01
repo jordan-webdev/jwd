@@ -1,0 +1,22 @@
+.bottom-bar {
+  font-size: rem(14);
+  text-transform: uppercase;
+  @include flexbox;
+  @include justify-content(flex-end);
+  color: white;
+  height: rem(50);
+
+  &__menu > li {
+    margin-right: rem(25);
+    padding-top: rem(17);
+    padding-bottom: rem(30);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  & a:hover, & a:focus, & a:active {
+    color: white;
+  }
+}
