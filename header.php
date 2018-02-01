@@ -26,29 +26,17 @@ $images = $template . '/images';
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'jwd'); ?></a>
 
-	<div class="padding-site color-grey--bg">
-		<header id="masthead" class="site-header container-site flex">
 
-			<!-- Logo (place where it needs to go) -->
-			<?php if (is_front_page()): ?>
-			  <h1 class="desktop-logo">
-			<?php endif; ?>
-			  <a href="<?php echo get_home_url(); ?>" rel="home" class="block pad-t-15 pad-b-15">
-			    <img src="<?php echo get_field('logo', 'options')['url']; ?>" alt="<?php bloginfo( "title" ); ?>">
-			    <span class="screen-reader-text"><?php bloginfo( "name" ); ?></span>
-			  </a>
-			<?php if (is_front_page()): ?>
-			  </h1>
-			<?php endif; ?>
+	<header id="masthead" class="site-header">
 
-	    <!-- Desktop Nav -->
-	    <?php get_template_part('template-parts/header/part', 'nav-desktop'); ?>
-			<!-- Sticky Nav (Desktop) -->
-			<?php get_template_part('template-parts/header/part', 'sticky-nav'); ?>
-			<!-- Mobile Nav -->
-			<?php get_template_part('template-parts/header/part', 'header-mobile'); ?>
+    <!-- Desktop Nav -->
+    <?php get_template_part('template-parts/header/part', 'nav-desktop'); ?>
+		<!-- Sticky Nav (Desktop) -->
+		<?php //get_template_part('template-parts/header/part', 'sticky-nav'); ?>
+		<!-- Mobile Nav -->
+		<?php get_template_part('template-parts/header/part', 'header-mobile'); ?>
 
-		</header><!-- #masthead -->
-	</div>
+	</header><!-- #masthead -->
+
 
 	<div id="content" class="site-content">
