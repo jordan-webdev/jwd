@@ -43,6 +43,8 @@ function jwd_setup()
      */
     add_theme_support('post-thumbnails');
 
+    add_theme_support( 'customize-selective-refresh-widgets' );
+
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(array(
         'menu-1' => esc_html__('Primary', 'jwd'),
@@ -98,24 +100,29 @@ function jwd_scripts()
     //wp_enqueue_script('jwd-owl-js', get_template_directory_uri() . '/inc/owl-carousel/owl.carousel.min.js', array('jquery'), '', true);
 
     // Slick Slider
-    //wp_enqueue_script('jwd-slick-js', get_template_directory_uri() . '/inc/slick/slick.min.js', array('jquery'), '', true);
+    wp_enqueue_script('jwd-slick-js', get_template_directory_uri() . '/inc/slick/slick.min.js', array('jquery'), '', true);
+
+    // Add to any
+    if (is_tax("blog_category") || is_singular("blog_posts")){
+      wp_enqueue_script('jwd-add-to-any-js', '//static.addtoany.com/menu/page.js');
+    }
 
     // Arrive
-    wp_enqueue_script('jwd-arrive-js', get_template_directory_uri() . '/inc/arrive/arrive.min.js', array('jquery'), '', true);
-    
+    //wp_enqueue_script('jwd-arrive-js', get_template_directory_uri() . '/inc/arrive/arrive.min.js', array('jquery'), '', true);
+
     // Fancybox
-    //wp_enqueue_script('jwd-fancybox-js', get_template_directory_uri() . '/inc/fancybox/jquery.fancybox.min.js', array('jquery'), '', true);
+    wp_enqueue_script('jwd-fancybox-js', get_template_directory_uri() . '/inc/fancybox/jquery.fancybox.min.js', array('jquery'), '', true);
 
     // FooTable
-    wp_enqueue_script('jwd-footable-js', get_template_directory_uri() . '/inc/footable/footable.js', array('jquery'), '', true);
-    
+    //wp_enqueue_script('jwd-footable-js', get_template_directory_uri() . '/inc/footable/footable.js', array('jquery'), '', true);
+
     // Font Awesome
     wp_enqueue_script('jwd-font-awesome', 'https://use.fontawesome.com/1562b4b0a4.js');
 
     wp_enqueue_script('jwd-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
     // Google Font
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:400,500|Quattrocento:700');
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
 
     // JS Cookie
     //wp_enqueue_script('jwd-js-cookie-js', get_template_directory_uri() . '/js/js-cookie.js', array(), '', true);
@@ -129,15 +136,26 @@ function jwd_scripts()
     wp_enqueue_script('jwd-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true);
 
     // Ajax Index
-    if (is_singular('blog_posts') || is_tax()){
+    if (is_singular('blog_posts') || is_tax() || is_category()){
       wp_enqueue_script('jwd-ajax-index', get_template_directory_uri() . '/js/ajax-index.js', array('jquery'), '', true);
     }
-    
+
+    // Category
+    //if (is_category()) {
+      //wp_enqueue_script('jwd-category', get_template_directory_uri() . '/js/category.js', array('jquery'), '', true);
+    //}
+
     // Carousels
-    //wp_enqueue_script('jwd-carousels', get_template_directory_uri() . '/js/carousels.js', array('jquery'), '', true);
+    wp_enqueue_script('jwd-carousels', get_template_directory_uri() . '/js/carousels.js', array('jquery'), '', true);
 
     // Drop Down
-    wp_enqueue_script('jwd-drop-down-js', get_template_directory_uri() . '/js/drop-down.js', array('jquery'), '', true);
+    //wp_enqueue_script('jwd-drop-down-js', get_template_directory_uri() . '/js/drop-down.js', array('jquery'), '', true);
+
+    // Go To Top
+    wp_enqueue_script('jwd-go-to-top-js', get_template_directory_uri() . '/js/go-to-top.js', array('jquery'), '', true);
+
+    // Product
+    //wp_enqueue_script('jwd-product-js', get_template_directory_uri() . '/js/product.js', array('jquery'), '', true);
 
     // Side Slider
     wp_register_script('jwd-side-slider-js', get_template_directory_uri() . '/js/side-slider.js', array('jquery'), '', true);
@@ -226,5 +244,14 @@ require $template . '/inc/functions/shortcodes.php';
 // Taxonomies
 require $template . '/inc/functions/taxonomies.php';
 
+// Extra TinyMCE
+require $template . '/inc/functions/extra_tinymce_buttons/extra_tinymce_buttons.php';
+
 // Remove wp admin bar
-add_filter('show_admin_bar', '__return_false');
+//add_filter('show_admin_bar', '__return_false');
+
+// Remove Auto P from text widget
+remove_filter('widget_text_content', 'wpautop');
+
+// Enable shortcodes in text widgets
+add_filter('widget_text','do_shortcode');
