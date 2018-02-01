@@ -1,26 +1,9 @@
 .nav-desktop {
-  left: 0;
-  width: 100%;
-
   &__wrapper {
     display: none;
 
     @media screen and (min-width: $breakpoint__mobile-menu) {
       display: block;
-    }
-  }
-
-  @media screen and (min-width: $breakpoint__mobile-menu) {
-    @include flexbox;
-  }
-
-  li {
-    margin-right: 5%;
-    padding-top: rem(25);
-    padding-bottom: rem(25);
-
-    &:last-child {
-      margin-right: 0;
     }
   }
 }
