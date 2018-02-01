@@ -12,7 +12,7 @@ add_filter("mce_external_plugins", "enqueue_extra_tinymce_buttons_scripts");
 function add_tinymce_buttons($buttons)
 {
     //register buttons with their id.
-    array_push($buttons, "align_center, half_items");
+    array_push($buttons, "align_center, half_items, three_col, four_col");
     return $buttons;
 }
 
