@@ -8,17 +8,9 @@
  */
  ?>
 
- <!-- CTA BANNER -->
-<?php get_template_part('template-parts/part', 'cta'); ?>
-
-<!-- OUR SERVICES -->
-<?php get_template_part('template-parts/part', 'info-graphic'); ?>
-
-<!-- OUR PRODUCTS -->
-<?php get_template_part('template-parts/part', 'showcase'); ?>
-
-<!-- WHY CHOOSE US? -->
-<?php get_template_part('template-parts/part', 'incentive'); ?>
-
-<!-- BRANDS -->
-<?php get_template_part('template-parts/part', 'brands-slider'); ?>
+ <!-- Hero -->
+ <div class="padding-site hero__wrapper">
+   <div class="container-site">
+     <?php get_template_part('template-parts/home/part', 'hero'); ?>
+   </div>
+ </div>
