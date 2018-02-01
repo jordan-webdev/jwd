@@ -2,6 +2,6 @@
   text-transform: uppercase;
 }
 
-.current-menu-item {
+.current-menu-item, .current-menu-ancestor {
   color: $color__highlight;
 }
