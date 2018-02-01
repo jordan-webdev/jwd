@@ -19,8 +19,11 @@ get_header();
 		<main id="main" class="site-main">
 
 
-      <?php if ( have_posts() ) :
-        else:
+      <?php if ( have_posts() ) : ?>
+				
+				<?php get_template_part('template-parts/category/content', 'category'); ?>
+				
+        <?php else:
       ?>
         <div class="padding-site">
           <p class="container-site no-results">
