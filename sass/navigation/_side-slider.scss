@@ -1,27 +1,25 @@
-$side_slider_link_primary: black;
+$side_slider_link_primary: $color__primary;
 $side_slider_link_secondary: white;
-$menu_width: rem(285);
+$current_item: $color__highlight;
+$menu_width: rem(305);
 
 .mobile-navigation {
-  //background-color: $side_slider_link_secondary;
+  /*background-color: $side_slider_link_secondary;*/
+
   .wp-nav-menu {
     @include flex-direction(column);
-
     height: 100vh;
-
     @include justify-content(flex-start);
-
     width: $menu_width;
     background-color: $side_slider_link_secondary;
     position: fixed;
     top: 0;
     color: $side_slider_link_primary;
     left: -$menu_width;
-    transition: left 0.35s ease-out;
+    transition: left .35s ease-out;
     overflow-y: scroll;
     z-index: 26;
-
-    //stack on top of fade banner
+    /*stack on top of fade banner*/
     padding-bottom: px-to(rem, 66);
 
     & > .menu-item {
@@ -41,17 +39,13 @@ $menu_width: rem(285);
     top: 0;
     height: 100vh;
     left: -$menu_width;
-    transition: left 0.35s ease-out;
-
+    transition: left .35s ease-out;
     @include flexbox;
-
     @include flex-direction(column);
-
     border-right: 1px solid $side_slider_link_secondary;
 
     .sub-menu-header {
       @include flex-grow(0);
-
       align-items: center;
       padding-top: 25px;
       padding-bottom: 25px;
@@ -78,6 +72,12 @@ $menu_width: rem(285);
         border-bottom: 1px solid $side_slider_link_primary;
       }
 
+      &.current-menu-item {
+        a {
+          color: $current_item;
+        }
+      }
+
       a {
         padding-top: rem(15);
         padding-bottom: rem(15);
@@ -87,14 +87,11 @@ $menu_width: rem(285);
         color: $side_slider_link_primary;
       }
     }
-  }
+  }/*Menu items with children*/
 
-  //Menu items with children
   .menu-item-has-children-items-wrapper {
     @include flexbox;
-
     @include justify-content(space-between);
-
     align-items: center;
   }
 
@@ -104,15 +101,20 @@ $menu_width: rem(285);
 
   .menu-logo-img {
     margin: 15px;
-  }
+  }/*Colours*/
 
-  //Colours
   a {
     color: $side_slider_link_primary;
   }
+
+  .current-menu-ancestor {
+    a {
+      color: $current_item;
+    }
+  }
 }
 
-//End mobile navigation
+/*End mobile navigation*/
 
 .site-header {
   position: relative;
@@ -125,7 +127,7 @@ $menu_width: rem(285);
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, .5);
   cursor: pointer;
   z-index: 10;
 }
