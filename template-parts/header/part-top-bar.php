@@ -6,10 +6,10 @@
 $phone = get_field("site_phone", 'options');
 ?>
 
-<div class="top-bar flex color-primary">
+<div class="grid-x">
 
   <!-- Contact Info -->
-  <div class="top-bar__contact">
+  <div class="top-bar__contact cell medium-6">
     <div class="top-bar__bevel"></div>
     <span class="top-bar__contact-text italic mar-r-5">CONTACT US TODAY!</span>
     <a class="font-tert italic" href="tel:<?php echo esc_attr($phone); ?>">
@@ -19,7 +19,7 @@ $phone = get_field("site_phone", 'options');
   </div>
 
   <!-- Nav -->
-  <nav class="top-bar__nav">
+  <nav class="top-bar__nav cell medium-6">
     <?php
       $args = array(
           'menu' => 2,
