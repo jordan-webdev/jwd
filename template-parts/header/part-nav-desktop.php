@@ -8,7 +8,7 @@
 
   <div class="nav-desktop">
 
-    <div class="padding-site top-bar__wrapper">
+    <div class="padding-site top-bar">
       <div class="container-site">
         <?php get_template_part('template-parts/header/part', 'top-bar'); ?>
       </div>
