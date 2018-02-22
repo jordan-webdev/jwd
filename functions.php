@@ -255,3 +255,11 @@ remove_filter('widget_text_content', 'wpautop');
 
 // Enable shortcodes in text widgets
 add_filter('widget_text','do_shortcode');
+
+// Remove type from style and JS tags (Works for most)
+add_filter('style_loader_tag', 'jwd_remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'jwd_remove_type_attr', 10, 2);
+
+function jwd_remove_type_attr($tag, $handle) {
+    return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
+}
