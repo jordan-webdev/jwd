@@ -125,9 +125,9 @@ function quote_shortcode( $atts , $content = null ) {
 	);
 
 	$author =  $atts['author'];
-	$html = '<div class="block-quote color-primary">';
-	$html .= '<blockquote class="block-quote__quote mar-b-15">'.$content.'</blockquote>';
-	$html .= '<span class="block-quote__author block">'.$author.'</span>';
+	$html = '<div class="block-quote clear">';
+	$html .= '<blockquote class="block-quote__quote">'.$content.'</blockquote>';
+	$html .= '<span class="block-quote__author">'.$author.'</span>';
 	$html .= '</div>';
 
 	return $html;
