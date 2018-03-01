@@ -76,6 +76,37 @@ function ajax_archive_pagination()
     echo '</ul></nav>' . "\n";
 }
 
+// Pagination for pages, rather than archives
+function pagination($query){ ?>
+  <ul class="pagination">
+    <?php
+        $pages = paginate_links( array(
+            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+            'total'        => $query->max_num_pages,
+            'current'      => max( 1, get_query_var( 'paged' ) ),
+            'format'       => '?paged=%#%',
+            'show_all'     => false,
+            'type'         => 'array',
+            'end_size'     => 2,
+            'mid_size'     => 1,
+            'prev_next'    => true,
+            'prev_text'    => '<span class ="fa fa-chevron-left" aria-hidden="true"></span>',
+            'next_text'    => '<span class ="fa fa-chevron-right" aria-hidden="true"></span>',
+            'add_args'     => false,
+            'add_fragment' => '',
+        ) );
+
+      if (is_array($pages)):
+        foreach ($pages as $p): ?>
+          <li class="pagination-item js-ajax-link-wrap">
+            <?php echo $p; ?>
+          </li>
+        <?php endforeach;
+      endif; ?>
+  </ul>
+<?php
+}
+
 // Category has parent https://stackoverflow.com/questions/19064875/how-to-check-if-a-category-has-a-parent-category
 function category_has_parent($catid){
     $category = get_category($catid);
