@@ -16,12 +16,12 @@
 	<?php get_template_part('template-parts/part', 'go-to-top'); ?>
 
 	<footer id="colophon" class="site-footer">
+
     <?php get_template_part('template-parts/footer/part', 'site-map'); ?>
+
     <div class="padding-site widget-4">
       <div class="container-site grid-x">
-        <?php if (is_active_sidebar("widget-4")): ?>
-          <?php dynamic_sidebar("widget-4") ?>
-        <?php endif; ?>
+        <?php get_template_part('template-parts/footer/part', 'copyright'); ?>
       </div>
     </div>
 	</footer><!-- #colophon -->
