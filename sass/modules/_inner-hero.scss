@@ -1,0 +1,17 @@
+.inner-hero {
+  height: rem(150);
+  overflow: hidden;
+  position: relative;
+  background-color: $color__secondary;
+
+  @media screen and (min-width: $size__large) {
+    height: rem(350);
+  }
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+  }
+}
