@@ -4,29 +4,48 @@
  */
 
 $phone = get_field("site_phone", 'options');
+$email = get_field("site_email", "options");
 ?>
 
 <div class="grid-x">
 
-  <!-- Contact Info -->
-  <div class="top-bar__contact cell medium-6">
-    <div class="top-bar__bevel"></div>
-    <span class="top-bar__contact-text italic mar-r-5">CONTACT US TODAY!</span>
-    <a class="font-tert italic" href="tel:<?php echo esc_attr($phone); ?>">
-      <span class="fa fa-lg fa-phone" aria-hidden="true"></span>
-      <span class="top-bar__phone-number"><?php echo esc_html($phone); ?></span>
-    </a>
-  </div>
+  <!-- Social Media + Language -->
+  <nav class="social-media cell medium-6 flex">
+    <?php if ( have_rows("social_media", "options") ) : ?>
+      <ul class="social-media-list flex">
+        <?php while ( have_rows("social_media", "options") ) :
+          the_row();
+          $type = strtolower(get_sub_field("social_media_name"));
+          $link = get_sub_field("social_media_link");
+        ?>
+          <li class="social-media-list-item">
+            <a class="social-media-link" href="<?php echo esc_url($link); ?>">
+              <span class="fa fa-<?php echo esc_attr($type); ?>" aria-hidden="true"></span>
+            </a>
+          </li>
+        <?php endwhile; ?>
+      </ul>
+    <?php endif; ?>
 
-  <!-- Nav -->
-  <nav class="top-bar__nav cell medium-6">
     <?php
-      $args = array(
-          'menu' => 2,
-          'menu_class' => 'wp-nav-menu top-bar__menu flex',
-      );
-      wp_nav_menu($args);
-     ?>
+    $args = array(
+        'menu' => 15,
+        'menu_class' => 'wp-nav-menu language-menu',
+    );
+    wp_nav_menu($args);
+    ?>
+  </nav>
+
+  <!-- Contact Info -->
+  <nav class="contact-info cell medium-6">
+    <ul class="flex contact-info-list">
+      <li class="contact-info-item">
+        <a class="phone contact-link" href="tel:<?php echo esc_attr(str_replace(" ", "", $phone)); ?>"><?php echo esc_html(str_replace(" ", ".", $phone)); ?></a>
+      </li>
+      <li class="contact-info-item">
+        <a class="email contact-link" href="mailto:<?php echo esc_url($email); ?>"><?php echo esc_html(strtoupper($email)); ?></a>
+      </li>
+    </ul>
   </nav>
 
 </div>
