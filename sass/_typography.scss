@@ -1,30 +1,22 @@
-//Typography
-body,
-button,
-input,
-select,
-textarea {
+/*Typography*/
+
+@font-face {
+  font-family: "Monotype Corsiva";
+  src: url(fonts/MTCORSVA.TTF);
+}
+
+body, button, input, select, textarea {
   color: $color__text-main;
   font-family: $font__primary;
-
   @include font-size(1);
-
   line-height: $font__line-height-body;
 }
 
-// Headings
-.header, .entry-title {
-  font-size: px-to(rem, 22);
-
-  $map: (320px: 22px, 620px: 27px, 950px: 32px);
-
-  @include poly-fluid-sizing("font-size", $map);
-
-  font-weight: bold;
-}
+/* Headings*/
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font__primary;
+  font-weight: 400;
 }
 
 .entry-title {
@@ -38,13 +30,12 @@ h1, h2, h3, h4, h5, h6 {
       height: px-to(rem, 3);
       background-color: $color__primary;
       width: px-to(rem, 100);
-      margin-top: 0.6em;
-      margin-bottom: 0.6em;
+      margin-top: .6em;
+      margin-bottom: .6em;
       margin-left: auto;
       margin-right: auto;
-    }
+    }/*Left underline*/
 
-    //Left underline
     @media screen and (min-width: 1170px) {
       &.left::after {
         margin-left: 0;
@@ -53,9 +44,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-//Copy
+/*Copy*/
+
 p {
-  //letter-spacing: 0.02em;
+  /*letter-spacing: 0.02em;*/
   line-height: 1.55;
 }
 
@@ -71,9 +63,7 @@ address {
 pre {
   background: $color__background-pre;
   font-family: $font__pre;
-
   @include font-size(0.9375);
-
   line-height: $font__line-height-pre;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -83,7 +73,6 @@ pre {
 
 code, kbd, tt, var {
   font-family: $font__code;
-
   @include font-size(0.9375);
 }
 
