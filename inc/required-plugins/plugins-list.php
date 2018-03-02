@@ -53,11 +53,66 @@ function jwd_register_required_plugins() {
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
+		
+		array(
+			'name'      => 'WP-SCSS',
+			'slug'      => 'wp-scss',
+			'required'  => true,
+		),
+		
+		array(
+			'name'      => 'Jetpack by WordPress.com',
+			'slug'      => 'jetpack',
+			'required'  => true,
+		),
+		
+		array(
+			'name'      => 'Contact Form 7',
+			'slug'      => 'contact-form-7',
+			'required'  => true,
+		),
+		
+		array(
+			'name'      => 'Contact Form 7',
+			'slug'      => 'contact-form-7',
+			'required'  => true,
+		),
+		
+		array(
+			'name'      => 'Post Types Order',
+			'slug'      => 'post-types-order',
+			'required'  => true,
+		),
+		
+		array(
+			'name'      => 'Category Order and Taxonomy Terms Order',
+			'slug'      => 'taxonomy-terms-order',
+			'required'  => true,
+		),
+		
+		array(
+			'name'      => 'Post Types Order',
+			'slug'      => 'post-types-order',
+			'required'  => true,
+		),
+		
+		array(
+			'name'      => 'Duplicate Post',
+			'slug'      => 'duplicate-post',
+			'required'  => true,
+		),
+		
+		array(
+			'name'      => 'Duplicate Post',
+			'slug'      => 'duplicate-post',
+			'required'  => true,
+		),
+		
 
 		array(
 			'name'      => 'Wordfence Security – Firewall & Malware Scan',
 			'slug'      => 'wordfence',
-			'required'  => false,
+			'required'  => true,
 		),
 
 	);
