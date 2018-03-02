@@ -225,6 +225,11 @@ require $template . '/inc/template-tags.php';
 require $template . '/inc/extras.php';
 
 /**
+ * Required Plugins
+ */
+require $template . '/inc/required-plugins/plugins-list.php';
+
+/**
  * Customizer additions.
  */
 require $template . '/inc/customizer.php';
