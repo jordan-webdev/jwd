@@ -133,7 +133,7 @@ function jwd_scripts()
     //wp_enqueue_script('jwd-js-cookie-js', get_template_directory_uri() . '/js/js-cookie.js', array(), '', true);
     
     // Object Fit Polyfill (for image / video backgrounds)
-    //wp_enqueue_script('jwd-object-fit-js', get_template_directory_uri() . '/js/objectFitPolyfill.basic.min.js', array(), '', true);
+    //wp_enqueue_script('jwd-object-fit-js', get_template_directory_uri() . '/inc/object-fit/objectFitPolyfill.basic.min.js', array(), '', true);
 
     /* ****** Non-Asset JS ****** */
 
