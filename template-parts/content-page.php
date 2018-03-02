@@ -9,30 +9,34 @@
 
 ?>
 
-<?php get_template_part('template-parts/part', 'breadcrumb'); ?>
-<?php get_template_part('template-parts/part', 'intro'); ?>
+<article id="post-<?php the_ID(); ?>" <?php body_class(); ?>>
 
-<div class="padding-site">
-	<article id="post-<?php the_ID(); ?>" <?php body_class('container-site mar-t-35 mar-b-35 clear'); ?>>
+	<div class="padding-site">
+	  <div class="container-site">
+			<div class="entry-content clear">
+				<?php the_content(); ?>
+			</div><!-- .entry-content -->
+	  </div>
+	</div>
 
-		<div class="entry-content">
-			<?php the_content(); ?>
-		</div><!-- .entry-content -->
 
-		<?php if ( get_edit_post_link() ) : ?>
-			<footer class="entry-footer">
-				<?php
-					edit_post_link(
-						sprintf(
-							/* translators: %s: Name of current post */
-							esc_html__( 'Edit %s', 'jwd' ),
-							the_title( '<span class="screen-reader-text">"', '"</span>', false )
-						),
-						'<span class="edit-link">',
-						'</span>'
-					);
-				?>
-			</footer><!-- .entry-footer -->
-		<?php endif; ?>
-	</article><!-- #post-## -->
-</div>
+	<?php if ( get_edit_post_link() ) : ?>
+		<div class="padding-site">
+		  <div class="container-site">
+				<footer class="entry-footer">
+					<?php
+						edit_post_link(
+							sprintf(
+								/* translators: %s: Name of current post */
+								esc_html__( 'Edit %s', 'jwd' ),
+								the_title( '<span class="screen-reader-text">"', '"</span>', false )
+							),
+							'<span class="edit-link">',
+							'</span>'
+						);
+					?>
+				</footer><!-- .entry-footer -->
+		  </div>
+		</div>
+	<?php endif; ?>
+</article><!-- #post-## -->
