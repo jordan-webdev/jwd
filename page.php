@@ -17,13 +17,29 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php
-			while ( have_posts() ) : the_post();
+			<?php get_template_part('template-parts/part', 'inner-hero'); ?>
 
-				get_template_part( 'template-parts/content', 'page' );
+			<div class="page-wrapper">
+				<?php
+					while ( have_posts() ) : the_post();
 
-			endwhile; // End of the loop.
-			?>
+						if (is_page(135)) {
+							// Become a Retailer
+							get_template_part('template-parts/become-retailer/content', 'become-retailer');
+						}
+
+						elseif (is_page(352)) {
+							// Blog
+							get_template_part('template-parts/blog/content', 'blog-index');
+						}
+
+						else{
+							get_template_part( 'template-parts/content', 'page' );
+						}
+
+				endwhile; // End of the loop.
+				?>
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
