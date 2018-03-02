@@ -104,7 +104,7 @@ function jwd_scripts()
 
     // Add to any
     //$add_social_buttons = is_tax("blog_category") || is_singular("post")
-    $add_social_buttons = is_singular("post")
+    $add_social_buttons = is_singular("post");
     if ($add_social_buttons){
       wp_enqueue_script('jwd-add-to-any-js', '//static.addtoany.com/menu/page.js');
     }
