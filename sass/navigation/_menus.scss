@@ -3,5 +3,9 @@
 }
 
 .current-menu-item, .current-menu-ancestor {
-  color: $color__highlight;
+  /*  color: $color__highlight;*/
+
+  & > a {
+    $color__highlight;
+  }
 }
