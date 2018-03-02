@@ -3,12 +3,15 @@
 @import "misc/index";
 @import "shortcodes/index";
 @import "tables/index";
+//@import "ajax-index";
+@import "go-to-top";
 
-@import "ajax-index";
-//@import "go-to-top"
-//@import "drop-down";
+/*@import "drop-down";*/
+@import "accordion";
 @import "generic";
 @import "pagination";
 
-//@import "css-toggler";
-//@import "owl-carousel";
+/*@import "css-toggler";*/
+
+/*@import "owl-carousel";*/
+@import "sidebar";
