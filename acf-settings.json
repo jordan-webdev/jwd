@@ -1,14 +1,13 @@
 [
     {
-        "key": "group_58f91c93561ca",
-        "title": "Blog",
+        "key": "group_5a9728a01129a",
+        "title": "Sidebar Options",
         "fields": [
             {
-                "key": "field_5888e64701b15",
-                "label": "Link to Article",
-                "name": "link_to_article",
-                "type": "radio",
-                "value": null,
+                "key": "field_5a9728d823504",
+                "label": "Sidebar",
+                "name": "sidebar",
+                "type": "group",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -17,36 +16,60 @@
                     "class": "",
                     "id": ""
                 },
-                "choices": {
-                    "External": "External",
-                    "PDF": "PDF",
-                    "Detail page": "Detail page",
-                    "Youtube": "Youtube"
-                },
-                "other_choice": 0,
-                "save_other_choice": 0,
-                "default_value": "Detail page",
-                "layout": "vertical",
-                "allow_null": 0,
-                "return_format": "value"
-            },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5a9728e523505",
+                        "label": "Title",
+                        "name": "title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "457"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5a90a9ac1674c",
+        "title": "Blog Default Settings",
+        "fields": [
             {
-                "key": "field_5888e68901b16",
-                "label": "External Link",
-                "name": "external_link",
+                "key": "field_5a90a9ba0eec5",
+                "label": "Blog Post Text",
+                "name": "blog_post_text",
                 "type": "text",
-                "value": null,
-                "instructions": "",
+                "instructions": "If it's a blog post, this text will display in the index.",
                 "required": 0,
-                "conditional_logic": [
-                    [
-                        {
-                            "field": "field_5888e64701b15",
-                            "operator": "==",
-                            "value": "External"
-                        }
-                    ]
-                ],
+                "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
                     "class": "",
@@ -56,54 +79,16 @@
                 "placeholder": "",
                 "prepend": "",
                 "append": "",
-                "formatting": "html",
                 "maxlength": ""
             },
             {
-                "key": "field_5888e6ae01b17",
-                "label": "PDF Upload",
-                "name": "pdf_upload",
-                "type": "file",
-                "value": null,
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": [
-                    [
-                        {
-                            "field": "field_5888e64701b15",
-                            "operator": "==",
-                            "value": "PDF"
-                        }
-                    ]
-                ],
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "url",
-                "library": "all",
-                "min_size": "",
-                "max_size": "",
-                "mime_types": ""
-            },
-            {
-                "key": "field_5888e6ea01b18",
-                "label": "Youtube Link",
-                "name": "youtube_link",
+                "key": "field_5a90a9ef0eec6",
+                "label": "Article Text",
+                "name": "article_text",
                 "type": "text",
-                "value": null,
-                "instructions": "",
+                "instructions": "If it's an external article, this text will display in the index.",
                 "required": 0,
-                "conditional_logic": [
-                    [
-                        {
-                            "field": "field_5888e64701b15",
-                            "operator": "==",
-                            "value": "Youtube"
-                        }
-                    ]
-                ],
+                "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
                     "class": "",
@@ -113,33 +98,218 @@
                 "placeholder": "",
                 "prepend": "",
                 "append": "",
-                "formatting": "html",
                 "maxlength": ""
             },
             {
-                "key": "field_5888e70201b19",
-                "label": "Preview Image",
-                "name": "preview_image",
-                "type": "image",
-                "value": null,
-                "instructions": "",
-                "required": 1,
+                "key": "field_5a90a9f30eec7",
+                "label": "Video text",
+                "name": "video_text",
+                "type": "text",
+                "instructions": "If it's an external video, this text will display in the index.",
+                "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
                     "class": "",
                     "id": ""
                 },
-                "preview_size": "thumbnail",
-                "library": "all",
-                "return_format": "array",
-                "min_width": 0,
-                "min_height": 0,
-                "min_size": 0,
-                "max_width": 0,
-                "max_height": 0,
-                "max_size": 0,
-                "mime_types": ""
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5a90a9f50eec8",
+                "label": "PDF Text",
+                "name": "pdf_text",
+                "type": "text",
+                "instructions": "If it's a PDF file, this text will display in the index.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post",
+                    "operator": "==",
+                    "value": "367"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5a909bbc7ba6a",
+        "title": "Blog Index Options",
+        "fields": [
+            {
+                "key": "field_5a909bc25dd13",
+                "label": "Options",
+                "name": "blog_index_options",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5a909bd25dd14",
+                        "label": "Image",
+                        "name": "img",
+                        "type": "image",
+                        "instructions": "The image that is displayed on the listing of blog posts.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "id",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_5a909bf05dd15",
+                        "label": "Excerpt",
+                        "name": "excerpt",
+                        "type": "textarea",
+                        "instructions": "The short description on the listing of blog posts.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_5a90a7c45dd18",
+                        "label": "Type",
+                        "name": "type",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "1": "Blog Post",
+                            "2": "External Article",
+                            "3": "External Video",
+                            "4": "PDF File"
+                        },
+                        "default_value": [
+                            1
+                        ],
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "return_format": "value",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_5a90a63f5dd17",
+                        "label": "External Link",
+                        "name": "external_link",
+                        "type": "text",
+                        "instructions": "If this is not a blog post, then please post the external URL here.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_5a90a7c45dd18",
+                                    "operator": "==",
+                                    "value": "2"
+                                }
+                            ],
+                            [
+                                {
+                                    "field": "field_5a90a7c45dd18",
+                                    "operator": "==",
+                                    "value": "3"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5a90a8813470f",
+                        "label": "PDF File",
+                        "name": "pdf",
+                        "type": "file",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_5a90a7c45dd18",
+                                    "operator": "==",
+                                    "value": "4"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url",
+                        "library": "all",
+                        "min_size": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    }
+                ]
             }
         ],
         "location": [
@@ -147,13 +317,227 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "blog_posts"
+                    "value": "post"
+                },
+                {
+                    "param": "post",
+                    "operator": "!=",
+                    "value": "367"
                 }
             ]
         ],
         "menu_order": 0,
         "position": "normal",
-        "style": "seamless",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5a908806a08c3",
+        "title": "Blog Sidebar Options",
+        "fields": [
+            {
+                "key": "field_5a908813c129d",
+                "label": "Sidebar",
+                "name": "sidebar",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5a90882fc129e",
+                        "label": "Category Title",
+                        "name": "title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5a90888fc129f",
+                        "label": "Checklist Title",
+                        "name": "check_title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5a90889ac12a0",
+                        "label": "Checklist Image",
+                        "name": "img",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "id",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_5a9088a9c12a1",
+                        "label": "Link",
+                        "name": "link",
+                        "type": "page_link",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "post_type": [],
+                        "taxonomy": [],
+                        "allow_null": 0,
+                        "allow_archives": 1,
+                        "multiple": 0
+                    },
+                    {
+                        "key": "field_5a9088bec12a2",
+                        "label": "Link Text",
+                        "name": "link_text",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "352"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5a879fa53524e",
+        "title": "Hero Banner",
+        "fields": [
+            {
+                "key": "field_5a879fd1576e2",
+                "label": "Hero Banner",
+                "name": "inner_hero",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5a879fdf576e3",
+                        "label": "Image",
+                        "name": "img",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "id",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                },
+                {
+                    "param": "page_template",
+                    "operator": "!=",
+                    "value": "front-page.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
         "hide_on_screen": "",
@@ -169,7 +553,6 @@
                 "label": "PDF",
                 "name": "careers_pdf",
                 "type": "file",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -212,7 +595,6 @@
                 "label": "Mobile Logo",
                 "name": "mobile_logo",
                 "type": "image",
-                "value": null,
                 "instructions": "The logo to be used in the mobile top navigation bar.",
                 "required": 1,
                 "conditional_logic": 0,
@@ -222,6 +604,30 @@
                     "id": ""
                 },
                 "return_format": "url",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_5a963d895b665",
+                "label": "Inner Hero Banner Default Image",
+                "name": "innero_hero_img",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
                 "preview_size": "thumbnail",
                 "library": "all",
                 "min_width": "",
@@ -260,7 +666,6 @@
                 "label": "Schema: Logo",
                 "name": "company_logo",
                 "type": "image",
-                "value": null,
                 "instructions": "Resolution max: 151x151",
                 "required": 0,
                 "conditional_logic": [
@@ -293,7 +698,6 @@
                 "label": "Schema: Photo of Building",
                 "name": "company_image",
                 "type": "image",
-                "value": null,
                 "instructions": "Resolution max: 200x200",
                 "required": 0,
                 "conditional_logic": [
@@ -326,7 +730,6 @@
                 "label": "Schema Type",
                 "name": "schema_type",
                 "type": "select",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -373,7 +776,6 @@
                 "label": "Street",
                 "name": "address_street",
                 "type": "text",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -393,7 +795,6 @@
                 "label": "Phone",
                 "name": "company_phone",
                 "type": "text",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -413,7 +814,6 @@
                 "label": "Postal Code",
                 "name": "address_postal",
                 "type": "text",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -433,7 +833,6 @@
                 "label": "City",
                 "name": "address_locality",
                 "type": "text",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -453,7 +852,6 @@
                 "label": "Region",
                 "name": "address_region",
                 "type": "text",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -473,7 +871,6 @@
                 "label": "Country",
                 "name": "address_country",
                 "type": "text",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -522,7 +919,6 @@
                 "label": "Opening Hours",
                 "name": "opening_hours",
                 "type": "repeater",
-                "value": null,
                 "instructions": "Open all day: 00:00 - 23:59",
                 "required": 0,
                 "conditional_logic": 0,
@@ -542,7 +938,6 @@
                         "label": "Days",
                         "name": "days",
                         "type": "select",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -573,7 +968,6 @@
                         "label": "from",
                         "name": "from",
                         "type": "time_picker",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": [
@@ -598,7 +992,6 @@
                         "label": "to",
                         "name": "to",
                         "type": "time_picker",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": [
@@ -623,7 +1016,6 @@
                         "label": "Closed",
                         "name": "closed",
                         "type": "true_false",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -645,7 +1037,6 @@
                 "label": "Special Days",
                 "name": "special_days",
                 "type": "repeater",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -665,7 +1056,6 @@
                         "label": "Date: from",
                         "name": "date_from",
                         "type": "date_picker",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -683,7 +1073,6 @@
                         "label": "Date: to",
                         "name": "date_to",
                         "type": "date_picker",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -701,7 +1090,6 @@
                         "label": "Time: from",
                         "name": "time_from",
                         "type": "time_picker",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": [
@@ -726,7 +1114,6 @@
                         "label": "Time: to",
                         "name": "time_to",
                         "type": "time_picker",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": [
@@ -751,7 +1138,6 @@
                         "label": "Closed",
                         "name": "closed",
                         "type": "true_false",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -789,7 +1175,6 @@
                 "label": "Contact",
                 "name": "contact",
                 "type": "repeater",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -809,7 +1194,6 @@
                         "label": "Type",
                         "name": "type",
                         "type": "select",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -846,7 +1230,6 @@
                         "label": "Phone",
                         "name": "phone",
                         "type": "text",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -866,7 +1249,6 @@
                         "label": "Option",
                         "name": "option",
                         "type": "select",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -894,7 +1276,6 @@
                 "label": "Social Media",
                 "name": "social_media",
                 "type": "repeater",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -914,7 +1295,6 @@
                         "label": "URL",
                         "name": "url",
                         "type": "url",
-                        "value": null,
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -956,7 +1336,6 @@
                 "label": "Logo",
                 "name": "logo",
                 "type": "image",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -981,7 +1360,6 @@
                 "label": "Address",
                 "name": "site_address",
                 "type": "text",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1001,7 +1379,6 @@
                 "label": "Phone",
                 "name": "site_phone",
                 "type": "text",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1021,7 +1398,6 @@
                 "label": "Fax",
                 "name": "site_fax",
                 "type": "text",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1041,7 +1417,6 @@
                 "label": "Email",
                 "name": "site_email",
                 "type": "email",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1060,7 +1435,6 @@
                 "label": "Social Media",
                 "name": "social_media",
                 "type": "repeater",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1080,7 +1454,6 @@
                         "label": "Social Media Name",
                         "name": "social_media_name",
                         "type": "text",
-                        "value": null,
                         "instructions": "",
                         "required": 1,
                         "conditional_logic": 0,
@@ -1100,7 +1473,6 @@
                         "label": "Link to Social Media Page",
                         "name": "social_media_link",
                         "type": "url",
-                        "value": null,
                         "instructions": "",
                         "required": 1,
                         "conditional_logic": 0,
@@ -1119,7 +1491,6 @@
                 "label": "Catalogue",
                 "name": "site_catalogue",
                 "type": "file",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1139,7 +1510,6 @@
                 "label": "Google Maps API Key",
                 "name": "google_maps_api",
                 "type": "text",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1159,7 +1529,6 @@
                 "label": "Google Maps Icon",
                 "name": "google_maps_icon",
                 "type": "image",
-                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
