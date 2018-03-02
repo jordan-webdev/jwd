@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="bottom-bar font-sec">
+<div class="bottom-bar">
   <?php
   $args = array(
       'menu' => 9,
