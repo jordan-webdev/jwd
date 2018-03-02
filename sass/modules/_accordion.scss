@@ -1,0 +1,52 @@
+@mixin accordion_padding() {
+  padding-left: rem(15);
+  padding-right: rem(15);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  border-radius: rem(7);
+
+  @media screen and (min-width: $size__large) {
+    padding-left: rem(20);
+    padding-right: rem(20);
+  }
+}
+
+.accordions {
+  &__accordion {
+    &:not(:first-child) {
+      margin-top: rem(-5);
+    }
+  }
+
+  &__toggler {
+    background-color: $color__primary;
+    @include accordion_padding;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+  }
+
+  &__title {
+    font-size: rem(18);
+    margin-right: rem(15);
+  }
+
+  &__pullout {
+    @include accordion_padding;
+
+    h3 {
+      font-weight: 600;
+      margin-top: rem(10);
+      margin-bottom: rem(5);
+      font-size: rem(17);
+    }
+
+    p {
+      margin-bottom: rem(5);
+
+      @media screen and (min-width: $size__large) {
+        margin-bottom: rem(15);
+      }
+    }
+  }
+}
