@@ -12,15 +12,14 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php
-        while (have_posts()) : the_post();
-
-      get_template_part('template-parts/part', 'breadcrumb');
-
-            get_template_part('template-parts/content', get_post_format());
-
-        endwhile; // End of the loop.
-        ?>
+			<?php while (have_posts()) : the_post(); ?>
+				
+				<div class="padding-site">
+				  <div class="container-site">
+				    <?php get_template_part('template-parts/blog/content', get_post_format()); ?>
+				  </div>
+				</div>
+			<?php endwhile; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
