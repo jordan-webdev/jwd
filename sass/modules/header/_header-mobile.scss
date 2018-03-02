@@ -5,7 +5,7 @@
   @media screen and (min-width: $breakpoint__mobile-menu) {
     display: none;
   }
-  
+
   &__wrapper {
     @media screen and (min-width: $breakpoint__mobile-menu) {
       display: none;
@@ -17,5 +17,6 @@
     color: $color__primary;
   }
 
-  &__logo {}
+  &__logo {
+  }
 }
