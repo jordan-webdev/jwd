@@ -1,32 +1,20 @@
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea,
-select,
-.input-style,
-.date-picker {
+input[type="text"], input[type="email"], input[type="url"],
+input[type="password"], input[type="search"], input[type="number"],
+input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
+input[type="week"], input[type="time"], input[type="datetime"],
+input[type="datetime-local"], input[type="color"], textarea, select,
+.input-style, .date-picker {
   color: $color__text-input;
   border: 1px solid $color__med-grey;
   border-radius: px-to(rem, 3);
   padding-left: px-to(rem, 15);
   padding-right: px-to(rem, 15);
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: .4em;
+  padding-bottom: .4em;
   width: 100%;
   background-color: white;
   line-height: 2;
+  font-size: rem(15);
 
   &.btn--has-arrow {
     padding-right: rem(53);
