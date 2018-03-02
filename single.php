@@ -16,7 +16,8 @@ get_header(); ?>
 				
 				<div class="padding-site">
 				  <div class="container-site">
-				    <?php get_template_part('template-parts/blog/content', get_post_format()); ?>
+				    <?php //get_template_part('template-parts/blog/content', get_post_format()); ?>
+			            <?php get_template_part('template-parts/blog/content', 'blog'); ?>
 				  </div>
 				</div>
 			<?php endwhile; ?>
