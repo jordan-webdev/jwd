@@ -1,7 +1,7 @@
 $submenu_bg: $color__white;
-$submenu_color: $color__primary;
+$submenu_color: $color__black;
 $submenu_border: $color__grey;
-$side_gutter: 30;
+$side_gutter: 13;
 $gutter: 16;
 $half_gutter: $gutter / 2;
 
@@ -10,40 +10,49 @@ $half_gutter: $gutter / 2;
 
   &:hover {
     .sub-menu {
-      left: 50%;
+      left: rem(-13);
       opacity: 1;
       @include filter(blur(0));
-      @include transform(scale(1) translate(-50%, 0));
+      @include transform(scale(1));
     }
   }
 
   .sub-menu {
+    min-width: rem(90);
     position: absolute;
     left: -999rem;
-    top: 79%;
+    top: 100%;
+    white-space: nowrap;
     padding-top: rem($half_gutter);
     padding-bottom: rem($half_gutter);
     opacity: 0;
     color: $submenu_color;
     background-color: $submenu_bg;
     border: 1px solid $submenu_border;
-    @include transform(scale(0.9) translate(-50%, 0));
+    @include transform(scale(0.9));
     transition: opacity .3s, filter .3s, transform .3s;
+
+    &:hover {
+      left: rem(-13);
+      opacity: 1;
+      @include filter(blur(0));
+      @include transform(scale(1));
+    }
 
     &::before {
       content: '';
       display: block;
       position: absolute;
       top: -8px;
-      left: 50%;
-      @include transform(translate(-8px, 0));
+      left: rem(15);
+      /*left: 50%;*//*@include transform(translate(-8px, 0));*/
       border-left: rem(8) solid transparent;
       border-right: rem(8) solid transparent;
       border-bottom: rem(8) solid white;
     }
 
     .menu-item {
-      white-space: nowrap;
+      /*white-space: nowrap;*/
       margin-right: 0;
       padding-left: rem($side_gutter);
       padding-right: rem($side_gutter);
@@ -59,4 +68,10 @@ $half_gutter: $gutter / 2;
       }
     }
   }
+}
+
+.menu-bottom-bar-container .menu-item-has-children .sub-menu {
+  /* The bottom bar uses padding on the menu items to adjust the position of the products
+  Pullout menu, so we need to adjust the position of its regular pullouts here to compensate.*/
+  top: 46%;
 }
