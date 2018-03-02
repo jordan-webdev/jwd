@@ -4,10 +4,29 @@
  */
 ?>
 
-<div class="middle-bar flex space-between font-sec">
+<div class="grid-x align-center">
+
+  <!-- Since Img -->
+  <div class="cell large-4 since-img">
+    <?php if (is_active_sidebar("widget-1")): ?>
+      <?php dynamic_sidebar("widget-1") ?>
+    <?php endif; ?>
+    <?php if (is_active_sidebar("widget-2")): ?>
+      <?php dynamic_sidebar("widget-2") ?>
+    <?php endif; ?>
+
+    <!-- Button -->
+    <?php if (is_active_sidebar("widget-5")): ?>
+      <?php dynamic_sidebar("widget-5") ?>
+    <?php endif; ?>
+    <?php if (is_active_sidebar("widget-6")): ?>
+      <?php dynamic_sidebar("widget-6") ?>
+    <?php endif; ?>
+  </div>
+
 
   <!-- Logo -->
-  <div class="desktop-logo middle-bar__logo">
+  <div class="desktop-logo middle-bar__logo cell large-4 justify-center">
     <?php if (is_front_page()): ?>
       <h1>
     <?php endif; ?>
@@ -20,26 +39,14 @@
     <?php endif; ?>
   </div>
 
-  <div class="middle-bar__options flex font-13">
-
-    <div class="middle-bar__quote flex align-end mar-r-35">
-      <div class="flex align-center">
-        <?php $id = 76; ?>
-        <?php echo wp_get_attachment_image( $id, "full", false, array("class" => "middle-bar__icon mar-r-10") ); ?>
-        <a class="middle-bar__text color-primary" href="<?php echo get_permalink (77); ?>">REQUEST A QUOTE</a>
-      </div>
-    </div>
-
-    <div class="middle-bar__consult flex align-end">
-      <div class="flex align-center">
-        <?php $id = 75; ?>
-        <?php echo wp_get_attachment_image( $id, "full", false, array("class" => "middle-bar__icon mar-r-10") ); ?>
-        <a class="middle-bar__text color-primary" href="<?php echo get_permalink (79); ?>">GET A FREE WATER TEST / CONSULTATION</a>
-      </div>
-
-    </div>
-
-  </div>
-
+  <!-- Buttons -->
+  <nav class="cell medium-4 btns flex justify-end buttons">
+    <?php if (is_active_sidebar("widget-3")): ?>
+      <?php dynamic_sidebar("widget-3") ?>
+    <?php endif; ?>
+    <?php if (is_active_sidebar("widget-4")): ?>
+      <?php dynamic_sidebar("widget-4") ?>
+    <?php endif; ?>
+  </nav>
 
 </div>
