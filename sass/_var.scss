@@ -2,14 +2,14 @@
 $color__black: #353535;
 $color__dark-black: black;
 $color__green: green;
-$color__grey: #d7e2ee;
-$color__med-grey: #e2e2e2;
-$color__dark-grey: #838383;
 $color__white: white;
-$color__primary: #083160;
-$color__secondary: #30b8b8;
-$color__tertiary: #eff5f5;
+$color__primary: #e7e4e2;
+$color__secondary: #f2f2f2;
+$color__tertiary: #c3c1bf;
 $color__quaternary: #3e1016;
+$color__grey: #eee;
+$color__med-grey: #e2e2e2;
+$color__dark-grey: $color__tertiary;
 $color__highlight: $color__secondary;
 $color__light-brown: $color__secondary;
 $color__dark-brown: #cab7aa;
@@ -34,8 +34,8 @@ $color__border-abbr: #666;
 
 /*Structure*/
 $breakpoint__animations: rem(1000);
-$breakpoint__mobile-menu: rem(1000);
-$breakpoint__dynamic-content: rem(730);
+$breakpoint__mobile-menu: rem(1055);
+$breakpoint__dynamic-content: rem(1000);
 $breakpoint__half-items: rem(850);
 $padding__btn: .8em 2em .9em;
 $padding__btn-left: 2em;
@@ -61,10 +61,10 @@ $z-site-header: 20;
 $z-site-content: 21;
 
 /*Font Families*/
-$font__primary: "Poppins", sans-serif;
-$font__secondary: "Poppins", sans-serif;
-$font__tertiary: "Poppins", sans-serif;
-$font__quaternary: "Poppins", sans-serif;
+$font__primary: "Roboto", sans-serif;
+$font__secondary: "Monotype Corsiva", serif;
+$font__tertiary: "Roboto", sans-serif;
+$font__quaternary: "Roboto", sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.15;
