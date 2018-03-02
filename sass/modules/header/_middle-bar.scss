@@ -1,13 +1,6 @@
 .middle-bar {
-  padding-bottom: rem(23);
-  margin-top: rem(-7);
 
-  &__logo {
-    position: relative;
-    z-index: 1;
+  .logo {
   }
 
-  &__options {
-    padding-bottom: rem(10);
-  }
 }
