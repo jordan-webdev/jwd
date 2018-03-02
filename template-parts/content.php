@@ -19,4 +19,6 @@ $title = get_the_title();
 
 <article id="post-<?php the_ID(); ?>" <?php body_class(); ?>>
 
+  <?php the_title(); ?>
+
 </article><!-- #post-## -->
