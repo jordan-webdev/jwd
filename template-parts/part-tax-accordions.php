@@ -9,12 +9,12 @@
 
 ?>
 
-<article class="tax-accordions__accordion two-column-item-wrapper clear">
-	<header class="tax-accordions__toggler flex align-center space-between color-grey--bg pointer">
-		<h3 class="color-primary normal font-16"><?php echo get_the_title(); ?></h3>
-    <img class="tax-accordions__arrow" src="<?php echo get_template_directory_uri(); ?>/images/faq-arrow-min.png" alt="click to expand the answer" />
+<article class="accordions__accordion">
+	<header class="accordions__toggler">
+		<h2 class="accordions__title"><?php echo get_the_title(); ?></h2>
+    <!--<img class="accordions__arrow" src="<?php echo get_template_directory_uri(); ?>/images/faq-arrow-min.png" alt="click to expand the answer" />-->
 	</header>
-	<div class="tax-accordions__pullout pad-l-15">
+	<div class="accordions__pullout">
 		<?php the_content(); ?>
 	</div>
 </article>
