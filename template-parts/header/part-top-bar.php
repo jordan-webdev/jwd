@@ -9,7 +9,7 @@ $email = get_field("site_email", "options");
 
 <div class="grid-x">
 
-  <!-- Social Media + Language -->
+  <!-- Social Media -->
   <nav class="social-media cell medium-6 flex">
     <?php if ( have_rows("social_media", "options") ) : ?>
       <ul class="social-media-list flex">
@@ -26,14 +26,6 @@ $email = get_field("site_email", "options");
         <?php endwhile; ?>
       </ul>
     <?php endif; ?>
-
-    <?php
-    $args = array(
-        'menu' => 15,
-        'menu_class' => 'wp-nav-menu language-menu',
-    );
-    wp_nav_menu($args);
-    ?>
   </nav>
 
   <!-- Contact Info -->
