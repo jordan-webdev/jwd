@@ -23,7 +23,7 @@
       </a>
 
       <!-- Phone -->
-      <a class="header-mobile__phone header-mobile__icon color-white" href="tel:<?php echo esc_attr(str_replace(" ", "", get_field("site_phone", "options"))); ?>"><span class="fa fa-phone" aria-hidden="true"></span></a>
+      <a class="header-mobile__phone header-mobile__icon" href="tel:<?php echo esc_attr(str_replace(" ", "", get_field("site_phone", "options"))); ?>"><span class="fa fa-phone" aria-hidden="true"></span></a>
 
     </nav>
   </div>
