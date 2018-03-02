@@ -5,7 +5,7 @@
   updateFilterHrefs(true);
 
   // Ajax load content on link click
-  $('body').on('click', '#categories a, .js-blog-ajax-link, .js-ajax-link, .pagination-wrapper a', function(e) {
+  $('body').on('click', '.js-ajax-link, .js-ajax-link-wrap a', function(e) {
 
     if ($(this).parent('li').hasClass('not-clickable')) {
       return false;
@@ -67,6 +67,11 @@
           a2a.init('page');
         }
 
+        // Load in JetPack lazy images
+        $('.js-ajax-results img').each(function() {
+          $(this).prop('src', $(this).data('lazy-src'));
+        });
+
         // Add height to the image loaded with AJAX, to accomodate for Safari issue with AJAX-loaded images that have srcset
         setTimeout(function() {
           add_height_to_thumbnail();
@@ -102,9 +107,9 @@
   }); // End link/button click
 
   // Color highlighting
-  $('body').on('click', '#categories .js-category-selector-link', function() {
-    $('#categories span.js-selected-category').removeClass('js-selected-category');
-    $(this).find(".category-selector__category").addClass('js-selected-category');
+  $('body').on('click', '.js-category-selector-link', function() {
+    $('.js-category-selector-link.active').removeClass('active');
+    $(this).addClass('active');
   });
 
   //Categories dropdown
