@@ -6,7 +6,7 @@
 ?>
 
 <p class="copyright-text">
-  <span class="site">
+  <span class="website">
     Copyright &copy; <?php echo Date('Y'); ?>. All Rights Reserved <?php bloginfo('title'); ?>
   </span>
   <span class="dolce">
