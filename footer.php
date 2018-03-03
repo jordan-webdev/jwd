@@ -17,10 +17,15 @@
 
 	<footer id="colophon" class="site-footer">
 
-    <?php get_template_part('template-parts/footer/part', 'site-map'); ?>
+		<div class="padding-site sitemap">
+		  <div class="container-site">
+		    <?php get_template_part('template-parts/footer/part', 'site-map'); ?>
+		  </div>
+		</div>
 
-    <div class="padding-site widget-4">
-      <div class="container-site grid-x">
+
+    <div class="copyright padding-site">
+      <div class="container-site">
         <?php get_template_part('template-parts/footer/part', 'copyright'); ?>
       </div>
     </div>
