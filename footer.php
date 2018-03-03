@@ -25,7 +25,7 @@
 
 
     <div class="copyright padding-site">
-      <div class="container-site">
+      <div class="grid container-site">
         <?php get_template_part('template-parts/footer/part', 'copyright'); ?>
       </div>
     </div>
