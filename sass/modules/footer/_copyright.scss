@@ -1,4 +1,4 @@
-.disclaimer {
+.copyright {
   padding-top: rem(15);
   padding-bottom: rem(15);
   font-size: rem(13);
@@ -6,5 +6,9 @@
 
   @media screen and (min-width: $size__medium) {
     text-align: left;
+  }
+  
+  .dolce-link {
+    white-space: nowrap;
   }
 }
