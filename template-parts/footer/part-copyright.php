@@ -7,6 +7,6 @@
 
 <p class="copyright-text">
     Copyright &copy; <?php echo Date('Y'); ?>. All Rights Reserved <?php bloginfo('title'); ?>
-    Designed and developed by <a href="http://www.dolcemedia.ca/" rel="noopener noreferrer" target="_blank">Dolce Media Group</a>
+    Designed and developed by <a class="dolce-link" href="http://www.dolcemedia.ca/" rel="noopener noreferrer" target="_blank">Dolce Media Group</a>
 </p>
 
