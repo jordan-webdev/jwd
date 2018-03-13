@@ -127,13 +127,13 @@ function jwd_scripts()
     wp_enqueue_script('jwd-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
     // Google Font
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,500');
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
 
     // JS Cookie
-    //wp_enqueue_script('jwd-js-cookie-js', get_template_directory_uri() . '/js/js-cookie.js', array(), '', true);
-    
+    wp_enqueue_script('jwd-js-cookie-js', get_template_directory_uri() . '/js/js-cookie.js', array(), '', true);
+
     // Object Fit Polyfill (for image / video backgrounds)
-    //wp_enqueue_script('jwd-object-fit-js', get_template_directory_uri() . '/inc/object-fit/objectFitPolyfill.basic.min.js', array(), '', true);
+    wp_enqueue_script('jwd-object-fit-js', get_template_directory_uri() . '/inc/object-fit/objectFitPolyfill.basic.min.js', array(), '', true);
 
     /* ****** Non-Asset JS ****** */
 
@@ -156,6 +156,14 @@ function jwd_scripts()
 
     // Carousels
     wp_enqueue_script('jwd-carousels', get_template_directory_uri() . '/js/carousels.js', array('jquery'), '', true);
+
+    // Cart (on cart page)
+    //if ( is_cart() ) {
+      //wp_enqueue_script('jwd-cart', get_template_directory_uri() . '/js/cart.js', array('jquery'), '', true);
+    //}
+
+    // Cart List (in header)
+    //wp_enqueue_script('jwd-cart-list', get_template_directory_uri() . '/js/cart-list.js', array('jquery'), '', true);
 
     // Drop Down
     //wp_enqueue_script('jwd-drop-down-js', get_template_directory_uri() . '/js/drop-down.js', array('jquery'), '', true);
@@ -182,6 +190,9 @@ function jwd_scripts()
 
     // Scroll
     wp_enqueue_script('jwd-scroll-js', get_template_directory_uri() . '/js/scroll.js', array('jquery'), '', true);
+
+    // WooCommerce
+    //wp_enqueue_script('jwd-woocommerce-js', get_template_directory_uri() . '/js/woocommerce.js', array('jquery'), '', true);
 
     // Tax Accordions
     //if (is_tax()){
