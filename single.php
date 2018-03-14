@@ -13,11 +13,15 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php while (have_posts()) : the_post(); ?>
-				
+
 				<div class="padding-site">
 				  <div class="container-site">
 				    <?php //get_template_part('template-parts/blog/content', get_post_format()); ?>
-			            <?php get_template_part('template-parts/blog/content', 'blog'); ?>
+						<?php if (!is_singular("product")): ?>
+							<?php get_template_part('template-parts/blog/content', 'blog'); ?>
+						<?php else: ?>
+							<?php get_template_part( 'template-parts/products/content', 'product' ); ?>
+						<?php endif; ?>
 				  </div>
 				</div>
 			<?php endwhile; ?>
