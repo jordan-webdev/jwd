@@ -2,16 +2,66 @@
   padding-top: rem(15);
   padding-bottom: rem(15);
   font-size: rem(13);
-  text-align: center;
+  background-color: $color__secondary;
+  color: $color__white;
 
-  @media screen and (min-width: $size__medium) {
-    text-align: left;
+  .grid {
+    @include flexbox;
+    @include flex-direction(column);
+    text-align: center;
+
+    @media screen and (min-width: $size__medium) {
+      @include flex-direction(row);
+      @include justify-content(center);
+      @include align-items(center);
+    }
   }
-  
+
+  .copyright-text {
+    margin-bottom: rem(5);
+
+    @media screen and (min-width: $size__medium) {
+      margin-bottom: rem(0);
+    }
+
+    span {
+      display: block;
+
+      @media screen and (min-width: $size__large) {
+        display: inline;
+      }
+    }
+  }
+
+  .list {
+    @include flexbox;
+    @include justify-content(center);
+
+    @media screen and (min-width: $size__medium) {
+      @include justify-content(flex-start);
+    }
+  }
+
+  .item {
+    margin-left: rem(15);
+    padding-left: rem(15);
+    border-left: rem(1) solid $color__white;
+
+    &:first-child {
+      margin-left: rem(0);
+      border-left: none;
+
+      @media screen and (min-width: $size__medium) {
+        margin-left: rem(15);
+        border-left: rem(1) solid $color__white;
+      }
+    }
+  }
+
   .site-title {
     white-space: nowrap;
   }
-  
+
   .dolce-link {
     white-space: nowrap;
   }
