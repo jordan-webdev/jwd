@@ -116,6 +116,12 @@ function category_has_parent($catid){
     return false;
 }
 
+// Retrieve the current url of the page
+function get_current_url() {
+  $url = get_home_url() . $_SERVER['REQUEST_URI'];
+  return $url;
+}
+
 // Get excerpt function
 function get_excerpt($limit)
 {
