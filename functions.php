@@ -173,6 +173,9 @@ function jwd_scripts()
 
     // Product
     //wp_enqueue_script('jwd-product-js', get_template_directory_uri() . '/js/product.js', array('jquery'), '', true);
+    
+    // Products Archive
+    //wp_enqueue_script('jwd-products-js', get_template_directory_uri() . '/js/products.js', array('jquery'), '', true);
 
     // Side Slider
     wp_register_script('jwd-side-slider-js', get_template_directory_uri() . '/js/side-slider.js', array('jquery'), '', true);
