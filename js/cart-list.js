@@ -11,7 +11,7 @@
     }
   });
 
-  $('.top-bar').on('change', '.cart-list .quantity input', function() {
+  $('.top-bar').on('change', '.jwd-cart-list .quantity input', function() {
     var the_button = $(this).closest('.update').find('.update-btn');
     $('.update-btn.active').not(the_button).removeClass('active');
     the_button.addClass('active');
