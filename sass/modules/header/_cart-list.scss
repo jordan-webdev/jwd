@@ -150,3 +150,11 @@
     }
   }
 }
+
+.cart-wrapper {
+  position: relative;
+
+  &:not(.disabled):hover .cart-list {
+    left: rem(-97);
+  }
+}
