@@ -52,12 +52,13 @@ function my_wp_nav_menu_objects( $items, $args ) {
 }
 
 // Remove each style one by one
-//add_filter( 'woocommerce_enqueue_styles', 'jwd_dequeue_wc_styles' );
+add_filter( 'woocommerce_enqueue_styles', 'jwd_dequeue_wc_styles' );
 function jwd_dequeue_wc_styles( $enqueue_styles ) {
-  if (!is_page(array(80, 81, 82)) && !is_singular("product")){
+  if (!is_cart() && !is_checkout() && !is_account_page() && !is_singular("product")){
     unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
   	unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
   	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
   }
   return $enqueue_styles;
 }
+
