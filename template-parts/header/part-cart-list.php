@@ -84,6 +84,6 @@ $cart = WC()->cart;
 </form>
 
 <div class="btns">
-  <a class="btn checkout" href="<?php echo get_permalink(81); ?>">CHECKOUT NOW</a>
-  <a class="btn btn--secondary view-edit" href="<?php echo get_permalink(80); ?>">VIEW AND EDIT CART</a>
+  <a class="btn checkout" href="<?php echo wc_get_checkout_url(); ?>">CHECKOUT NOW</a>
+  <a class="btn btn--secondary view-edit" href="<?php echo wc_get_cart_url(); ?>">VIEW AND EDIT CART</a>
 </div>
