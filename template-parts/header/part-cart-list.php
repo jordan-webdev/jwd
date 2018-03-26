@@ -4,12 +4,11 @@
  */
 
 $cart = WC()->cart;
-
 ?>
 
 <div class="details">
   <span class="list-count">
-    <span class="count-number"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+    <span class="count-number"><?php echo $cart->get_cart_contents_count(); ?></span>
     <span class="count-text"> items</span>
    </span>
   <div class="subtotal-wrapper">
