@@ -1,4 +1,4 @@
-.top-bar .cart-list {
+.jwd-cart-list {
   color: $color__black;
   background-color: $color__white;
   position: absolute;
@@ -154,7 +154,7 @@
 .cart-wrapper {
   position: relative;
 
-  &:not(.disabled):hover .cart-list {
+  &:not(.disabled):hover .jwd-cart-list {
     left: rem(-97);
   }
 }
