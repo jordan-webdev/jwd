@@ -36,7 +36,7 @@ $cart = WC()->cart;
             <h2 class="title"><?php echo get_the_title($product_id); ?></h2>
             <span class="price">
               <?php
-                echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+                echo apply_filters( 'woocommerce_cart_item_price', $cart->get_product_price( $_product ), $cart_item, $cart_item_key );
               ?>
             </span>
           </div>
