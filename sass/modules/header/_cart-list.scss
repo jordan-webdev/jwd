@@ -8,6 +8,7 @@
   border-radius: rem(7);
   border: rem(1) solid $color__grey;
   padding: rem(15) rem(4);
+  z-index: 2;
 
   &::before {
     content: '';
@@ -145,6 +146,8 @@
   }
 
   .btn {
+    width: 100%;
+
     &:first-child {
       margin-bottom: rem(7);
     }
@@ -155,6 +158,6 @@
   position: relative;
 
   &:not(.disabled):hover .jwd-cart-list {
-    left: rem(-97);
+    left: rem(-197);
   }
 }
