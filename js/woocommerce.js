@@ -8,12 +8,14 @@
   });
 
   // Products AJAX update cart
-  $('.products form').on('submit', function() {
+  $('body').on('submit', '.js-sizes-form form', function() {
 
     var $theForm = $(this);
 
     // Show loader
-    var $addCartButton = $theForm.find('button');
+    var $addCartButton = $theForm.parent('.js-sizes-form').prev('.sizes-btn');
+    var $view_cart_button = $theForm.closest('.sizes-wrapper').find('.added-msg-wrap');
+
     $addCartButton.html('<span class="fa fa-spinner fa-spin" aria-hidden="true"></span>');
 
     // send xhr request
@@ -25,9 +27,7 @@
         $(document).trigger('jwd-product-added');
 
         // Change the Add To Cart button to a link
-        $addCartButton.replaceWith(
-          '<a href="' + home_url + '/cart" class="btn btn--secondary">VIEW CART</a>'
-        );
+        $view_cart_button.addClass('active');
         // Update the list in the header
         $('.top-bar .cart-wrapper').load(home_url + ' .top-bar .cart-wrapper > *', function() {
           $(document).trigger('jwd-header-cart-updated');
@@ -41,7 +41,7 @@
   });
 
   // Cart List (in header) AJAX update cart
-  $('.top-bar').on('submit', '.cart-list form', function() {
+  $('.top-bar').on('submit', '.jwd-cart-list form', function() {
 
     var $theForm = $(this);
 
@@ -70,7 +70,7 @@
         $('.top-bar .cart').load(home_url + ' .top-bar .cart > *', function() {
           $(document).trigger('jwd-header-cart-count-updated');
         });
-        $('.top-bar .cart-list').load(home_url + ' .top-bar .cart-list > *', function() {
+        $('.top-bar .jwd-cart-list').load(home_url + ' .top-bar .jwd-cart-list > *', function() {
           $(document).trigger('jwd-header-cart-updated');
         });
       }
@@ -94,7 +94,7 @@
   $('.top-bar').on('click', '.delete a', function() {
 
     var href = $(this).prop('href');
-    var $theForm = $('.top-bar .cart-list form');
+    var $theForm = $('.top-bar .jwd-cart-list form');
 
     // Add spinner
     $(this).find('.fa-trash').removeClass('fa-trash').addClass('fa-spinner fa-spin');
@@ -111,7 +111,7 @@
         $('.top-bar .cart').load(home_url + ' .top-bar .cart > *', function() {
           $(document).trigger('jwd-header-cart-count-updated');
         });
-        $('.top-bar .cart-list').load(home_url + ' .top-bar .cart-list > *', function() {
+        $('.top-bar .jwd-cart-list').load(home_url + ' .top-bar .jwd-cart-list > *', function() {
           $(document).trigger('jwd-header-cart-updated');
         });
       }
