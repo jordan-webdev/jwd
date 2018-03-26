@@ -12,6 +12,8 @@
  * @package jwd
  */
 
+$login_page_id = get_field("login_page", "options");
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -31,6 +33,11 @@ get_header(); ?>
 						elseif (is_page(352)) {
 							// Blog
 							get_template_part('template-parts/blog/content', 'blog-index');
+						}
+				
+				                elseif (is_page($login_page_id)) {
+							// Login
+							get_template_part('template-parts/login/content', '');
 						}
 				
 						elseif (is_page(1)) {
