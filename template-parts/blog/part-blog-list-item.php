@@ -19,26 +19,26 @@ $new_tab = true;
 switch ($type) {
   case 1:
     // Blog Post
-    $link_text = get_field("blog_post_text", 367);
+    $link_text = get_field("blog_post_text", "options");
     $link = get_the_permalink();
     $new_tab = false;
     break;
 
   case 2:
     // External Article
-    $link_text = get_field("article_text", 367);
+    $link_text = get_field("article_text", "options");
     $link = $g['external_link'];
     break;
 
   case 3:
     // External Video
-    $link_text = get_field("video_text", 367);
+    $link_text = get_field("video_text", "options");
     $link = $g['external_link'];
     break;
 
   case 4:
     // PDF File
-    $link_text = get_field("pdf_text", 367);
+    $link_text = get_field("pdf_text", "options");
     $link = $g['pdf'];
     break;
 }
