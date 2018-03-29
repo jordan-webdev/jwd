@@ -22,6 +22,12 @@ if (function_exists('acf_add_options_page')) {
     ));
 
     acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Blog Settings',
+        'menu_title'    => 'Blog',
+        'parent_slug'    => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
         'page_title'    => 'Theme Schema Settings',
         'menu_title'    => 'Schema',
         'parent_slug'    => 'theme-general-settings',
