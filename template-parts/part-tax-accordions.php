@@ -12,7 +12,7 @@
 <article class="accordions__accordion">
 	<header class="accordions__toggler">
 		<h2 class="accordions__title"><?php echo get_the_title(); ?></h2>
-    <!--<img class="accordions__arrow" src="<?php echo get_template_directory_uri(); ?>/images/faq-arrow-min.png" alt="click to expand the answer" />-->
+    <img class="accordions__arrow" src="<?php echo get_template_directory_uri(); ?>/images/faq-arrow-min.png" alt="click to expand the answer" />
 	</header>
 	<div class="accordions__pullout">
 		<?php the_content(); ?>
