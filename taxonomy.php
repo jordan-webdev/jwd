@@ -14,10 +14,8 @@ get_header();
 
 		<main id="main" class="site-main container-site">
 
-      <div class="site-content-wrapper">
+      <div class="site-content-wrapper page-wrapper">
         <section class="relative">
-
-
 
     			<div class="clear container-site news-wrapper two-column-wrapper flex">
             <!-- Categories -->
@@ -39,6 +37,8 @@ get_header();
           <div class="ajax-pagination">
             <?php ajax_archive_pagination(); ?>
           </div>
+
+
         </section>
       </div>
 
