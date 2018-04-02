@@ -25,7 +25,7 @@ $all_term_id = $all_term->term_id;
 
 <div id="category-wrapper" class="category-selector">
 
-	<h2 id="js-category-wrapper-title" class="font-16 bold color-primary js-categories-wrapper-toggle category-selector__toggler mar-b-10">
+	<h2 id="js-category-wrapper-title" class="category-selector__cat-title js-categories-wrapper-toggle category-selector__toggler">
     CATEGORIES
     <span class="screen-reader-text">Click to expand categories</span>
   </h2>
