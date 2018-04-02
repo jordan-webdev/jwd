@@ -43,7 +43,7 @@ $all_term_id = $all_term->term_id;
 			$categories = get_categories($args); ?>
 
 			<!-- All -->
-			<a href="<?php echo get_term_link($all_term_id); ?>" data-slug="all" class="js-category-selector-link category-selector__category-wrapper flex space-between align-center">
+			<a href="<?php echo get_term_link($all_term_id); ?>" data-slug="all" class="js-category-selector-link js-ajax-link category-selector__category-wrapper flex space-between align-center">
 				<span
           class="block all-categories-selector category-selector__category color-white--bg <?php echo ($term_name == "All" ? "color-primary js-selected-category" : ""); ?>"
           data-slug="all"
@@ -63,7 +63,7 @@ $all_term_id = $all_term->term_id;
 
         $is_listing_match = $term_name == $label ? true : false;
       ?>
-  			<a href="<?php echo get_term_link($id); ?>" data-slug="<?php echo $slug; ?>" class="js-category-selector-link category-selector__category-wrapper flex space-between align-center">
+  			<a href="<?php echo get_term_link($id); ?>" data-slug="<?php echo $slug; ?>" class="js-category-selector-link js-ajax-link category-selector__category-wrapper flex space-between align-center">
   				<span
             class="block category-selector__category color-white--bg <?php echo ($is_listing_match ? "color-primary js-selected-category" : ""); ?>"
             data-slug="<?php echo $data_category; ?>"
