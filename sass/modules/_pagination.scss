@@ -1,6 +1,8 @@
 $shift: rem(450);
 
 .pagination-wrapper {
+  @include flexbox;
+  @include justify-content(flex-end);
   margin-top: rem(20);
   margin-bottom: rem(25);
 
@@ -12,33 +14,48 @@ $shift: rem(450);
       margin-right: rem(10);
     }
   }
+
+  .prev-text {
+    margin-left: rem(5);
+    text-transform: uppercase;
+    padding-right: rem(15);
+    margin-right: rem(3);
+    border-right: rem(1) solid $color__med-grey;
+  }
+
+  .next-text {
+    margin-right: rem(5);
+    padding-left: rem(15);
+    margin-left: rem(3);
+    border-left: rem(1) solid $color__med-grey;
+    text-transform: uppercase;
+  }
 }
 
-.page-numbers.current,
-.pagination-wrapper li.current a {
-  color: $color__primary;
+.pagination {
+  @include flexbox;
+  @include align-items(center);
 
-  @media screen and (min-width: $shift) {
-    color: white;
-    background-color: $color__primary;
+  .fa-caret-left {
+    margin-right: rem(5);
   }
+
+  .fa-caret-right {
+    margin-left: rem(5);
+  }
+}
+
+.page-numbers.current, .pagination-wrapper li.current a {
+  color: $color__black;
+  font-weight: 700;
 }
 
 .page-numbers, .pagination-wrapper a {
-  padding-left: rem(13);
-  padding-right: rem(13);
-
-  @media screen and (min-width: $shift) {
-    padding-top: rem(8.5);
-    padding-bottom: rem(8.5);
-    background-color: #f1f1f1;
-    margin-right: 10px;
-    border-radius: 7px;
-  }
-
+  color: $color__med-grey;
+  padding-left: rem(3);
+  padding-right: rem(3);
+  margin-right: 10px;
   @include flexbox;
-
   @include align-items(center);
-
   @include justify-content(center);
 }
