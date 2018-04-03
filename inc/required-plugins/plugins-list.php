@@ -44,7 +44,16 @@ function jwd_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-  
+
+		array(
+			'name'               => 'JWD Setup Theme', // The plugin name.
+			'slug'               => 'jwd-theme-setup', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory() . '/inc/plugins/jwd-setup-theme.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		),
+
 		array(
 			'name'               => 'ACF PRO', // The plugin name.
 			'slug'               => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
@@ -53,61 +62,61 @@ function jwd_register_required_plugins() {
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
-		
+
 		array(
 			'name'      => 'WP-SCSS',
 			'slug'      => 'wp-scss',
 			'required'  => true,
 		),
-		
+
 		array(
 			'name'      => 'Jetpack by WordPress.com',
 			'slug'      => 'jetpack',
 			'required'  => true,
 		),
-		
+
 		array(
 			'name'      => 'Contact Form 7',
 			'slug'      => 'contact-form-7',
 			'required'  => true,
 		),
-		
+
 		array(
 			'name'      => 'Contact Form 7',
 			'slug'      => 'contact-form-7',
 			'required'  => true,
 		),
-		
+
 		array(
 			'name'      => 'Post Types Order',
 			'slug'      => 'post-types-order',
 			'required'  => true,
 		),
-		
+
 		array(
 			'name'      => 'Category Order and Taxonomy Terms Order',
 			'slug'      => 'taxonomy-terms-order',
 			'required'  => true,
 		),
-		
+
 		array(
 			'name'      => 'Post Types Order',
 			'slug'      => 'post-types-order',
 			'required'  => true,
 		),
-		
+
 		array(
 			'name'      => 'Duplicate Post',
 			'slug'      => 'duplicate-post',
 			'required'  => true,
 		),
-		
+
 		array(
 			'name'      => 'Duplicate Post',
 			'slug'      => 'duplicate-post',
 			'required'  => true,
 		),
-		
+
 
 		array(
 			'name'      => 'Wordfence Security – Firewall & Malware Scan',
