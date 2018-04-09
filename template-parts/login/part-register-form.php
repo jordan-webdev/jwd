@@ -39,6 +39,6 @@ $text_2 = $register['text_2'];
 
 	<p class="text"><?php echo esc_html($text_2); ?></p>
 
-	<a class="btn" href="<?php echo get_permalink(81) ?>">GUEST CHECKOUT</a>
+	<a class="btn" href="<?php echo wc_get_checkout_url(); ?>">GUEST CHECKOUT</a>
 
 </form>
