@@ -3,18 +3,18 @@
 // Redirect to Account Page after logging in or registering
 //add_action('template_redirect', 'redirect_to_account' );
 function redirect_to_account(){
-  $login_page_id = get_field("login_page", "options");
-  $current_page_id = get_the_ID();
   // Redirect from Login page to Account Page
-  if($login_page_id == $current_page_id && is_user_logged_in()){
-    $account_url = get_permalink( get_option('woocommerce_myaccount_page_id') );
+  if(is_page(131) && is_user_logged_in()){
+    $account_url = get_permalink(82);
     wp_redirect($account_url);
     exit;
   }
 
   // Redirect from Account Page to Login Page
-  if(is_account_page() && !is_user_logged_in()){
-    wp_redirect(get_permalink($login_page_id));
+  $allow_access = array_key_exists('allow_access', $_GET) || array_key_exists('show-reset-form', $_GET) ? true : false;
+  if(is_page(82) && !is_user_logged_in() && !$allow_access){
+    $login_url = get_permalink(131);
+    wp_redirect($login_url);
     exit;
   }
 };
