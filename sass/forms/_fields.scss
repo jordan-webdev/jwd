@@ -15,6 +15,7 @@ input[type="datetime-local"], input[type="color"], textarea, select,
   background-color: white;
   line-height: 2;
   font-size: rem(15);
+  height: rem(43);
 
   &.btn--has-arrow {
     padding-right: rem(53);
