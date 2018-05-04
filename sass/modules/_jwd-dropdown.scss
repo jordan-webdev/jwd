@@ -7,7 +7,8 @@
 
   &__selected {
     width: 100%;
-    padding: rem(8) rem(0) rem(12) rem(8);
+    padding: rem(8) rem(12);
+    border: rem(1) solid $color__med-grey;
   }
 
   &__selected-inner {
@@ -15,7 +16,7 @@
     @include flexbox;
     @include justify-content(space-between);
   }
-  
+
   &__icon {
     margin-left: rem(15);
   }
@@ -30,7 +31,7 @@
     min-width: 100%;
 
     &.active {
-      left: rem(-6);
+      left: rem(0);
     }
   }
 
