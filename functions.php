@@ -168,6 +168,9 @@ function jwd_scripts()
     // Drop Down
     //wp_enqueue_script('jwd-drop-down-js', get_template_directory_uri() . '/js/drop-down.js', array('jquery'), '', true);
 
+    // Footable
+    wp_enqueue_script('jwd-footable-init-js', get_template_directory_uri() . '/js/footable.js', array('jquery'), '', true);
+    
     // Go To Top
     wp_enqueue_script('jwd-go-to-top-js', get_template_directory_uri() . '/js/go-to-top.js', array('jquery'), '', true);
     
