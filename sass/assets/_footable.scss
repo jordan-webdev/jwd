@@ -1,9 +1,6 @@
 .footable {
   width: 100%;
-
-  /** SORTING **/
-
-  /** PAGINATION **/
+  /** SORTING **//** PAGINATION **/
 }
 
 .footable.breakpoint > tbody > tr.footable-detail-show > td {
@@ -34,7 +31,7 @@
   -webkit-font-smoothing: antialiased;
   padding-right: 5px;
   font-size: 14px;
-  color: #888888;
+  color: #888;
 }
 
 .footable.breakpoint > tbody > tr > td > span.footable-toggle:before {
@@ -52,10 +49,10 @@
 .footable > thead > tr > th {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: -moz-none;
-  -ms-user-select: none;
-  user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .footable > thead > tr > th.footable-sortable:hover {
@@ -87,7 +84,11 @@
 }
 
 .footable-row-detail-inner {
-  display: table;
+  display: block;
+  padding-left: rem(20);
+  padding-right: rem(20);
+  padding-top: rem(17);
+  padding-bottom: rem(17);
 }
 
 .footable-row-detail-row {
@@ -105,7 +106,7 @@
 .footable-row-detail-name {
   display: table-cell;
   font-weight: bold;
-  padding-right: 0.5em;
+  padding-right: .5em;
 }
 
 .footable-row-detail-value {
