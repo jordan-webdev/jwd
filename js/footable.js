@@ -1,0 +1,5 @@
+(function($) {
+
+  $('.table').footable();
+
+})(jQuery)
