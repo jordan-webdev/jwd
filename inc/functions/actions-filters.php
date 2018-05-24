@@ -1,6 +1,12 @@
 <?php
 
-// Redirect to Account Page after logging in or registering
+/* ******************************************************************
+   *
+   * redirect_to_account
+   * Redirect to Account Page after logging in or registering
+   *
+   ******************************************************************
+*/
 //add_action('template_redirect', 'redirect_to_account' );
 function redirect_to_account(){
   // Redirect from Login page to Account Page
@@ -19,6 +25,16 @@ function redirect_to_account(){
   }
 };
 
+
+
+
+/* ******************************************************************
+   *
+   * img_p_class_content_filter
+   * Remove <p> tags wrapping <img> in the_content()
+   *
+   ******************************************************************
+*/
 //add_filter( 'the_content', 'img_p_class_content_filter' ,20);
 function img_p_class_content_filter($content) {
     // assuming you have created a page/post entitled 'debug'
@@ -27,6 +43,16 @@ function img_p_class_content_filter($content) {
     return $content;
 }
 
+
+
+
+/* ******************************************************************
+   *
+   * wp_nav_menu_objects
+   * Add custom fields to menu items
+   *
+   ******************************************************************
+*/
 //add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 function my_wp_nav_menu_objects( $items, $args ) {
 
@@ -51,7 +77,16 @@ function my_wp_nav_menu_objects( $items, $args ) {
 
 }
 
-// Remove each style one by one
+
+
+
+/* ******************************************************************
+   *
+   * woocommerce_enqueue_styles
+   * Remove WooCommerce styles
+   *
+   ******************************************************************
+*/
 add_filter( 'woocommerce_enqueue_styles', 'jwd_dequeue_wc_styles' );
 function jwd_dequeue_wc_styles( $enqueue_styles ) {
   if (!is_cart() && !is_checkout() && !is_account_page() && !is_singular("product")){
@@ -61,4 +96,3 @@ function jwd_dequeue_wc_styles( $enqueue_styles ) {
   }
   return $enqueue_styles;
 }
-
