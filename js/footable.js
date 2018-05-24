@@ -1,5 +1,7 @@
 (function($) {
 
-  $('.table').footable();
+  if (typeof footable == 'function') {
+    $('.table').footable();
+  }
 
 })(jQuery)
