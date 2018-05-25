@@ -33,7 +33,7 @@
 <!-- Mobile navigation (placed outside header-mobile to prevent flex miscalculation) -->
 <nav id="mobile-site-navigation" class="mobile-navigation header-mobile__navigation">
   <?php $args = array(
-    "theme_location" => "menu-1",
+    "menu" => "Mobile Menu",
     "menu_id" => "mobile-menu",
     "menu_class" => "wp-nav-menu header-mobile__menu",
   );
