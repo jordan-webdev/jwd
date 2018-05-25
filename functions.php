@@ -294,7 +294,7 @@ require $template . '/inc/functions/actions-filters.php';
 //add_filter('show_admin_bar', '__return_false');
 
 // Remove Auto P from text widget
-remove_filter('widget_text_content', 'wpautop');
+//remove_filter('widget_text_content', 'wpautop');
 
 // Enable shortcodes in text widgets
 add_filter('widget_text','do_shortcode');
