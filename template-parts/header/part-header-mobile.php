@@ -6,7 +6,7 @@
 
 <div class="header-mobile__wrapper padding-site">
   <div class="container-site">
-    <nav class="header-mobile flex justify-between align-center width-100">
+    <nav class="header-mobile">
 
       <!-- Menu -->
       <button id="js-mobile-menu-toggle" class="header-mobile__button header-mobile__icon color-primary" aria-controls="mobile-menu" aria-expanded="false" data-toggles="#mobile-menu">
@@ -17,7 +17,7 @@
 
       <!-- Logo -->
       <a class="header-mobile__logo" href="<?php echo get_home_url(); ?>" rel="home">
-        <img class="width-100" src="<?php echo get_field("mobile_logo", "options"); ?>" alt="<?php bloginfo("title"); ?>">
+        <img src="<?php echo get_field("mobile_logo", "options"); ?>" alt="<?php bloginfo("title"); ?>">
         <span class="screen-reader-text"><?php bloginfo("name"); ?>
         </span>
       </a>
