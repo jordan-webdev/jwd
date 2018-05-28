@@ -1,12 +1,18 @@
 .header-mobile {
   padding-top: rem(15);
   padding-bottom: rem(15);
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(center);
+  width: 100%;
 
   @media screen and (min-width: $breakpoint__mobile-menu) {
     display: none;
   }
 
   &__wrapper {
+    background-color: rgba(black, .3);
+
     @media screen and (min-width: $breakpoint__mobile-menu) {
       display: none;
     }
@@ -14,9 +20,12 @@
 
   &__icon {
     font-size: rem(27);
-    color: $color__primary;
+    color: $color__white;
   }
 
   &__logo {
+    img {
+      width: 100%;
+    }
   }
 }
