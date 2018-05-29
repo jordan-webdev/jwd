@@ -142,6 +142,8 @@ function jwd_get_the_archive_title(){
 }
 
 
+
+
 /* **************************************************************************
  * get_image_id
  * retrieves the attachment ID from the file URL
