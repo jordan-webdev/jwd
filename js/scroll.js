@@ -55,7 +55,7 @@
   }
 
   //Scroll Blocker
-  //scrollBlocker();
+  scrollBlocker();
 
   function scrollBlocker() {
     $('body').on('click', '.js-scroll-blocker', function(event) {
