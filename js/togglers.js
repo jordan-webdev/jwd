@@ -1,5 +1,12 @@
 (function($) {
 
+  // Generic Togglers
+  $('.js-toggler').on("click", function() {
+    var toggles = $(this).data("toggles");
+    $(toggles).toggleClass("active");
+  });
+
+  // Tax accordions
   $('.tax-accordions__pullout').slideUp(1);
   $('body').on('click', '.tax-accordions__toggler', function() {
     var arrow = $(this);
