@@ -4,6 +4,13 @@
   $('.js-toggler').on("click", function() {
     var toggles = $(this).data("toggles");
     $(toggles).toggleClass("active");
+
+    // Adjust focus between popup and original toggle button
+    if ($(toggles).hasClass("active")) {
+      $(toggles).focus();
+    } else {
+      $('.js-toggler[data-toggles="' + toggles + '"]').not($(this)).focus();
+    }
   });
 
   // Tax accordions
