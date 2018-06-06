@@ -15,6 +15,7 @@
     width: 100%;
     @include flexbox;
     @include justify-content(space-between);
+    @include align-items(center);
   }
 
   &__icon {
@@ -23,11 +24,11 @@
 
   &__list {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     left: -9999px;
     top: 100%;
-    background-color: $color__white;
-    border: rem(1) solid $color__grey;
+    background-color: #f8f8f8;
+    border: rem(1) solid #dedede;
     min-width: 100%;
 
     &.active {
@@ -39,7 +40,7 @@
     border-bottom: rem(1) solid $color__grey;
 
     &:hover {
-      background-color: $color__grey;
+      background-color: $color__white;
     }
 
     &:last-child {
@@ -50,5 +51,6 @@
   &__item-btn {
     text-align: left;
     padding: rem(8) rem(12);
+    width: 100%;
   }
 }
