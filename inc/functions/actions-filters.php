@@ -56,15 +56,49 @@ function img_p_class_content_filter($content) {
 
 function modify_query_with_filters($query){
 
-  $post_eco = array_key_exists("eco", $_POST) ? $_POST['eco'] : false;
-  $filter_exists = $post_eco ? true : false;
+  $filters = array(
+      "p_brand" => "brand",
+      "type" => "types",
+      "sheen" => "sheen",
+      "eco" => "eco_friendly",
+  );
 
-  if ( !is_admin() && $query->is_main_query() && $filter_exists ) {
+  $chosen_filters = array();
 
-    $query->set('post_type', 'post');
-
+  foreach ($filters as $post_key => $meta_key) {
+    if ( array_key_exists($post_key, $_POST) ){
+      $chosen_filters[$post_key] = $meta_key;
+    }
   }
 
+  if ( !is_admin() && $query->is_main_query() && $chosen_filters ) {
+
+    $meta_query = array();
+
+    foreach ($chosen_filters as $post_key => $meta_key) {
+
+      $meta_value = $_POST[$post_key];
+
+      if ($meta_value && $meta_value != ""){
+
+        if ($meta_key == "types"){
+          // The meta value is an array, so use LIKE to search for it
+          array_push($meta_query, array(
+            'key' => $meta_key,
+            'value' => $_POST[$post_key],
+            'compare' => 'LIKE'
+          ));
+        } else{
+          array_push($meta_query, array(
+            'key' => $meta_key,
+            'value' => $_POST[$post_key],
+          ));
+        }
+
+      }
+    }
+    $query->set('meta_query', $meta_query);
+  }
 }
 //add_action("pre_get_posts", "modify_query_with_filters");
 
