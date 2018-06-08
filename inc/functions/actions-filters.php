@@ -48,6 +48,31 @@ function img_p_class_content_filter($content) {
 
 /* ******************************************************************
    *
+   * modify_query_with_filters
+   * Use pre_get_posts to modify the category query, based on filters
+   *
+   ******************************************************************
+*/
+
+function modify_query_with_filters($query){
+
+  $post_eco = array_key_exists("eco", $_POST) ? $_POST['eco'] : false;
+  $filter_exists = $post_eco ? true : false;
+
+  if ( !is_admin() && $query->is_main_query() && $filter_exists ) {
+
+    $query->set('post_type', 'post');
+
+  }
+
+}
+//add_action("pre_get_posts", "modify_query_with_filters");
+
+
+
+
+/* ******************************************************************
+   *
    * wp_nav_menu_objects
    * Add custom fields to menu items
    *
