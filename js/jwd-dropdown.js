@@ -9,7 +9,7 @@
       if (existing.length < 1) {
         var selected = select.find("option:selected").text();
         var element = "<div class=\"jwd-dde\">";
-        element += "<button class=\"jwd-dde__selected\" type=\"button\"> <span class=\"jwd-dde__selected-inner\"><span class=\"jwd-dde__selected-text\">" + selected + "</span><img class=\"jwd-dde__icon\" src=\"" + host_name + "/wp-content/themes/jwd-master/images/jwd-dropdown-icon.png\" alt=\"\" /></span></button>";
+        element += "<button class=\"jwd-dde__selected\" type=\"button\"> <span class=\"jwd-dde__selected-inner\"><span class=\"jwd-dde__selected-text\">" + selected + "</span><img class=\"jwd-dde__icon\" src=\"" + host_name + "/wp-content/uploads/more-min.png\" alt=\"\" /></span></button>";
         element += "<ul class=\"jwd-dde__list\">";
 
         $(select).find("option").each(function() {
@@ -22,19 +22,25 @@
     });
 
     $('.jwd-dde__item-btn').on('click', function() {
-      // Update the selected option in both selects
+      // On drop down click, update values
+
       var jwd_dde = $(this).closest(".jwd-dde");
       var list = jwd_dde.find('.jwd-dde__list');
       var select = jwd_dde.prev(".jwd-dropdown");
       var val = $(this).data("val");
       var text = $(this).text();
-      select.find("option:selected").prop("selected", false);
-      select.find("option[value=\"" + val + "\"]").prop("selected", true);
-      jwd_dde.find(".jwd-dde__selected-text").text(text);
+      update_jwd_dd(jwd_dde, list, select, val, text);
+    });
 
-      // Hide the dropdown
-      list.removeClass("active");
+    $('.jwd-dde').on("jwd-update-dde", function() {
+      // Update jwd-dde with the corresponding <select> value
 
+      var jwd_dde = $(this);
+      var list = jwd_dde.find('.jwd-dde__list');
+      var select = $(this).prev(".jwd-dropdown");
+      var val = $(select).val();
+      var text = $(select).find("option:selected").text();
+      update_jwd_dd(jwd_dde, list, select, val, text);
     });
 
     $('.jwd-dde').on("mouseenter", function() {
@@ -43,6 +49,19 @@
     $('.jwd-dde').on("mouseleave", function() {
       $(this).find(".jwd-dde__list").removeClass('active');
     });
+  }
+
+  function update_jwd_dd(jwd_dde, list, select, val, text) {
+
+    select.find("option:selected").prop("selected", false);
+    select.find("option[value=\"" + val + "\"]").prop("selected", true);
+    jwd_dde.find(".jwd-dde__selected-text").text(text);
+
+    // Trigger change event
+    jwd_dde.trigger("jwd-change");
+
+    // Hide the dropdown
+    list.removeClass("active");
   }
 
   // Convert a select of class "jwd-drop-down" to a custom drop down element
