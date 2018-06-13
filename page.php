@@ -12,7 +12,7 @@
  * @package jwd
  */
 
-$login_page_id = get_field("login_page", "options");
+//$login_page_id = get_field("login_page", "options");
 
 get_header(); ?>
 
@@ -25,14 +25,14 @@ get_header(); ?>
 				<?php
 					while ( have_posts() ) : the_post();
 
-				    if (is_page($login_page_id)) {
+				    //if (is_page($login_page_id)) {
 							// Login
-							get_template_part('template-parts/login/content', '');
-						}
+							//get_template_part('template-parts/login/content', '');
+						//}
 				
-						else{
+						//else{
 							get_template_part( 'template-parts/content', 'page' );
-						}
+						//}
 
 				endwhile; // End of the loop.
 				?>
