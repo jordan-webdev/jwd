@@ -44,7 +44,6 @@ get_header();
       			'terms'    => $chosen_cat,
           ),
         );
-        array_push($args, $tax_query);
       }
 
 			$query = new WP_Query($args);
