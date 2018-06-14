@@ -31,6 +31,9 @@ function create_faq_category_hierarchical_taxonomy() {
 }
 add_action( 'init', 'create_faq_category_hierarchical_taxonomy', 0 );
 
+
+
+
 // Add the "Glossary Category" taxonomy
 function create_glossary_category_taxonomy() {
 
@@ -62,11 +65,14 @@ function create_glossary_category_taxonomy() {
 }
 add_action( 'init', 'create_glossary_category_taxonomy', 0 );
 
+
+
+
 // Add the "Blog Category" taxonomy
-function create_blog_hierarchical_taxonomy() {
+function create_blog_category_taxonomy() {
 
   $labels = array(
-    'name' => _x( 'Blog Categories', 'taxonomy general name' ),
+    'name' => _x( 'Blog Category', 'taxonomy general name' ),
     'singular_name' => _x( 'Blog Category', 'taxonomy singular name' ),
     'search_items' =>  __( 'Search Blog Categories' ),
     'all_items' => __( 'All Blog Categories' ),
@@ -75,21 +81,20 @@ function create_blog_hierarchical_taxonomy() {
     'edit_item' => __( 'Edit Blog Category' ),
     'update_item' => __( 'Update Blog Category' ),
     'add_new_item' => __( 'Add New Blog Category' ),
-    'new_item_name' => __( 'New Blog category Name' ),
+    'new_item_name' => __( 'New Blog Category Name' ),
     'menu_name' => __( 'Blog Categories' ),
   );
 
   register_taxonomy(
     'blog_category',
-    'blog_posts',
+    'blog_post',
     array(
       'hierarchical' => true,
       'labels' => $labels,
       'show_ui' => true,
       'show_admin_column' => true,
       'query_var' => true,
-      'rewrite' => array( 'slug' => 'blog' ),
     ));
 
 }
-add_action( 'init', 'create_blog_hierarchical_taxonomy', 0 );
+add_action( 'init', 'create_blog_category_taxonomy', 0 );
