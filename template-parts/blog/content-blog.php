@@ -2,13 +2,17 @@
 /*
  * Content for the single blog page
  */
+
+$id = get_the_ID();
+$category = get_the_terms($id, "blog_category")[0];
+$cat_name = $category->name;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('page-wrapper'); ?>>
 	<header class="header">
 
     <!-- Blog Category -->
-    <span class="cat"><?php echo get_the_category()[0]->name; ?></span>
+    <span class="cat"><?php echo $cat_name; ?></span>
 
     <!-- Title -->
 		<h1 class="title"><?php echo get_the_title(); ?></h1>
