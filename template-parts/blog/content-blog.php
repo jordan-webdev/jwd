@@ -17,7 +17,7 @@
 
 	</header><!-- .entry-header -->
 
-	<div class="content entry-content">
+	<div class="content entry-content clear">
 		<?php if (has_post_thumbnail()): ?>
 			<div class="thumb-wrap">
 				<?php the_post_thumbnail(); ?>
