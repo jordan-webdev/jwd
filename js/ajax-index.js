@@ -48,17 +48,10 @@
         //Update the hrefs for filter links (if any)
         updateFilterHrefs(false);
 
-        //Give phones some extra time to load
-        let mq = window.matchMedia("(max-width: 450px)");
-        if (mq.matches) {
-          target.fadeTo(300, 1, function() {
-            scroll_to_results();
-          });
-        } else {
-          target.fadeTo(300, 1, function() {
-            scroll_to_results();
-          });
-        }
+        // Fade the results in
+        target.fadeTo(300, 1, function() {
+          scroll_to_results();
+        });
 
         // Allow clicking again
         $('.drop-down--filters__sub-item.not-clickable, .drop-down__all.not-clickable').removeClass('not-clickable');
@@ -202,6 +195,33 @@
       $(this).attr('href', updatedHref);
 
     })
+  }
+
+  // http://locutus.io/php/array/array_unique/
+  function array_unique(inputArr) {
+    var key = ''
+    var tmpArr2 = {}
+    var val = ''
+    var _arraySearch = function(needle, haystack) {
+      var fkey = ''
+      for (fkey in haystack) {
+        if (haystack.hasOwnProperty(fkey)) {
+          if ((haystack[fkey] + '') === (needle + '')) {
+            return fkey
+          }
+        }
+      }
+      return false
+    }
+    for (key in inputArr) {
+      if (inputArr.hasOwnProperty(key)) {
+        val = inputArr[key]
+        if (_arraySearch(val, tmpArr2) === false) {
+          tmpArr2[key] = val
+        }
+      }
+    }
+    return tmpArr2
   }
 
 })(jQuery)
