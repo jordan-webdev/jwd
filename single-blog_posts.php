@@ -1,47 +1,28 @@
 <?php
 /**
- * The template for displaying single posts
+ *
+ * The template for single blog posts
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package jwd
  */
 
-get_header();
-?>
+get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
 
-      <div class="padding-site">
-        <div class="container-site">
-          <div class="site-content-wrapper">
-      			<?php
-      			while ( have_posts() ) : the_post();
-      			?>
+    <div class="city-content">
 
-      			<section class="two-column-wrapper flex flex-wrap" class="clear site-container">
-							<!-- Categories -->
-      				<div class="two-column-item">
-      					<?php get_template_part('template-parts/blog/part', 'category-select-column'); ?>
-      				</div>
+      <?php while ( have_posts() ) : the_post(); ?>
+          <?php get_template_part('template-parts/blog/content', 'blog'); ?>
+      <?php endwhile; ?>
 
-							<!-- Results -->
-      				<div id="js-ajax-scroll-to" class="two-column-item flex-grow-1 js-ajax-content-container">
-								<div class="height-100 js-ajax-results">
-      						<?php get_template_part('template-parts/blog/content', 'blog'); ?>
-								</div>
-      				</div>
-      			</section>
+    </div>
 
-      			<?php
-      			endwhile; // End of the loop.
-      			?>
-          </div>
-        </div>
-      </div>
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_footer();
