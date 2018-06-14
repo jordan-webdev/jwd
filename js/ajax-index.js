@@ -48,10 +48,17 @@
         //Update the hrefs for filter links (if any)
         updateFilterHrefs(false);
 
-        // Fade the results in
-        target.fadeTo(300, 1, function() {
-          scroll_to_results();
-        });
+        //Give phones some extra time to load
+        let mq = window.matchMedia("(max-width: 450px)");
+        if (mq.matches) {
+          target.fadeTo(300, 1, function() {
+            scroll_to_results();
+          });
+        } else {
+          target.fadeTo(300, 1, function() {
+            scroll_to_results();
+          });
+        }
 
         // Allow clicking again
         $('.drop-down--filters__sub-item.not-clickable, .drop-down__all.not-clickable').removeClass('not-clickable');
@@ -179,6 +186,7 @@
       var href = $(this).attr('href');
       var hrefBeforeGETQueries = href.split("?")[0];
       var GETQueriesString = href.split("?")[1];
+      GETQueriesString = GETQueriesString ? GETQueriesString : href;
       GETQueriesString = GETQueriesString.replace(/#038;/g, "&");
       var GETQueriesArray = GETQueriesString.split("&");
       //console.log(GETQueriesArray);
