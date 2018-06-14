@@ -1,5 +1,5 @@
 .category-sidebar {
-  border-bottom: rem(1) solid $color__grey;
+  /*border-bottom: rem(1) solid $color__grey;*/
   padding-bottom: rem(25);
   margin-bottom: rem(10);
   height: 100%;
@@ -9,7 +9,7 @@
     padding-bottom: rem(0);
     margin-bottom: rem(0);
     border-right: rem(1) solid $color__grey;
-    border-bottom: none;
+    /*border-bottom: none;*/
   }
 
   @media screen and (min-width: $size__large) {
