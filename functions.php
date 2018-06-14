@@ -146,8 +146,8 @@ function jwd_scripts()
     wp_enqueue_script('jwd-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true);
 
     // Ajax Index
-    $ajax__index_pages = array();
-    if (is_page($ajax__index_pages)){
+    $is_ajax_index_page = is_page_template('template-blog.php');
+    if ($is_ajax_index_page){
       wp_enqueue_script('jwd-ajax-index', get_template_directory_uri() . '/js/ajax-index.js', array('jquery'), '', true);
     }
 
