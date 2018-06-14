@@ -22,8 +22,20 @@ if (function_exists('acf_add_options_page')) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'    => 'Theme Blog Settings',
-        'menu_title'    => 'Blog',
+        'page_title'    => 'Theme Schema Settings',
+        'menu_title'    => 'Blog Default',
+        'parent_slug'    => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Schema Settings',
+        'menu_title'    => 'Blog Sidebar',
+        'parent_slug'    => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Popup Settings',
+        'menu_title'    => 'Popup',
         'parent_slug'    => 'theme-general-settings',
     ));
 
@@ -33,6 +45,9 @@ if (function_exists('acf_add_options_page')) {
         'parent_slug'    => 'theme-general-settings',
     ));
 }
+
+
+
 
 //Populate social media choices with values from options repeater field
 function acf_load_social_media_choices($field)
@@ -56,6 +71,9 @@ function acf_load_social_media_choices($field)
 }
 //add_filter('acf/load_field/name=social_media_choices', 'acf_load_social_media_choices');
 add_filter('acf/load_field/name=social_media_to_use', 'acf_load_social_media_choices');
+
+
+
 
 //Dynamic product filter options
 function acf_dynamic_select_from_textarea($field)
@@ -84,6 +102,9 @@ function acf_dynamic_select_from_textarea($field)
     return $field;
 }
 //add_filter('acf/load_field/name=search_filters_label', 'acf_dynamic_select_from_textarea');
+
+
+
 
 // category ancestor location rule
 add_filter('acf/location/rule_types', 'acf_location_types_category_ancestor');
@@ -156,15 +177,19 @@ function acf_location_rule_match_category_ancestor($match, $rule, $options)
     return $match;
 }
 
+
+
+
 // Show WP custom field metabox
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+
+
 
 
 /* *****************************************************
  * ********** Custom fields for specific category
  * *****************************************************
  */
-
 
 add_filter('acf/location/rule_types', 'acf_location_rules_types', 999);
 function acf_location_rules_types($choices) {
