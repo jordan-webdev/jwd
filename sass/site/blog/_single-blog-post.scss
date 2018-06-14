@@ -18,7 +18,9 @@
   }
 
   .cat {
+    display: block;
     font-size: rem(15);
+    margin-bottom: rem(10);
   }
 
   .title {
@@ -33,7 +35,13 @@
 
   .meta {
     opacity: .85;
-  }
+  }/*.site-main {
+    margin-top: rem(15);
+
+    @media screen and (min-width: $size__large) {
+      margin-top: rem(55);
+    }
+  }*/
 
   .thumb-wrap {
     margin-bottom: rem(15);
