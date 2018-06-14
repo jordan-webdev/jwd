@@ -10,12 +10,6 @@
 get_header();
 ?>
 
-<div class="city-title-wrapper">
-  <div class="city-title">
-    <h2 class="city-title__content"><?php echo get_the_title();?></h2>
-  </div>
-</div>
-
 <div class="padding-site">
   <div class="container-site">
 
