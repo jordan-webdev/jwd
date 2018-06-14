@@ -27,11 +27,11 @@ if (function_exists('acf_add_options_page')) {
         'parent_slug'    => 'theme-general-settings',
     ));
 
-    acf_add_options_sub_page(array(
+    /*acf_add_options_sub_page(array(
         'page_title'    => 'Theme Schema Settings',
         'menu_title'    => 'Blog Sidebar',
         'parent_slug'    => 'theme-general-settings',
-    ));
+    ));*/
 
     acf_add_options_sub_page(array(
         'page_title'    => 'Theme Popup Settings',
