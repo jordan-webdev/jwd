@@ -3,7 +3,8 @@
  * Blog Index List Item
  */
 
-$category = get_the_category()[0];
+$id = get_the_ID();
+$category = get_the_terms($id, "blog_category")[0];
 $cat_name = $category->name;
 
 $g = get_field('blog_index_options');
