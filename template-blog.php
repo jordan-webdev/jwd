@@ -20,7 +20,6 @@ get_header();
           $sidebar = get_field("sidebar");
           $tax = "blog_category";
           $title = $sidebar['title'];
-          $include_checklist = false;
           $page_url = get_the_permalink();
           include(locate_template("template-parts/blog/part-blog-sidebar.php"));
         ?>
