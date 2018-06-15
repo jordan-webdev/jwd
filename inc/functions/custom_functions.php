@@ -37,7 +37,7 @@ function ajax_archive_pagination()
 
     /**	Previous Post Link */
     if (get_previous_posts_link()) {
-        printf('<li>%s</li>' . "\n", get_previous_posts_link('«'));
+        printf('<li class="js-ajax-link-wrap">%s</li>' . "\n", get_previous_posts_link('«'));
     }
 
     /**	Link to first page, plus ellipses if necessary */
