@@ -21,7 +21,7 @@ get_header();
 								$sidebar = get_field("sidebar");
 								$title = $sidebar['title'];
 							  $tax = "faq_category";
-							  include(locate_template("template-parts/blog/part-blog-sidebar.php"));
+							  include(locate_template("template-parts/part-category-sidebar.php"));
 							?>
     				</div>
 
