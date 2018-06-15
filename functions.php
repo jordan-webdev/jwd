@@ -151,11 +151,6 @@ function jwd_scripts()
       wp_enqueue_script('jwd-ajax-index', get_template_directory_uri() . '/js/ajax-index.js', array('jquery'), '', true);
     }
 
-    // Category
-    //if (is_category()) {
-      //wp_enqueue_script('jwd-category', get_template_directory_uri() . '/js/category.js', array('jquery'), '', true);
-    //}
-
     // Carousels
     wp_enqueue_script('jwd-carousels', get_template_directory_uri() . '/js/carousels.js', array('jquery'), '', true);
 
@@ -166,6 +161,16 @@ function jwd_scripts()
 
     // Cart List (in header)
     //wp_enqueue_script('jwd-cart-list', get_template_directory_uri() . '/js/cart-list.js', array('jquery'), '', true);
+    
+    // Category
+    //if (is_category()) {
+      //wp_enqueue_script('jwd-category', get_template_directory_uri() . '/js/category.js', array('jquery'), '', true);
+    //}
+    
+    // Category Accordions
+    if (is_page_template("template-q-a.php"){
+      wp_enqueue_script('jwd-category-accordions', get_template_directory_uri() . '/js/category-accordions.js', array('jquery'), '', true);
+    }
 
     // Drop Down
     //wp_enqueue_script('jwd-drop-down-js', get_template_directory_uri() . '/js/drop-down.js', array('jquery'), '', true);
@@ -201,11 +206,6 @@ function jwd_scripts()
 
     // WooCommerce
     //wp_enqueue_script('jwd-woocommerce-js', get_template_directory_uri() . '/js/woocommerce.js', array('jquery'), '', true);
-
-    // Tax Accordions
-    //if (is_tax()){
-      //wp_enqueue_script('jwd-tax-accordions', get_template_directory_uri() . '/js/tax-accordions.js', array('jquery'), '', true);
-    //}
 
     // SVG animations
     //wp_enqueue_script('jwd-svg-animations', get_template_directory_uri() . '/js/svg.js', array('jquery'), '', true);
