@@ -15,6 +15,13 @@ $shift: rem(450);
     }
   }
 
+  .pagination-list {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(end);
+  }
+
   .prev-text {
     margin-left: rem(5);
     text-transform: uppercase;
