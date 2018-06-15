@@ -90,8 +90,8 @@ function pagination($query){ ?>
             'end_size'     => 2,
             'mid_size'     => 1,
             'prev_next'    => true,
-            'prev_text'    => '<span class ="fa fa-chevron-left" aria-hidden="true"></span>',
-            'next_text'    => '<span class ="fa fa-chevron-right" aria-hidden="true"></span>',
+            'prev_text'    => '<span class ="next-icon-wrap">«</span>',
+            'next_text'    => '<span class ="next-icon-wrap">»</span>',
             'add_args'     => false,
             'add_fragment' => '',
         ) );
