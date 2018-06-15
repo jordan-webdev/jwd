@@ -33,7 +33,7 @@ function ajax_archive_pagination()
         $links[] = $paged + 1;
     }
 
-    echo '<nav class="pagination-wrapper js-ajax-pagination"><ul class="flex flex-wrap justify-center align-end">' . "\n";
+    echo '<nav class="pagination-wrapper js-ajax-pagination"><ul class="pagination-list">' . "\n";
 
     /**	Previous Post Link */
     if (get_previous_posts_link()) {
