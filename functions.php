@@ -168,7 +168,7 @@ function jwd_scripts()
     //}
     
     // Category Accordions
-    if (is_page_template("template-q-a.php"){
+    if (is_page_template("template-q-a.php")){
       wp_enqueue_script('jwd-category-accordions', get_template_directory_uri() . '/js/category-accordions.js', array('jquery'), '', true);
     }
 
