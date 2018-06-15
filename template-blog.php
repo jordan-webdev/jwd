@@ -21,7 +21,7 @@ get_header();
           $tax = "blog_category";
           $title = $sidebar['title'];
           $page_url = get_the_permalink();
-          include(locate_template("template-parts/blog/part-blog-sidebar.php"));
+          include(locate_template("template-parts/part-category-sidebar.php"));
         ?>
     	</div>
 
