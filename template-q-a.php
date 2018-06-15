@@ -43,11 +43,13 @@ get_header();
 											get_template_part('template-parts/q-a/part', 'accordions');
 		              	endwhile;
 									endif; ?>
+
+									<!-- Pagination -->
+							  	<?php pagination($query); wp_reset_postdata(); ?>
 							</div>
     				</div>
 
-						<!-- Pagination -->
-				  	<?php pagination($query); wp_reset_postdata(); ?>
+
 
     			</div>
       </section>
