@@ -2,16 +2,18 @@
 /*
 * Mobile button, menu, logo and phone icon
 */
+
+$images = get_template_directory_uri() . '/images';
+$is_solid = is_category() || is_front_page() || is_singular("post") || get_field("inner_hero_background");
 ?>
 
-<div class="header-mobile__wrapper padding-site">
+<div class="header-mobile__wrapper padding-site <?php echo $is_solid ? "transparent" : false; ?>">
   <div class="container-site">
     <nav class="header-mobile">
 
       <!-- Menu -->
       <button id="js-mobile-menu-toggle" class="header-mobile__button header-mobile__icon color-primary" aria-controls="mobile-menu" aria-expanded="false" data-toggles="#mobile-menu">
-        <!--<img src="<?php //echo $images; ?>/hamburger-min.png" alt="Toggle menu." />-->
-        <span class="fa fa-bars header-mobile__hamburger" aria-hidden="true"></span>
+        <img src="<?php echo $images; ?>/menu-min.png" alt="Toggle menu." />
         <span class="screen-reader-text">Click to toggle the navigation menu.</span>
       </button>
 
@@ -23,7 +25,9 @@
       </a>
 
       <!-- Phone -->
-      <a class="header-mobile__phone header-mobile__icon" href="tel:<?php echo esc_attr(str_replace(" ", "", get_field("site_phone", "options"))); ?>"><span class="fa fa-phone" aria-hidden="true"></span></a>
+      <a class="header-mobile__phone header-mobile__icon" href="tel:<?php echo esc_attr(str_replace(" ", "", get_field("site_phone", "options"))); ?>">
+        <img src="<?php echo $images; ?>/phone-min.png" alt="Call us">
+      </a>
 
     </nav>
   </div>
