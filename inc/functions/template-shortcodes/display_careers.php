@@ -12,17 +12,17 @@ function display_careers_shortcode( $atts , $content = null ) {
 
    <?php if ( $query->have_posts() ): ?>
      <section class="careers">
-       <h2 class="careers__title color-white color-primary--bg font-secondary pad-l-15 pad-t-5 pad-b-5 font-18">Current Opportunities</h2>
-       <ul class="careers__list color-grey--bg">
+       <h2 class="careers__title">Current Opportunities</h2>
+       <ul class="careers__list">
          <?php while ( $query->have_posts() ):
            $query->the_post();
            $title = get_the_title();
            $pdf = get_field('careers_pdf');
          ?>
-          <li class="careers__list-item flex align-center pad-t-15 pad-b-15 mar-l-15 mar-r-15 color-med-grey--bor-b">
+          <li class="careers__list-item">
             <?php if ($pdf): ?>
-              <a class="careers__pdf-wrapper mar-r-10 color-primary--bg" href="<?php echo esc_url($pdf); ?>" rel="noopener noreferrer" target="_blank">
-                <span class="careers__pdf-text color-white">PDF</span>
+              <a class="careers__pdf-wrapper" href="<?php echo esc_url($pdf); ?>" rel="noopener noreferrer" target="_blank">
+                <span class="careers__pdf-text">PDF</span>
               </a>
             <?php endif; ?>
             <span class="careers_career-title"><?php echo esc_html($title); ?></span>
