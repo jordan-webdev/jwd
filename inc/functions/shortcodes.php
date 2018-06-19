@@ -50,7 +50,7 @@ function generate_half_items_shortcode( $atts , $content = null ) {
 		'half-items'
 	);
 	$show_p = $atts['show-p'] ? "show-p" : "";
-	return '<div class="half-items flex flex-wrap space-between '.$show_p.'">' .do_shortcode($content) .'</div>';
+	return '<div class="half-items '.$show_p.'">' .do_shortcode($content) .'</div>';
 }
 add_shortcode( 'half-items', 'generate_half_items_shortcode' );
 
