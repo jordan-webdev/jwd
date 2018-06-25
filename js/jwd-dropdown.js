@@ -2,7 +2,7 @@
 
   var host_name = "https://" + window.location.hostname;
 
-  $.jwd_dropdown_init = function(item = false) {
+  $.jwd_dropdown_init = function() {
     $(".jwd-dropdown").each(function() {
 
       select = $(this);
@@ -116,14 +116,14 @@
 
 
 
-  function update_jwd_dd(jwd_dde, list, select, val, text, is_clear = false) {
+  function update_jwd_dd(jwd_dde, list, select, val, text) {
 
     select.find(".jwd-is-match").removeClass("jwd-is-match");
     select.find("option:selected").prop("selected", false);
 
-    if (!is_clear) {
-      select.find("option[value=\"" + val + "\"]").prop("selected", true).addClass("jwd-is-match");
-    }
+
+    select.find("option[value=\"" + val + "\"]").prop("selected", true).addClass("jwd-is-match");
+
 
     jwd_dde.find(".jwd-dde__selected-text").text(text);
 
