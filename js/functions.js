@@ -25,6 +25,9 @@ function array_unique(inputArr) {
   return tmpArr2
 }
 
+
+
+
 function do_when_exists(el, callback) {
   if (el.length > 0) {
     callback();
@@ -34,6 +37,9 @@ function do_when_exists(el, callback) {
     }, 10);
   }
 }
+
+
+
 
 function is_wrapped(className) {
 
@@ -54,9 +60,27 @@ function is_wrapped(className) {
 
 }
 
+
+
+
 String.prototype.replaceAll = function(str1, str2, ignore) {
   return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof(str2) == "string") ? str2.replace(/\$/g, "$$$$") : str2);
 }
+
+
+
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds) {
+      break;
+    }
+  }
+}
+
+
+
 
 function ucwords(str) {
   return str.replace(/\w\S*/g, function(txt) {
