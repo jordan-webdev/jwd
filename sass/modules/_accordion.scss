@@ -3,7 +3,7 @@
   padding-right: rem(15);
   padding-top: rem(10);
   padding-bottom: rem(10);
-  border-radius: rem(7);
+  /*border-radius: rem(7);*/
 
   @media screen and (min-width: $size__large) {
     padding-left: rem(20);
@@ -24,23 +24,39 @@
       }
 
       & .accordions__toggler {
-        background-color: $color__primary;
+        background-position: 0% 0%;
+        color: white;
       }
     }
   }
 
   &__toggler {
-    background-color: $color__grey;
+    /*@include linear-gradient(90deg, $color__primary, $color__secondary 12.5%, $color__tertiary 25%, $color__quaternary 37.5%, $color__quaternary 50%, $color__grey 50%);*/
+    @include linear-gradient(90deg, #dc2928, #952491);
     @include accordion_padding;
     @include flexbox;
     @include align-items(center);
     @include justify-content(space-between);
     cursor: pointer;
+    background-position: 100% 0%;
+    background-size: 200% 100%;
+    transition: background-position .3s, color .3s;
   }
 
   &__title {
+    font-family: $font__secondary;
+    color: white;
     font-size: rem(18);
-    margin-right: rem(15);
+    font-style: italic;
+    font-weight: 600;
+
+    @media screen and (min-width: $size__large) {
+      font-size: rem(24);
+    }
+  }
+
+  &__arrow {
+    margin-left: rem(15);
   }
 
   &__pullout {
@@ -55,6 +71,8 @@
 
     p {
       margin-bottom: rem(5);
+      line-height: rem(25);
+      font-weight: 300;
 
       @media screen and (min-width: $size__large) {
         margin-bottom: rem(15);
