@@ -1,6 +1,6 @@
-$side_slider_link_primary: $color__primary;
-$side_slider_link_secondary: white;
-$current_item: $color__highlight;
+$side_slider_link_primary: white;
+$side_slider_link_secondary: black;
+$current_item: white;
 $menu_width: rem(305);
 
 .mobile-navigation {
@@ -95,8 +95,8 @@ $menu_width: rem(305);
     align-items: center;
   }
 
-  .menu-item-has-children .fa-chevron-right {
-    margin-right: 17px;
+  .menu-item-has-children .right-arrow {
+    margin-right: rem(10);
   }
 
   .menu-logo-img {
