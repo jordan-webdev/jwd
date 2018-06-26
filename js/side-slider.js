@@ -1,5 +1,7 @@
 (function($) {
 
+  var images = window.location.origin + "/wp-content/themes/jwd-master/images";
+
   //Side Slider Mobile menu
   sideSliderMenu(true, true); //parameters (bool $add_logo, bool $fade_banner)
   function sideSliderMenu(logo, fadeBanner) {
@@ -21,7 +23,7 @@
       $(this).prepend(
         '<li class="sub-menu-header">' +
         '<button class="sub-menu-back-button">' +
-        '<span class="fa fa-chevron-left fa-lg" aria-hidden="true"></span>' +
+        '<img class="arrow left-arrow" src="' + images + '/pull-menu-left-min.png" alt="" />' +
         '</button>' +
         $(this).prev('a').text() +
         '</li>');
@@ -37,7 +39,8 @@
     $('#mobile-menu .menu-item-has-children').each(function() {
       $('> a', this).wrap(
         '<div class="menu-item-has-children-items-wrapper">').after(
-        '<span class="fa fa-chevron-right" aria-hidden="true"></span>')
+        '<img class="arrow right-arrow" src="' + images + '/pull-menu-right-min.png" alt="" />'
+      )
     });
 
     //Menu navigation sliding
