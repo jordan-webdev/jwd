@@ -171,6 +171,9 @@ function jwd_scripts()
     if (is_page_template("template-q-a.php")){
       wp_enqueue_script('jwd-category-accordions', get_template_directory_uri() . '/js/category-accordions.js', array('jquery'), '', true);
     }
+    
+    // Custom Input
+    //wp_enqueue_script('jwd-custom-input-js', get_template_directory_uri() . '/js/custom-input.js', array('jquery'), '', true);
 
     // Drop Down
     //wp_enqueue_script('jwd-drop-down-js', get_template_directory_uri() . '/js/drop-down.js', array('jquery'), '', true);
