@@ -103,16 +103,16 @@ function jwd_scripts()
     }
 
     // Arrive
-    //wp_enqueue_script('jwd-arrive-js', get_template_directory_uri() . '/inc/arrive/arrive.min.js', array('jquery'), '', true);
+    //wp_enqueue_script('jwd-arrive-js', get_template_directory_uri() . '/inc/assets/arrive/arrive.min.js', array('jquery'), '', true);
 
     // Draw SVG
     //wp_enqueue_script('jwd-draw-svg-js', get_template_directory_uri() . '/js/drawsvg.js', array('jquery'), '', true);
 
     // Fancybox
-    wp_enqueue_script('jwd-fancybox-js', get_template_directory_uri() . '/inc/fancybox/jquery.fancybox.min.js', array('jquery'), '', true);
+    wp_enqueue_script('jwd-fancybox-js', get_template_directory_uri() . '/inc/assets/fancybox/jquery.fancybox.min.js', array('jquery'), '', true);
 
     // FooTable
-    //wp_enqueue_script('jwd-footable-js', get_template_directory_uri() . '/inc/footable/footable.js', array('jquery'), '', true);
+    //wp_enqueue_script('jwd-footable-js', get_template_directory_uri() . '/inc/assets/footable/footable.js', array('jquery'), '', true);
 
     // Skip link focus fix
     wp_enqueue_script('jwd-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
@@ -121,10 +121,10 @@ function jwd_scripts()
     //wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
 
     // JS Cookie
-    wp_enqueue_script('jwd-js-cookie-js', get_template_directory_uri() . '/js/js-cookie.js', array(), '', true);
+    wp_enqueue_script('jwd-js-cookie-js', get_template_directory_uri() . '/inc/assets/js-cookie/js-cookie.js', array(), '', true);
 
     // Object Fit Polyfill (for image / video backgrounds)
-    wp_enqueue_script('jwd-object-fit-js', get_template_directory_uri() . '/inc/object-fit/objectFitPolyfill.basic.min.js', array(), '', true);
+    wp_enqueue_script('jwd-object-fit-js', get_template_directory_uri() . '/inc/assets/object-fit/objectFitPolyfill.basic.min.js', array(), '', true);
 
     // Swiper
     wp_enqueue_script('jwd-swiper-js', get_template_directory_uri() . '/inc/assets/swiper/swiper.min.js', array('jquery), '', true);
