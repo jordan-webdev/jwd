@@ -57,6 +57,7 @@
 
   &__arrow {
     margin-left: rem(15);
+    @include flex-shrink(0);
   }
 
   &__pullout {
