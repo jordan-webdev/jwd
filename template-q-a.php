@@ -7,6 +7,9 @@
  *
  * @package jwd
  */
+
+$type = esc_html(get_field("post_type"));
+
 get_header();
 ?>
 
@@ -23,7 +26,7 @@ get_header();
 						<?php
 							$sidebar = get_field("sidebar");
 							$title = $sidebar['title'];
-						  $tax = "faq_category";
+						  $tax = $type ."_category";
 						  include(locate_template("template-parts/part-category-sidebar.php"));
 						?>
   				</div>
@@ -33,7 +36,6 @@ get_header();
 						<div class="js-ajax-results">
 
               <?php
-								$type = esc_html(get_field("post_type"));
 								$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 								$args = array(
 									"post_type" => $type,
@@ -45,7 +47,7 @@ get_header();
 								if (array_key_exists("cat", $_GET)){
 									$args['tax_query'] = array(
 										array(
-											"taxonomy" => "faq_category",
+											"taxonomy" => $tax,
 											"field" => "slug",
 											"terms" => $_GET['cat'],
 										),
