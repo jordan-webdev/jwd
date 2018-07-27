@@ -127,16 +127,16 @@ function jwd_scripts()
     wp_enqueue_script('jwd-object-fit-js', get_template_directory_uri() . '/inc/assets/object-fit/objectFitPolyfill.basic.min.js', array(), '', true);
 
     // Swiper
-    wp_enqueue_script('jwd-swiper-js', get_template_directory_uri() . '/inc/assets/swiper/swiper.min.js', array('jquery), '', true);
-    
-    
-    
-    
+    wp_enqueue_script('jwd-swiper-js', get_template_directory_uri() . '/inc/assets/swiper/swiper.min.js', array('jquery'), '', true);
+
+
+
+
     /* ****** Non-Asset JS ****** */
 
     // Functions
     wp_enqueue_script('jwd-functions-js', get_template_directory_uri() . '/js/functions.js', array('jquery'), '', true);
-    
+
     // JWD Dropdown
     wp_enqueue_script('jwd-dropdown-js', get_template_directory_uri() . '/js/jwd-dropdown.js', array('jquery'), '', true);
 
@@ -159,17 +159,17 @@ function jwd_scripts()
 
     // Cart List (in header)
     //wp_enqueue_script('jwd-cart-list', get_template_directory_uri() . '/js/cart-list.js', array('jquery'), '', true);
-    
+
     // Category
     //if (is_category()) {
       //wp_enqueue_script('jwd-category', get_template_directory_uri() . '/js/category.js', array('jquery'), '', true);
     //}
-    
+
     // Category Accordions
     if (is_page_template("template-q-a.php")){
       wp_enqueue_script('jwd-category-accordions', get_template_directory_uri() . '/js/category-accordions.js', array('jquery'), '', true);
     }
-    
+
     // Custom Input
     //wp_enqueue_script('jwd-custom-input-js', get_template_directory_uri() . '/js/custom-input.js', array('jquery'), '', true);
 
@@ -178,13 +178,13 @@ function jwd_scripts()
 
     // Footable
     wp_enqueue_script('jwd-footable-init-js', get_template_directory_uri() . '/js/footable.js', array('jquery'), '', true);
-    
+
     // Go To Top
     wp_enqueue_script('jwd-go-to-top-js', get_template_directory_uri() . '/js/go-to-top.js', array('jquery'), '', true);
 
     // Product
     //wp_enqueue_script('jwd-product-js', get_template_directory_uri() . '/js/product.js', array('jquery'), '', true);
-    
+
     // Products Archive
     //wp_enqueue_script('jwd-products-js', get_template_directory_uri() . '/js/products.js', array('jquery'), '', true);
 
