@@ -37,7 +37,7 @@ function redirect_to_account(){
    ******************************************************************
 */
 //add_filter( 'the_content', 'gc_remove_p_tags_around_images' ,20);
-add_filter ('acf_the_content', 'gc_remove_p_tags_around_images', 20);
+//add_filter ('acf_the_content', 'gc_remove_p_tags_around_images', 20);
 function gc_remove_p_tags_around_images($content)
 {
 	$contentWithFixedPTags =  preg_replace_callback('/<p>((?:.(?!p>))*?)(<a[^>]*>)?\s*(<img[^>]+>)(<\/a>)?(.*?)<\/p>/is', function($matches)
