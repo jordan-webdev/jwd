@@ -9,19 +9,19 @@
   <div class="nav-desktop">
 
     <div class="padding-site top-bar">
-      <div class="container-site">
+      <div class="container-site layout">
         <?php get_template_part('template-parts/header/part', 'top-bar'); ?>
       </div>
     </div>
 
     <div class="padding-site middle-bar">
-      <div class="container-site">
+      <div class="container-site layout">
         <?php get_template_part('template-parts/header/part', 'middle-bar'); ?>
       </div>
     </div>
 
     <div class="padding-site bottom-bar">
-      <div class="container-site">
+      <div class="container-site layout">
         <?php get_template_part('template-parts/header/part', 'bottom-bar'); ?>
       </div>
     </div>
