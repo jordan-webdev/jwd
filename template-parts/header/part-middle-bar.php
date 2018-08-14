@@ -12,7 +12,7 @@
       <h1>
     <?php endif; ?>
       <a href="<?php echo get_home_url(); ?>" rel="home" class="block">
-        <img src="<?php echo get_field('logo', 'options')['url']; ?>" alt="<?php bloginfo( "title" ); ?>">
+        <img src="<?php echo esc_url(get_field('logo', 'options')); ?>" alt="<?php bloginfo( "title" ); ?>">
         <span class="screen-reader-text"><?php bloginfo( "name" ); ?></span>
       </a>
     <?php if (is_front_page()): ?>
