@@ -121,22 +121,20 @@ function modify_query_with_filters($query){
 
 /* ******************************************************************
    *
-   * wp_nav_menu_objects
+   * add_menu_images
    * Add custom fields to menu items
    *
    ******************************************************************
 */
-//add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-function my_wp_nav_menu_objects( $items, $args ) {
+add_filter('wp_nav_menu_objects', 'add_menu_images', 10, 2);
+function add_menu_images( $items, $args ) {
 
 	// loop
 	foreach( $items as &$item ) {
 
-		// vars
 		$icon = get_field('menu_img', $item);
 		$title = $item->title;
 
-		// append icon
 		if( $icon ) {
 			$item->title = wp_get_attachment_image( $icon, "full", false, array("class" => "menu-icon") ) . '<span class="menu-icon-title">' .$title. '</span>';
 
@@ -144,10 +142,7 @@ function my_wp_nav_menu_objects( $items, $args ) {
 
 	}
 
-
-	// return
 	return $items;
-
 }
 
 
