@@ -118,13 +118,19 @@ function jwd_scripts()
     wp_enqueue_script('jwd-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
     // Google Font
-    //wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Cormorant|Poppins:300,500');
 
     // JS Cookie
     wp_enqueue_script('jwd-js-cookie-js', get_template_directory_uri() . '/inc/assets/js-cookie/js-cookie.js', array(), '', true);
 
+    // Object Fit Function (for video backgrounds)
+    wp_enqueue_script('jwd-object-fit-videos-js', get_template_directory_uri() . '/inc/assets/object-fit/object-fit-videos.js', array(), '', true);
+
     // Object Fit Polyfill (for image / video backgrounds)
-    wp_enqueue_script('jwd-object-fit-js', get_template_directory_uri() . '/inc/assets/object-fit/objectFitPolyfill.basic.min.js', array(), '', true);
+    //wp_enqueue_script('jwd-object-fit-js', get_template_directory_uri() . '/inc/assets/object-fit/objectFitPolyfill.basic.min.js', array(), '', true);
+
+    // Progressbar
+    wp_enqueue_script('jwd-progressbar-js', get_template_directory_uri() . '/inc/assets/progressbar/progressbar.js', array(), '', true);
 
     // Swiper
     wp_enqueue_script('jwd-swiper-js', get_template_directory_uri() . '/inc/assets/swiper/swiper.min.js', array('jquery'), '', true);
@@ -216,6 +222,9 @@ function jwd_scripts()
 
     // Videos
     //wp_enqueue_script('jwd-videos', get_template_directory_uri() . '/js/videos.js', array('jquery'), '', true);
+
+    // Video Slider
+    wp_enqueue_script('jwd-video-slider', get_template_directory_uri() . '/js/video-slider.js', array('jquery'), '', true);
 
 }
 add_action('wp_enqueue_scripts', 'jwd_scripts');
