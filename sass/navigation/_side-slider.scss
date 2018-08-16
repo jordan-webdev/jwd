@@ -2,9 +2,30 @@ $side_slider_link_primary: white;
 $side_slider_link_secondary: black;
 $current_item: white;
 $menu_width: rem(305);
+$side: "right";
+$is_left: if($side == "left", true, false);
+
+@mixin slider_side($is_left, $is_active:false) {
+  @if ($is_left == true and $is_active == true) {
+    left: 0;
+  }
+
+  @if ($is_left == false and $is_active == true) {
+    right: 0;
+  }
+
+  @if ($is_left == true and $is_active == false) {
+    left: -$menu_width;
+  }
+
+  @if ($is_left == false and $is_active == false) {
+    right: -$menu_width;
+  }
+}
 
 .mobile-navigation {
   /*background-color: $side_slider_link_secondary;*/
+  @include slider_side($is_left, true);
 
   .wp-nav-menu {
     @include flex-direction(column);
@@ -15,12 +36,16 @@ $menu_width: rem(305);
     position: fixed;
     top: 0;
     color: $side_slider_link_primary;
-    left: -$menu_width;
-    transition: left .35s ease-out;
+    @include slider_side($is_left);
+    transition: left .35s ease-out, right .35s ease-out;
     overflow-y: scroll;
     z-index: 26;
     /*stack on top of fade banner*/
     padding-bottom: px-to(rem, 66);
+
+    &.active {
+      @include slider_side($is_left, true);
+    }
 
     & > .menu-item {
       padding-left: 15px;
@@ -38,11 +63,15 @@ $menu_width: rem(305);
     position: fixed;
     top: 0;
     height: 100vh;
-    left: -$menu_width;
-    transition: left .35s ease-out;
+    @include slider_side($is_left);
+    transition: left .35s ease-out, right .35s ease-out;
     @include flexbox;
     @include flex-direction(column);
     border-right: 1px solid $side_slider_link_secondary;
+
+    &.active {
+      @include slider_side($is_left, true);
+    }
 
     .sub-menu-header {
       @include flex-grow(0);
