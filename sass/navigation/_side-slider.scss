@@ -23,6 +23,16 @@ $is_left: if($side == "left", true, false);
   }
 }
 
+@mixin slider_transition($is_left) {
+  @if ($is_left == true) {
+    transition: left .35s ease-out;
+  }
+
+  @else {
+    transition: right .35s ease-out;
+  }
+}
+
 .mobile-navigation {
   /*background-color: $side_slider_link_secondary;*/
   @include slider_side($is_left, true);
@@ -37,7 +47,7 @@ $is_left: if($side == "left", true, false);
     top: 0;
     color: $side_slider_link_primary;
     @include slider_side($is_left);
-    transition: left .35s ease-out, right .35s ease-out;
+    @include slider_transition($is_left);
     overflow-y: scroll;
     z-index: 26;
     /*stack on top of fade banner*/
@@ -64,7 +74,7 @@ $is_left: if($side == "left", true, false);
     top: 0;
     height: 100vh;
     @include slider_side($is_left);
-    transition: left .35s ease-out, right .35s ease-out;
+    @include slider_transition($is_left);
     @include flexbox;
     @include flex-direction(column);
     border-right: 1px solid $side_slider_link_secondary;
