@@ -22,8 +22,6 @@ $larger_than_video: rem(1600);
   position: relative;
   overflow: hidden;
   height: 100vh;
-  padding-left: 5%;
-  padding-right: 5%;
 
   .slide {
     opacity: 0;
@@ -34,6 +32,8 @@ $larger_than_video: rem(1600);
     left: -99999px;
     width: 100%;
     height: 100%;
+    padding-left: 4%;
+    padding-right: 4%;
     @include flexbox;
     @include flex-direction(column);
     @include align-items(center);
@@ -76,8 +76,12 @@ $larger_than_video: rem(1600);
     }
 
     .title {
-      $map: (320px: 22px, 700px: 30px, 1050px: 35px, 1200px: 40px);
+      font-family: Cormorant;
+      font-weight: 300;
+      $map: (320px: 37px, 700px: 51px, 1050px: 62px, 1200px: 75px);
       @include poly-fluid-sizing("font-size", $map);
+      $map: (320px: 39px, 700px: 53px, 1050px: 64px, 1200px: 77px);
+      @include poly-fluid-sizing("line-height", $map);
       @include filter(blur(5px));
       @include transform(scale(1.5));
       opacity: 0;
