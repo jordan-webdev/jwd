@@ -21,6 +21,10 @@ input[type="datetime-local"], input[type="color"], textarea, select,
     padding-right: rem(53);
   }
 
+  &.wpcf7-not-valid {
+    border: rem(1) solid red;
+  }
+
   &:focus {
     color: $color__text-input-focus;
   }
