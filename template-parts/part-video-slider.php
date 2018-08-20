@@ -18,7 +18,7 @@ $gallery = get_field("video_slider");
 
 		<div class="slide <?php echo $i == 0 ? "active" : false; ?>">
 
-			<video class="video js-active-toggle <?php echo $i == 0 ? "active" : false; ?>" autoplay muted>
+			<video class="video js-active-toggle <?php echo $i == 0 ? "active" : false; ?>" autoplay muted playsinline>
 				<source src="<?php echo esc_url($gal['video']); ?>" type="video/mp4">
 			</video>
 
