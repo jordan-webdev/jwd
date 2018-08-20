@@ -132,7 +132,7 @@ function add_menu_images( $items, $args ) {
 	// loop
 	foreach( $items as &$item ) {
 
-		$icon = get_field('menu_img', $item);
+		$icon = get_field('menu_image', $item);
 		$title = $item->title;
 
 		if( $icon ) {
@@ -164,3 +164,14 @@ function jwd_dequeue_wc_styles( $enqueue_styles ) {
   }
   return $enqueue_styles;
 }
+
+
+
+/* ******************************************************************
+   *
+   * wpcf7_autop_or_not
+   * Remove Auto P from CF7
+   *
+   ******************************************************************
+*/
+add_filter('wpcf7_autop_or_not', '__return_false');
