@@ -39,9 +39,9 @@ $gallery = get_field("video_slider");
 			<li class="nav-item js-active-toggle">
 				<button class="nav-btn" type="button">
 					<span class="layout">
-						<div class="nav-icon-wrap">
+						<span class="nav-icon-wrap">
 							<?php echo wp_get_attachment_image( $gallery[$i]['nav_icon'], "full", false, array("class" => "nav-icon") ); ?>
-						</div>
+						</span>
 					</span>
 				</button>
 
@@ -53,5 +53,8 @@ $gallery = get_field("video_slider");
 			</li>
 		<?php $i++; endwhile; ?>
 	</ul>
+
+	<!-- Scroll Down Animation -->
+	<?php get_template_part('template-parts/part', 'scroll-animation'); ?>
 
 </section>
