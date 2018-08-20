@@ -167,7 +167,7 @@ div.wpcf7-validation-errors {
 }
 
 div.wpcf7 .ajax-loader {
-  position: absolute;
-  right: rem(200);
-  bottom: rem(-51);
+  background-image: url('/wp-content/themes/jwd-master/images/ajax-loader.gif');
+  height: rem(25);
+  width: rem(25);
 }
