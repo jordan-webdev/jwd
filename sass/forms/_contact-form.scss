@@ -1,15 +1,15 @@
-//Uses CF7 plugin
+/*Uses CF7 plugin*/
 $shift: rem(1100);
 $product_padding: rem(30);
 $product_content_padding: rem(35);
 $two_col: rem(500);
 
 .contact-form {
-  //z-index: $z-fade-banner + 1;
+  /*z-index: $z-fade-banner + 1;*/
   max-width: rem(557);
 
   &--is-popup {
-    // IOS
+    /* IOS*/
     margin-bottom: rem(150);
 
     @media screen and (min-width: $shift) {
@@ -25,8 +25,7 @@ $two_col: rem(500);
       top: rem(-17);
       right: rem(-17);
     }
-
-    padding: 0.6em 0.8em;
+    padding: .6em .8em;
   }
 
   &__header {
@@ -37,7 +36,6 @@ $two_col: rem(500);
     @media screen and (min-width: $shift) {
       padding-bottom: rem(20);
     }
-
     margin-bottom: rem(24);
   }
 
@@ -47,9 +45,7 @@ $two_col: rem(500);
 
   .wpcf7-form-control-wrap {
     display: block;
-
     @include flex-basis(100%);
-
     margin-bottom: rem(15);
 
     &.message, &.return {
@@ -90,7 +86,6 @@ $two_col: rem(500);
     padding-top: 0;
     padding-bottom: 0;
     height: rem(36);
-
     @include align-self(center);
   }
 
@@ -108,9 +103,7 @@ $two_col: rem(500);
       border-top-left-radius: 0;
       border-right: 0;
     }
-  }
-
-  // Wider contact form with a lower z-index
+  }/* Wider contact form with a lower z-index*/
   $two_col_wide: rem(600);
 
   &--not-popup {
@@ -141,6 +134,10 @@ $two_col: rem(500);
   display: none;
 }
 
+.wpcf7-not-valid-tip {
+  display: none !important;
+}
+
 div.wpcf7-response-output {
   margin: 0;
   color: $color__black;
@@ -148,7 +145,7 @@ div.wpcf7-response-output {
   position: relative;
   z-index: $z-fade-banner + 1;
   text-align: right;
-  padding-bottom: 0.9375rem;
+  padding-bottom: .9375rem;
   padding-top: rem(15);
   padding-right: rem(15);
   text-align: center;
