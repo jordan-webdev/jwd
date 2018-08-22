@@ -218,7 +218,7 @@ function jwd_scripts()
     //wp_enqueue_script('jwd-svg-animations', get_template_directory_uri() . '/js/svg.js', array('jquery'), '', true);
 
     // Togglers
-    //wp_enqueue_script('jwd-togglers', get_template_directory_uri() . '/js/togglers.js', array('jquery'), '', true);
+    wp_enqueue_script('jwd-togglers', get_template_directory_uri() . '/js/togglers.js', array('jquery'), '', true);
 
     // Videos
     //wp_enqueue_script('jwd-videos', get_template_directory_uri() . '/js/videos.js', array('jquery'), '', true);
