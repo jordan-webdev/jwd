@@ -4,12 +4,14 @@
   left: -999rem;
   right: 0;
   width: 100%;
+  background-color: $color__white;
   opacity: 0;
-  transition: opacity 0.3s, left 0s 0.3s;
+  transition: opacity .3s, left 0s .3s;
   padding-left: rem(30);
   padding-right: rem(30);
+  padding-top: rem(12);
+  padding-bottom: rem(12);
   z-index: $z-sticky;
-  height: rem(65);
   display: none;
 
   @media screen and (min-width: $breakpoint__mobile-menu) {
@@ -19,6 +21,11 @@
   &.active {
     left: 0;
     opacity: 1;
-    transition: opacity 0.5s, left 0s;
+    transition: opacity .5s, left 0s;
+  }
+
+  .layout {
+    @include flexbox;
+    @include justify-content(space-between);
   }
 }
