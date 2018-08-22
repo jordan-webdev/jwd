@@ -7,8 +7,6 @@
   background-color: $color__white;
   opacity: 0;
   transition: opacity .3s, left 0s .3s;
-  padding-left: rem(30);
-  padding-right: rem(30);
   padding-top: rem(12);
   padding-bottom: rem(12);
   z-index: $z-sticky;
