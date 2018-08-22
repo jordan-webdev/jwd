@@ -1,7 +1,9 @@
 //@import "var";
-@import "bottom-bar";
-@import "header-mobile";
-@import "middle-bar";
-@import "nav-desktop";
-//@import "sticky-nav";
-@import "top-bar";
+.site-header{
+  @import "bottom-bar";
+  @import "header-mobile";
+  @import "middle-bar";
+  @import "nav-desktop";
+  //@import "sticky-nav";
+  @import "top-bar";
+}
