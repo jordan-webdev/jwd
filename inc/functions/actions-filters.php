@@ -44,6 +44,10 @@ function admin_custom_css() {
       height: 80px;
       min-height: 80px;
     }
+    
+    .acf-button{
+      position: relative;
+    }
   </style>';
 }
 
