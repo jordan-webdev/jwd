@@ -30,6 +30,28 @@ function redirect_to_account(){
 
 /* ******************************************************************
    *
+   * admin_css
+   * Add custom CSS to wp-admin
+   * https://css-tricks.com/snippets/wordpress/apply-custom-css-to-admin-area/
+   *
+   ******************************************************************
+*/
+add_action('admin_head', 'admin_custom_css');
+
+function admin_custom_css() {
+  echo '<style>
+    .wysiwyg-small .mce-edit-area{
+      height: 80px;
+      min-height: 80px;
+    }
+  </style>';
+}
+
+
+
+
+/* ******************************************************************
+   *
    * img_p_class_content_filter
    * Remove <p> tags wrapping <img> in the_content()
    * http://micahjon.com/2016/removing-wrapping-p-paragraph-tags-around-images-wordpress/
