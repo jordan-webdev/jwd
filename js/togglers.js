@@ -14,35 +14,39 @@
 
       $(toggles).toggleClass("active");
 
-      // Adjust focus between popup and original toggle button
-      if ($(toggles).hasClass("active")) {
-        $(toggles).focus();
-      } else {
-        $('.js-toggler[data-toggles="' + toggles + '"]').not($(this)).focus();
+      // Adjust focus between popup and original toggle button when not scrolling
+      if (!toggle_scroll_to) {
+        if ($(toggles).hasClass("active")) {
+          $(toggles).focus();
+        } else {
+          $('.js-toggler[data-toggles="' + toggles + '"]').not($(this)).focus();
+        }
       }
+
     });
 
     // Scroll
-    var scroll_target = '#' + toggle_scroll_to;
+    if (toggle_scroll_to) {
+      var scroll_target = '#' + toggle_scroll_to;
+      //var is_sticky = window.matchMedia("(min-width: 1055px)").matches ? true : false;
+      var endingPosition = parseInt($(scroll_target).offset().top) + parseInt(toggle_offset);
+      //endingPosition = is_sticky ? endingPosition - 104 : endingPosition;
 
-    //var is_sticky = window.matchMedia("(min-width: 1055px)").matches ? true : false;
-    var endingPosition = parseInt($(scroll_target).offset().top) + parseInt(toggle_offset);
-    //endingPosition = is_sticky ? endingPosition - 104 : endingPosition;
-
-    $('html, body').animate({
-      scrollTop: endingPosition
-    }, 1000, function() {
-      // Callback after animation
-      // Must change focus!
-      var $target = $(scroll_target);
-      $target.focus();
-      if ($target.is(":focus")) { // Checking if the target was focused
-        return false;
-      } else {
-        $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-        $target.focus(); // Set focus again
-      };
-    });
+      $('html, body').animate({
+        scrollTop: endingPosition
+      }, 1000, function() {
+        // Callback after animation
+        // Must change focus!
+        var $target = $(scroll_target);
+        $target.focus();
+        if ($target.is(":focus")) { // Checking if the target was focused
+          return false;
+        } else {
+          $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+          $target.focus(); // Set focus again
+        };
+      });
+    }
 
 
   });
