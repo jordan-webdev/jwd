@@ -4,6 +4,10 @@
   $('.js-toggler').on("click", function() {
     var toggle_items = $(this).data("toggles");
     var toggle_items = $.isArray(toggle_items) ? toggle_items : [toggle_items];
+    var toggle_scroll = $(this).data("toggle-scroll");
+    var toggle_scroll = $.isArray(toggle_scroll) ? toggle_scroll : [toggle_scroll];
+    var toggle_scroll_to = $(this).data("toggle-scroll-to");
+    var toggle_offset = $(this).data("toggle-offset");
 
     $.each(toggle_items, function(i, v) {
       var toggles = '#' + v;
@@ -18,9 +22,33 @@
       }
     });
 
+    // Scroll
+    var scroll_target = '#' + toggle_scroll_to;
+
+    //var is_sticky = window.matchMedia("(min-width: 1055px)").matches ? true : false;
+    var endingPosition = parseInt($(scroll_target).offset().top) + parseInt(toggle_offset);
+    //endingPosition = is_sticky ? endingPosition - 104 : endingPosition;
+
+    $('html, body').animate({
+      scrollTop: endingPosition
+    }, 1000, function() {
+      // Callback after animation
+      // Must change focus!
+      var $target = $(scroll_target);
+      $target.focus();
+      if ($target.is(":focus")) { // Checking if the target was focused
+        return false;
+      } else {
+        $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+        $target.focus(); // Set focus again
+      };
+    });
 
 
   });
+
+
+
 
   // Tax accordions
   $('.tax-accordions__pullout').slideUp(1);
