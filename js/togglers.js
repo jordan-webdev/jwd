@@ -2,15 +2,25 @@
 
   // Generic Togglers
   $('.js-toggler').on("click", function() {
-    var toggles = '#' + $(this).data("toggles");
-    $(toggles).toggleClass("active");
+    var toggle_items = $(this).data("toggles");
+    var toggle_items = $.isArray(toggle_items) ? toggle_items : [toggle_items];
+    console.log(toggle_items);
 
-    // Adjust focus between popup and original toggle button
-    if ($(toggles).hasClass("active")) {
-      $(toggles).focus();
-    } else {
-      $('.js-toggler[data-toggles="' + toggles + '"]').not($(this)).focus();
-    }
+    $.each(toggle_items, function(i, v) {
+      var toggles = '#' + v;
+
+      $(toggles).toggleClass("active");
+
+      // Adjust focus between popup and original toggle button
+      if ($(toggles).hasClass("active")) {
+        $(toggles).focus();
+      } else {
+        $('.js-toggler[data-toggles="' + toggles + '"]').not($(this)).focus();
+      }
+    });
+
+
+
   });
 
   // Tax accordions
