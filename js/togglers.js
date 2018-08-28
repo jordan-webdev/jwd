@@ -4,7 +4,6 @@
   $('.js-toggler').on("click", function() {
     var toggle_items = $(this).data("toggles");
     var toggle_items = $.isArray(toggle_items) ? toggle_items : [toggle_items];
-    console.log(toggle_items);
 
     $.each(toggle_items, function(i, v) {
       var toggles = '#' + v;
