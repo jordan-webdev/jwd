@@ -88,6 +88,22 @@ function gc_remove_p_tags_around_images($content)
 
 /* ******************************************************************
    *
+   * custom_menu_page_removing
+   * Remove wp-admin menu items
+   *
+   ******************************************************************
+*/
+function custom_menu_page_removing() {
+  remove_menu_page( 'edit.php' );
+  remove_menu_page( 'edit-comments.php' );
+}
+add_action( 'admin_menu', 'custom_menu_page_removing' );
+
+
+
+
+/* ******************************************************************
+   *
    * modify_query_with_filters
    * Use pre_get_posts to modify the category query, based on filters
    *
