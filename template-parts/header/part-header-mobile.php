@@ -11,12 +11,6 @@ $is_solid = is_category() || is_front_page() || is_singular("post") || get_field
   <div class="container-site">
     <nav class="header-mobile">
 
-      <!-- Menu -->
-      <button id="js-mobile-menu-toggle" class="header-mobile__button header-mobile__icon color-primary" aria-controls="mobile-menu" aria-expanded="false" data-toggles="#mobile-menu">
-        <img src="<?php echo $images; ?>/menu-min.png" alt="Toggle menu." />
-        <span class="screen-reader-text">Click to toggle the navigation menu.</span>
-      </button>
-
       <!-- Logo -->
       <a class="header-mobile__logo" href="<?php echo get_home_url(); ?>" rel="home">
         <img src="<?php echo get_field("mobile_logo", "options"); ?>" alt="<?php bloginfo("title"); ?>">
@@ -24,10 +18,11 @@ $is_solid = is_category() || is_front_page() || is_singular("post") || get_field
         </span>
       </a>
 
-      <!-- Phone -->
-      <a class="header-mobile__phone header-mobile__icon" href="tel:<?php echo esc_attr(str_replace(" ", "", get_field("site_phone", "options"))); ?>">
-        <img src="<?php echo $images; ?>/phone-min.png" alt="Call us">
-      </a>
+      <!-- Menu -->
+      <button id="js-mobile-menu-toggle" class="header-mobile__button header-mobile__icon js-scroll-blocker" aria-controls="mobile-menu" aria-expanded="false" data-toggles="#mobile-menu">
+        <img src="<?php echo $images; ?>/menu-min.png" alt="Toggle menu." />
+        <span class="screen-reader-text">Click to toggle the navigation menu.</span>
+      </button>
 
     </nav>
   </div>
@@ -37,7 +32,7 @@ $is_solid = is_category() || is_front_page() || is_singular("post") || get_field
 <!-- Mobile navigation (placed outside header-mobile to prevent flex miscalculation) -->
 <nav id="mobile-site-navigation" class="mobile-navigation header-mobile__navigation">
   <?php $args = array(
-    "menu" => "Mobile Menu",
+    'menu' => "Mobile Menu",
     "menu_id" => "mobile-menu",
     "menu_class" => "wp-nav-menu header-mobile__menu",
   );
