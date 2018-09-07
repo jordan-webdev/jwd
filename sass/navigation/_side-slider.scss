@@ -1,6 +1,6 @@
-$side_slider_link_primary: white;
-$side_slider_link_secondary: black;
-$current_item: white;
+$side_slider_link_primary: $color__highlight;
+$side_slider_link_secondary: white;
+$current_item: $side_slider_link_primary;
 $menu_width: rem(305);
 $side: "right";
 $is_left: if($side == "left", true, false);
@@ -45,13 +45,14 @@ $is_left: if($side == "left", true, false);
     background-color: $side_slider_link_secondary;
     position: fixed;
     top: 0;
-    color: $side_slider_link_primary;
     @include slider_side($is_left);
     @include slider_transition($is_left);
     overflow-y: scroll;
     z-index: 26;
     /*stack on top of fade banner*/
     padding-bottom: px-to(rem, 66);
+    border: rem(1) solid #eaeaea;
+    box-shadow: rem(-2) rem(0) rem(11) rem(2) rgba(0, 0, 0, .1);
 
     &.active {
       @include slider_side($is_left, true);
@@ -61,7 +62,7 @@ $is_left: if($side == "left", true, false);
       padding-left: 15px;
       padding-top: 20px;
       padding-bottom: 20px;
-      border-top: 1px solid $side_slider_link_primary;
+      border-top: 1px solid #e4e4e4;
       text-transform: uppercase;
     }
   }
@@ -72,12 +73,14 @@ $is_left: if($side == "left", true, false);
     z-index: 2;
     position: fixed;
     top: 0;
-    height: 100vh;
+    bottom: 0;
+    height: 100%;
     @include slider_side($is_left);
     @include slider_transition($is_left);
     @include flexbox;
     @include flex-direction(column);
     border-right: 1px solid $side_slider_link_secondary;
+    overflow-y: scroll;
 
     &.active {
       @include slider_side($is_left, true);
@@ -92,7 +95,6 @@ $is_left: if($side == "left", true, false);
       padding-right: 17px;
       color: $side_slider_link_secondary;
       background-color: $color__highlight;
-      font-size: px-to(em, 20);
     }
 
     .sub-menu-back-button {
@@ -126,6 +128,12 @@ $is_left: if($side == "left", true, false);
         color: $side_slider_link_primary;
       }
     }
+
+    .menu-icon {
+      display: block;
+      margin-bottom: rem(10);
+      border: rem(3) solid transparent;
+    }
   }/*Menu items with children*/
 
   .menu-item-has-children-items-wrapper {
@@ -144,6 +152,8 @@ $is_left: if($side == "left", true, false);
 
   a {
     color: $side_slider_link_primary;
+    font-size: rem(14);
+    letter-spacing: rem(1.2);
   }
 
   .current-menu-ancestor {
@@ -166,7 +176,7 @@ $is_left: if($side == "left", true, false);
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba($color__highlight, .5);
   cursor: pointer;
   z-index: 10;
 }
