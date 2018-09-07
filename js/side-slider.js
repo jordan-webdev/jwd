@@ -9,8 +9,8 @@
     //Slide in on menu click
     $('#js-mobile-menu-toggle').on('click', function() {
       var menu = $(this).attr('data-toggles');
-      $(menu).toggleClass('js-left-0');
-      $('.sub-menu.js-left-0').removeClass('js-left-0');
+      $(menu).toggleClass('active');
+      $('.sub-menu.active').removeClass('active');
 
       if (fadeBanner) {
         menu = [$(menu), $('.sub-menu')];
@@ -45,7 +45,7 @@
 
     //Menu navigation sliding
     $('#mobile-menu .menu-item-has-children').on('click', function() {
-      $('> .sub-menu', this).toggleClass('js-left-0');
+      $('> .sub-menu', this).toggleClass('active');
     });
     $(
       '#mobile-menu .menu-item-has-children .sub-menu .menu-item:not(.menu-item-has-children) a'
@@ -77,12 +77,14 @@
   function menuFadeBanner(menu) {
     if ($('#menu-fade-banner').length == 0) {
       $('.site-header').prepend(
-        '<div id="menu-fade-banner" class="fade-banner"></div>');
+        '<div id="menu-fade-banner" class="fade-banner js-scroll-blocker"></div>');
       $('#menu-fade-banner').on('click', function() {
         menu.each(function() {
-          $(this).removeClass('js-left-0');
+          $(this).removeClass('active');
         });
-        $(this).remove();
+        setTimeout(function() {
+          $(this).remove();
+        }, 01);
       });
     } else {
       $('#menu-fade-banner').remove();
