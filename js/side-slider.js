@@ -82,8 +82,9 @@
         menu.each(function() {
           $(this).removeClass('active');
         });
+        var that = $(this);
         setTimeout(function() {
-          $(this).remove();
+          $(that).remove();
         }, 01);
       });
     } else {
