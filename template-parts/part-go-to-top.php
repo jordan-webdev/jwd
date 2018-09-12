@@ -3,9 +3,10 @@
  * Go to top button
  */
 
-$images = get_template_directory_uri() . '/images';
+$uploads = get_home_url() . '/wp-content/uploads';
+$arrow = get_image_id($uploads . '/scroll-arrow-up-min.png');
 ?>
 
 <a class="go-to-top" href="#masthead">
-  <img src="<?php echo $images; ?>/faq-arrow-min.png" alt="Click to go to top">
+  <?php echo wp_get_attachment_image( $arrow, "full", false, array("alt" => "Click to go to top") ); ?>
 </a>
