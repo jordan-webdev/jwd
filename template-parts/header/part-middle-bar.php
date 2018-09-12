@@ -14,7 +14,7 @@ $is_front_page = is_front_page();
       <h1>
     <?php endif; ?>
       <a href="<?php echo get_home_url(); ?>" rel="home" class="block">
-        <?php echo wp_get_attachment_image( $logo, "full", false, array("class" => "") ); ?>
+        <?php echo wp_get_attachment_image( $logo, "full", false, array("alt" => get_bloginfo("name")) ); ?>
         <span class="screen-reader-text"><?php bloginfo( "name" ); ?></span>
       </a>
     <?php if ($is_front_page): ?>
