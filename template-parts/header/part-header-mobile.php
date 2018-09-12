@@ -4,16 +4,16 @@
 */
 
 $images = get_template_directory_uri() . '/images';
-$is_solid = is_category() || is_front_page() || is_singular("post") || get_field("inner_hero_background");
+$mobile_logo = get_field("mobile_logo", "options");
 ?>
 
-<div class="header-mobile__wrapper padding-site <?php echo $is_solid ? "transparent" : false; ?>">
+<div class="header-mobile__wrapper padding-site">
   <div class="container-site">
     <nav class="header-mobile">
 
       <!-- Logo -->
       <a class="header-mobile__logo" href="<?php echo get_home_url(); ?>" rel="home">
-        <img src="<?php echo get_field("mobile_logo", "options"); ?>" alt="<?php bloginfo("title"); ?>">
+        <?php echo wp_get_attachment_image( $mobile_logo, "full", false, array("class" => "") ); ?>
         <span class="screen-reader-text"><?php bloginfo("name"); ?>
         </span>
       </a>
@@ -32,7 +32,7 @@ $is_solid = is_category() || is_front_page() || is_singular("post") || get_field
 <!-- Mobile navigation (placed outside header-mobile to prevent flex miscalculation) -->
 <nav id="mobile-site-navigation" class="mobile-navigation header-mobile__navigation">
   <?php $args = array(
-    'menu' => "Mobile Menu",
+    'menu' => 11,
     "menu_id" => "mobile-menu",
     "menu_class" => "wp-nav-menu header-mobile__menu",
   );
