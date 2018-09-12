@@ -14,7 +14,7 @@ $menu_icon = get_image_id($uploads .'/menu-min.png');
 
       <!-- Logo -->
       <a class="header-mobile__logo" href="<?php echo get_home_url(); ?>" rel="home">
-        <?php echo wp_get_attachment_image( $mobile_logo, "full", false, array("class" => "") ); ?>
+        <?php echo wp_get_attachment_image( $mobile_logo, "full", false, array("alt" => get_bloginfo("name")) ); ?>
         <span class="screen-reader-text"><?php bloginfo("name"); ?>
         </span>
       </a>
