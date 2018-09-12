@@ -2,6 +2,8 @@
 /*
  * Sticky Navigation
  */
+
+$sticky_logo = get_field("sticky_logo", "options");
 ?>
 
 <div id="sticky-navigation" class="sticky-nav padding-site">
@@ -10,7 +12,7 @@
     <!-- Logo -->
     <div class="logo-wrap">
       <a href="<?php echo get_home_url(); ?>" rel="home" class="block">
-        <img src="<?php echo esc_url(get_field('logo', 'options')); ?>" alt="<?php bloginfo( "title" ); ?>">
+        <?php echo wp_get_attachment_image( $sticky_logo, "full", false, array("class" => "") ); ?>
         <span class="screen-reader-text"><?php bloginfo( "name" ); ?></span>
       </a>
     </div>
