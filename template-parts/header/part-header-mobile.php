@@ -3,8 +3,9 @@
 * Mobile button, menu, logo and phone icon
 */
 
-$images = get_template_directory_uri() . '/images';
+$uploads = get_home_url() . '/wp-content/uploads';
 $mobile_logo = get_field("mobile_logo", "options");
+$menu_icon = get_image_id($uploads .'/menu-min.png');
 ?>
 
 <div class="header-mobile__wrapper padding-site">
@@ -20,7 +21,7 @@ $mobile_logo = get_field("mobile_logo", "options");
 
       <!-- Menu -->
       <button id="js-mobile-menu-toggle" class="header-mobile__button header-mobile__icon js-scroll-blocker" aria-controls="mobile-menu" aria-expanded="false" data-toggles="#mobile-menu">
-        <img src="<?php echo $images; ?>/menu-min.png" alt="Toggle menu." />
+        <?php echo wp_get_attachment_image( $menu_icon, "full", false, array("alt" => "Toggle menu.") ); ?>
         <span class="screen-reader-text">Click to toggle the navigation menu.</span>
       </button>
 
