@@ -21,7 +21,7 @@
         element += "<ul class=\"jwd-dde__list\">";
 
         $(select).find("option").each(function(i, v) {
-          element += "<li class=\"jwd-dde__item " + (i == 0 ? "none" : false) + "\"><button class=\"jwd-dde__item-btn\" type=\"button\" data-val=\"" + $(this).val() + "\">" + $(this).text() + "</button></li>";
+          element += "<li class=\"jwd-dde__item " + (i == 0 ? "none" : "") + "\"><button class=\"jwd-dde__item-btn\" type=\"button\" data-val=\"" + $(this).val() + "\">" + $(this).text() + "</button></li>";
         });
 
         element += "</ul></div>"
