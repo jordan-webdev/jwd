@@ -12,6 +12,7 @@
 
         // Custom placeholder
         var placeholder = select.find(".jwd-placeholder").text();
+        placeholder = placeholder ? placeholder : select.find('option[value=""]').text();
         var matching_option = $(select).find("option.jwd-is-match");
         var selected = get_selected_text(placeholder, matching_option);
 
@@ -39,7 +40,7 @@
       // Custom placeholder
       var placeholder = select.find(".jwd-placeholder").text();
       var matching_option = $(select).find("option.jwd-is-match");
-      var text = get_selected_text(placeholder, matching_option);
+      var text = $(this).text();
 
       update_jwd_dd(jwd_dde, list, select, val, text);
     });
