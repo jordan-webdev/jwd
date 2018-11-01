@@ -34,8 +34,8 @@ if (function_exists('acf_add_options_page')) {
     ));*/
 
     acf_add_options_sub_page(array(
-        'page_title'    => 'Theme Popup Settings',
-        'menu_title'    => 'Popup',
+        'page_title'    => 'Theme Google Maps',
+        'menu_title'    => 'Google Maps',
         'parent_slug'    => 'theme-general-settings',
     ));
 
