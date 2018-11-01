@@ -70,7 +70,7 @@ function jwd_setup()
 
     // Add theme support for selective refresh for widgets.
     add_theme_support('customize-selective-refresh-widgets');
-    
+
     // WooCommerce
     //add_theme_support( 'woocommerce' );
 }
@@ -289,6 +289,9 @@ require $template . '/inc/functions/schema.php';
 
 // Search Filters
 require $template . '/inc/functions/search-filters.php';
+
+// Blocks
+require $template . '/inc/functions/blocks/blocks.php';
 
 // Shortcodes
 require $template . '/inc/functions/shortcodes.php';
