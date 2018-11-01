@@ -70,7 +70,7 @@ function acf_load_social_media_choices($field)
     return $field;
 }
 //add_filter('acf/load_field/name=social_media_choices', 'acf_load_social_media_choices');
-add_filter('acf/load_field/name=social_media_to_use', 'acf_load_social_media_choices');
+//add_filter('acf/load_field/name=social_media_to_use', 'acf_load_social_media_choices');
 
 
 
