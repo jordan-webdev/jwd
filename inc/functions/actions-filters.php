@@ -56,6 +56,32 @@ function admin_custom_css() {
 
 /* ******************************************************************
    *
+   * body_class_blacklist
+   * Blacklist classes from body_class()
+   * Author: kaiser
+   * https://wordpress.stackexchange.com/questions/15850/remove-classes-from-body-class
+   *
+   ******************************************************************
+*/
+
+add_filter( 'body_class', 'body_class_blacklist', 10, 2 );
+function body_class_blacklist( $wp_classes, $extra_classes ) {
+
+    // List of the only WP generated classes that are not allowed
+    $blacklist = array('admin-bar');
+
+    // Filter the body classes
+    $wp_classes = array_diff( $wp_classes, $blacklist );
+
+    // Add the extra classes back untouched
+    return array_merge( $wp_classes, (array) $extra_classes );
+}
+
+
+
+
+/* ******************************************************************
+   *
    * img_p_class_content_filter
    * Remove <p> tags wrapping <img> in the_content()
    * http://micahjon.com/2016/removing-wrapping-p-paragraph-tags-around-images-wordpress/
