@@ -16,7 +16,19 @@
     // Store the top positions of all scroll elements in an array, to be referenced against the window scroll
     var scrollPoints = [];
     $('.js-scroll').each(function() {
-      scrollPoints.push($(this).offset().top + ($(this).height() / 1.25));
+      var el = $(this);
+      var el_top = el.offset().top + (el.height() / 1.25);
+      var offset = el.data('offset');
+      var el_height = el.height();
+      el_top = offset ? el_top - offset : el_top;
+
+      scrollPoints.push({
+        el: el,
+        start: el_top,
+        end: el_top + el_height,
+        inAnim: el.attr('data-anim-in'),
+        outAnim: el.attr('data-anim-out'),
+      });
     });
 
     // Scroll Animations, based on HTML data attributes that reference CSS classes (done on page load after timer set above)
@@ -33,15 +45,16 @@
     });
 
     function doScrollEffects(win, scrollPoints) {
-      var pageBottom = win.scrollTop() + win.height();
-      $.each(scrollPoints, function(index, value) {
-        var el = $('.js-scroll').eq(index);
-        var outAnim = el.attr('data-anim-out');
-        var inAnim = el.attr('data-anim-in');
-        var offset = el.data('offset');
-        value = offset ? value - offset : value;
+      var pageTop = win.scrollTop();
+      var pageBottom = pageTop + win.height();
 
-        if (pageBottom > value) {
+      $.each(scrollPoints, function(index, value) {
+
+        var el = value.el;
+        var inAnim = value.inAnim;
+        var outAnim = value.outAnim;
+
+        if (pageBottom > value.start && pageTop < value.end) {
           if (outAnim && inAnim) {
             el.removeClass(outAnim).addClass(inAnim);
           }
@@ -102,7 +115,11 @@
             // Only prevent default if animation is actually gonna happen
             event.preventDefault();
 
+            var is_sticky = window.matchMedia("(min-width: 1055px)").matches ? true : false;
+
             var endingPosition = $(this).attr('data-offset') ? parseInt(target.offset().top) + parseInt($(this).attr('data-offset')) : target.offset().top;
+            endingPosition = is_sticky ? endingPosition - 104 : endingPosition;
+
             $('html, body').animate({
               scrollTop: endingPosition
             }, 1000, function() {
