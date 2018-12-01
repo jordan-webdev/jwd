@@ -79,6 +79,9 @@
 
         // Create a trigger for use in other scripts
         $(document).trigger('ajax-index-complete');
+        
+        // Trigger JetPack Lazy Load
+        $(document.body).trigger('post-load');
 
       }); // End load
     });
