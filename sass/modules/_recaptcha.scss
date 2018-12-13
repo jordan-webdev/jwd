@@ -1,0 +1,11 @@
+.grecaptcha-badge {
+  visibility: hidden;
+  opacity: 0;
+  transition: linear opacity 1s;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition: linear opacity 1s;
+  }
+}
