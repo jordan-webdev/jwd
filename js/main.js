@@ -80,7 +80,7 @@
   jwd_recaptcha();
 
   function jwd_recaptcha() {
-    $('form input, form textarea').on('focus', function() {
+    $('form.wpcf7-form input, form.wpcf7-form textarea').on('focus', function() {
       $('.grecaptcha-badge').addClass('active');
     });
   }
