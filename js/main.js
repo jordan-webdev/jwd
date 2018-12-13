@@ -1,5 +1,5 @@
 (function($) {
-  
+
   // Click Banner
   click_banner();
 
@@ -10,6 +10,9 @@
       });
     });
   }
+
+
+
 
   //Close button
   closeBtn();
@@ -27,9 +30,12 @@
     });
   }
 
-  //Responsive BG images
-  responsiveBG();
 
+
+
+  //Responsive BG images
+
+  //responsiveBG();
   function responsiveBG() {
     $('.js-responsive-bg').each(function() {
       var that = $(this);
@@ -67,11 +73,29 @@
     });
   }
 
+
+
+
+  // ReCaptcha
+  jwd_recaptcha();
+
+  function jwd_recaptcha() {
+    $('form input, form textarea').on('focus', function() {
+      $('.grecaptcha-badge').addClass('active');
+    });
+  }
+
+
+
+
   // Not Clickable
   $('.not-clickable').on('click', function() {
     return false;
   });
-  
+
+
+
+
   // Remove hash URL navigation from Fancybox
   if ($.fancybox) {
     $.fancybox.defaults.hash = false;
