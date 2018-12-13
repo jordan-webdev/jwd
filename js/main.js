@@ -34,8 +34,8 @@
 
 
   //Responsive BG images
-
   //responsiveBG();
+
   function responsiveBG() {
     $('.js-responsive-bg').each(function() {
       var that = $(this);
