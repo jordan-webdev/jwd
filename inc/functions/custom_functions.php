@@ -147,13 +147,12 @@ function jwd_get_the_archive_title(){
 /* **************************************************************************
  * get_image_id
  * retrieves the attachment ID from the file URL
- * https://pippinsplugins.com/retrieve-attachment-id-from-image-url/
+ * https://developer.wordpress.org/reference/functions/attachment_url_to_postid/
  */
 
 function get_image_id($image_url) {
-	global $wpdb;
-	$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url ));
-        return $attachment[0];
+	$img_id = attachment_url_to_postid($image_url);
+  return $img_id;
 }
 
 
