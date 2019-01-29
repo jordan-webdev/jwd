@@ -1,3 +1,5 @@
+$current_page: red;
+
 .menu-item {
   text-transform: uppercase;
 }
@@ -6,12 +8,15 @@
   /*  color: $color__highlight;*/
 
   & > a {
-    color: $color__highlight;
+    color: $current_page;
   }
 }
 
+.is-current {
+  color: $current_page;
+}
+
 a {
-  color: $color__link;
   color: inherit;
 
   &:visited {
