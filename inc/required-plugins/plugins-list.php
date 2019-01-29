@@ -69,11 +69,11 @@ function jwd_register_required_plugins() {
 			'required'  => true,
 		),
 
-		array(
+		/*array(
 			'name'      => 'Jetpack by WordPress.com',
 			'slug'      => 'jetpack',
 			'required'  => true,
-		),
+		),*/
 
 		array(
 			'name'      => 'Contact Form 7',
