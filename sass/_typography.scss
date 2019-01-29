@@ -4,51 +4,23 @@
   font-family: "Monotype Corsiva";
   src: url(fonts/MTCORSVA.TTF);
 }*/
+$main_font: Poppins;
 
 body, button, input, select, textarea {
-  color: $color__text-main;
-  font-family: $font__primary;
-  @include font-size(1);
-  line-height: $font__line-height-body;
+  color: #455b76;
+  font-family: $main_font;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 /* Headings*/
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font__primary;
+  font-family: $main_font;
   font-weight: 400;
 }
 
-.entry-title {
-  &.underline {
-    position: relative;
-
-    &::after {
-      content: '';
-      position: relative;
-      display: block;
-      height: px-to(rem, 3);
-      background-color: $color__primary;
-      width: px-to(rem, 100);
-      margin-top: .6em;
-      margin-bottom: .6em;
-      margin-left: auto;
-      margin-right: auto;
-    }/*Left underline*/
-
-    @media screen and (min-width: 1170px) {
-      &.left::after {
-        margin-left: 0;
-      }
-    }
-  }
-}
-
 /*Copy*/
-
-p {
-  /*letter-spacing: 0.02em;*//*line-height: 1.55;*/
-}
 
 dfn, cite, em, i {
   font-style: italic;
@@ -60,28 +32,28 @@ address {
 }
 
 pre {
-  background: $color__background-pre;
-  font-family: $font__pre;
-  @include font-size(0.9375);
-  line-height: $font__line-height-pre;
-  margin-bottom: 1.6em;
+  background: #eee;
+  font-family: $main_font;
+  font-size: 14px;
+  line-height: 25px;
+  margin-bottom: 20px;
   max-width: 100%;
   overflow: auto;
   padding: 1.6em;
 }
 
 code, kbd, tt, var {
-  font-family: $font__code;
-  @include font-size(0.9375);
+  font-family: $main_font;
+  font-size: 14px;
 }
 
 abbr, acronym {
-  border-bottom: 1px dotted $color__border-abbr;
+  border-bottom: 1px dotted #666;
   cursor: help;
 }
 
 mark, ins {
-  background: $color__background-ins;
+  background: #fff9c0;
   text-decoration: none;
 }
 
