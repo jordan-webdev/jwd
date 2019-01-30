@@ -76,6 +76,9 @@ function ajax_archive_pagination()
     echo '</ul></nav>' . "\n";
 }
 
+
+
+
 // Pagination for pages, rather than archives
 function pagination($query){ ?>
   <ul class="pagination">
@@ -107,6 +110,9 @@ function pagination($query){ ?>
 <?php
 }
 
+
+
+
 // Category has parent https://stackoverflow.com/questions/19064875/how-to-check-if-a-category-has-a-parent-category
 function category_has_parent($catid){
     $category = get_category($catid);
@@ -116,11 +122,17 @@ function category_has_parent($catid){
     return false;
 }
 
+
+
+
 // Retrieve the current url of the page
 function get_current_url() {
   $url = get_home_url() . $_SERVER['REQUEST_URI'];
   return $url;
 }
+
+
+
 
 // Get excerpt function
 function get_excerpt($limit)
@@ -134,6 +146,80 @@ function get_excerpt($limit)
     return $excerpt;
 }
 
+
+
+
+/* **************************************************************************
+ * get_menu_classes
+ * retrieves menu item classes
+ */
+
+function get_menu_classes($menu_item){
+  $classes = ( $menu_item->is_current_page ? "is-current " : false ) . ( $menu_item->is_current_page_parent ? "is-current-parent " : false );
+
+  return $classes;
+}
+
+
+/* **************************************************************************
+ * get_navbar_items
+ * retrieves menu items, grouped with children
+ * https://stackoverflow.com/questions/48219063/how-can-i-get-wp-get-nav-menu-items-to-group-child-items-with-parents
+ */
+
+function get_navbar_items($menu_id) {
+    // wordpress does not group child menu items with parent menu items
+    $navbar_items = wp_get_nav_menu_items($menu_id);
+    $child_items = [];
+
+    foreach ($navbar_items as $key => $item){
+      // Add record for current page and set up other object properties
+      $item->is_current_page = false;
+      $item->is_current_page_parent = false;
+      $item->child_items = array();
+      $current_url = get_current_url();
+
+      if ($current_url == $item->url){
+        $item->is_current_page = true;
+      }
+
+      // pull all child menu items into separate object
+      if ($item->menu_item_parent) {
+          array_push($child_items, $item);
+          unset($navbar_items[$key]);
+      }
+    }
+
+    // Push children and add is_current_page_parent property
+    foreach ($navbar_items as $item) {
+      $id = $item->ID;
+
+      // push child items into their parent item in the original object
+      foreach ($child_items as $key => $child) {
+        $parent_id = $child->menu_item_parent;
+        $is_current_page = $child->is_current_page;
+
+        if ($parent_id == $id){
+          unset($child_items[$key]);
+          array_push($item->child_items, $child);
+
+          // If it's the current page, add the is_current_page_parent property to the parent
+          if ($is_current_page){
+            $item->is_current_page_parent = true;
+          }
+        }
+      }
+    }
+
+    // return navbar object where child items are grouped with parents
+    return $navbar_items;
+}
+
+
+
+
+
+// Get archive title
 function jwd_get_the_archive_title(){
   $unmodified = get_the_archive_title();
   $modified = str_replace(array("Archives: ", "Category: "), "", $unmodified);
