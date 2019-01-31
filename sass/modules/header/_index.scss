@@ -1,9 +1,11 @@
-//@import "var";
-.site-header{
+@import "var";
+@import "mixins";
+
+.site-header {
   @import "bottom-bar";
   @import "header-mobile";
   @import "middle-bar";
   @import "nav-desktop";
-  //@import "sticky-nav";
+  @import "side-slider";/*@import "sticky-nav";*/
   @import "top-bar";
 }
