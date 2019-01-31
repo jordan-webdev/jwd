@@ -1,11 +1,11 @@
 $side_slider_link_primary: $color__highlight;
 $side_slider_link_secondary: white;
 $current_item: $side_slider_link_primary;
-$menu_width: rem(305);
+$menu_width: 305px;
 $side: "right";
 $is_left: if($side == "left", true, false);
 
-@mixin slider_side($is_left, $is_active:false) {
+@mixin slider_side($menu_width, $is_left, $is_active:false) {
   @if ($is_left == true and $is_active == true) {
     left: 0;
   }
@@ -35,7 +35,7 @@ $is_left: if($side == "left", true, false);
 
 .mobile-navigation {
   /*background-color: $side_slider_link_secondary;*/
-  @include slider_side($is_left, true);
+  @include slider_side($menu_width, $is_left, true);
 
   .wp-nav-menu {
     @include flex-direction(column);
@@ -45,7 +45,7 @@ $is_left: if($side == "left", true, false);
     background-color: $side_slider_link_secondary;
     position: fixed;
     top: 0;
-    @include slider_side($is_left);
+    @include slider_side($menu_width, $is_left);
     @include slider_transition($is_left);
     overflow-y: scroll;
     z-index: 26;
@@ -55,7 +55,7 @@ $is_left: if($side == "left", true, false);
     box-shadow: rem(-2) rem(0) rem(11) rem(2) rgba(0, 0, 0, .1);
 
     &.active {
-      @include slider_side($is_left, true);
+      @include slider_side($menu_width, $is_left, true);
     }
 
     & > .menu-item {
@@ -75,7 +75,7 @@ $is_left: if($side == "left", true, false);
     top: 0;
     bottom: 0;
     height: 100%;
-    @include slider_side($is_left);
+    @include slider_side($menu_width, $is_left);
     @include slider_transition($is_left);
     @include flexbox;
     @include flex-direction(column);
@@ -83,7 +83,7 @@ $is_left: if($side == "left", true, false);
     overflow-y: scroll;
 
     &.active {
-      @include slider_side($is_left, true);
+      @include slider_side($menu_width, $is_left, true);
     }
 
     .sub-menu-header {
