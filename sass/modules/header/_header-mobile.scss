@@ -1,17 +1,17 @@
 .header-mobile {
+  background: red;
   padding-top: rem(15);
   padding-bottom: rem(18);
-  @include flexbox;
-  @include justify-content(space-between);
-  @include align-items(center);
-  width: 100%;
 
   @media screen and (min-width: $breakpoint__mobile-menu) {
     display: none;
   }
 
   .menu {
-    background-color: rgba(black, .3);
+    width: 100%;
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
 
     @media screen and (min-width: $breakpoint__mobile-menu) {
       display: none;
