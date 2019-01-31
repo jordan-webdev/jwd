@@ -1,4 +1,4 @@
-$side_slider_link_primary: $color__highlight;
+$side_slider_link_primary: #002656;
 $side_slider_link_secondary: white;
 $current_item: $side_slider_link_primary;
 $menu_width: 305px;
@@ -80,7 +80,7 @@ $is_left: if($side == "left", true, false);
     @include flexbox;
     @include flex-direction(column);
     border-right: 1px solid $side_slider_link_secondary;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
 
     &.active {
       @include slider_side($menu_width, $is_left, true);
@@ -94,7 +94,7 @@ $is_left: if($side == "left", true, false);
       padding-left: 15px;
       padding-right: 17px;
       color: $side_slider_link_secondary;
-      background-color: $color__highlight;
+      background-color: #002656;
     }
 
     .sub-menu-back-button {
@@ -144,6 +144,7 @@ $is_left: if($side == "left", true, false);
 
   .menu-item-has-children .right-arrow {
     margin-right: rem(10);
+    margin-left: 20px;
   }
 
   .menu-logo-img {
