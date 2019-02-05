@@ -171,6 +171,8 @@
     'menu_icon'           => 'dashicons-welcome-write-blog',
     // This is where we add taxonomies to our CPT
     'taxonomies'          => array( 'blog_category' ),
+    // Enable Gutenberg
+    "show_in_rest" => true,
   );
 
     register_post_type( 'blog_post', $args );
