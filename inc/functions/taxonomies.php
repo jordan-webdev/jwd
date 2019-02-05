@@ -94,6 +94,8 @@ function create_blog_category_taxonomy() {
       'show_ui' => true,
       'show_admin_column' => true,
       'query_var' => true,
+      // Enable Gutenberg
+      "show_in_rest" => true,
     ));
 
 }
