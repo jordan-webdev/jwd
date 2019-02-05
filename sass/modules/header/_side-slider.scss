@@ -15,11 +15,11 @@ $is_left: if($side == "left", true, false);
   }
 
   @if ($is_left == true and $is_active == false) {
-    left: -$menu_width;
+    left: -#{$menu_width + 11px};
   }
 
   @if ($is_left == false and $is_active == false) {
-    right: -$menu_width;
+    right: -#{$menu_width + 11px};
   }
 }
 
