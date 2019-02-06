@@ -33,7 +33,7 @@ $all_items = array();
 
 <!-- Desktop -->
 <section class="sitemap__wrapper">
-  <div class="container-site relative">
+  <div class="container-site">
     <ul class="list">
       <?php foreach ($grouped_items as $item) : ?>
         <?php
@@ -45,3 +45,16 @@ $all_items = array();
     </ul>
   </div>
 </section>
+
+<!-- Mobile -->
+<!--<section class="sitemap__wrapper padding-site">
+  <ul class="sitemap sitemap--mobile container-site">
+    <?php //foreach ($all_items as $item) : ?>
+      <?php
+        //$search = '/id="[^"]*"/';
+        //$replace = "";
+      ?>
+      <li class="sitemap__item"><?php //echo preg_replace($search, $replace, $item); ?></li>
+    <?php //endforeach; ?>
+  </ul>
+</section>-->
