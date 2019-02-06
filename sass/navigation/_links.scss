@@ -1,22 +1,16 @@
-$current_page: white;
+.is-current {
+  color: #002656;
 
-.menu-item {
-  text-transform: uppercase;
-}
-
-.current-menu-item, .current-menu-ancestor {
-  /*  color: $color__highlight;*/
-
-  & > a {
-    color: $current_page;
+  &:visited, &:hover, &:focus, &:active {
+    color: #002656;
   }
 }
 
-.is-current, .is-current-parent {
-  color: $current_page;
+.is-current-parent {
+  font-weight: 700;
 
   &:visited, &:hover, &:focus, &:active {
-    color: $current_page;
+    font-weight: 700;
   }
 }
 
