@@ -9,8 +9,6 @@
  */
 
 get_header();
-$bg = get_field("page_bg");
-$bg = $bg ? $bg : get_field("default_page_bg", "options");
 ?>
 
 <?php get_template_part('template-parts/part', 'inner-hero'); ?>
@@ -18,9 +16,7 @@ $bg = $bg ? $bg : get_field("default_page_bg", "options");
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 
-    <div class="padding-site page-content">
-
-			<?php echo wp_get_attachment_image( $bg, "full", false, array("class" => "page-bg") ); ?>
+    <div class="padding-site">
 
       <div class="container-site grid-x grid-margin-x">
 				<?php while ( have_posts() ) : the_post(); ?>
