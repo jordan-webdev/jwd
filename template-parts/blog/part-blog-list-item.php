@@ -4,7 +4,8 @@
  */
 
 $id = get_the_ID();
-$category = get_the_terms($id, "blog_category")[0];
+$tax = isset($tax) ? $tax : "blog_category";
+$category = get_the_terms($id, $tax)[0];
 $cat_name = $category->name;
 
 $g = get_field('blog_index_options');
