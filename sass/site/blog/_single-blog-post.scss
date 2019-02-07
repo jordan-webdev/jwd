@@ -1,4 +1,4 @@
-.single-blog_post {
+.single-blog_post{
   .page-wrapper {
     .header {
       margin-bottom: rem(15);
@@ -75,6 +75,14 @@
           background-color: $color__black !important;
         }
       }
+    }
+  }
+
+  .category-sidebar {
+    border-right: none;
+
+    @media screen and (min-width: $size__large) {
+      border-right: rem(1) solid $color__grey;
     }
   }
 }
