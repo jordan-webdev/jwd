@@ -14,6 +14,7 @@ $args = array(
 );
 $categories = get_terms($args);
 $chosen_cat = array_key_exists('cat', $_GET) ? $_GET['cat'] : false;
+$base_link = isset($base_link) ? $base_link : get_the_permalink(get_the_ID())
 ?>
 
 <aside id="secondary" class="category-sidebar" role="complementary">
@@ -25,7 +26,7 @@ $chosen_cat = array_key_exists('cat', $_GET) ? $_GET['cat'] : false;
 			$is_active = $i == 0 && !$_GET || $chosen_cat == $slug;
 		?>
 	  	<li class="item">
-	  	  	<a class="link js-ajax-link js-category-selector-link <?php echo $is_active ? "active" : ""; ?>" href="<?php echo get_the_permalink(get_the_ID()); ?>?cat=<?php echo $slug; ?>"><?php echo $c->name; ?></a>
+	  	  	<a class="link js-ajax-link js-category-selector-link <?php echo $is_active ? "active" : ""; ?>" href="<?php echo $base_link; ?>?cat=<?php echo $slug; ?>"><?php echo $c->name; ?></a>
 	  	</li>
 	  <?php $i++; endforeach; ?>
 	</ul>
