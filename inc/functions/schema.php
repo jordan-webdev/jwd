@@ -1,6 +1,8 @@
 <?php
 
-add_action('wp_head', function() {
+//add_action('wp_head', 'jwd_add_dynamic_schema');
+
+function jwd_add_dynamic_schema() {
 
     $schema = array(
         '@context'  => "http://schema.org",
@@ -111,4 +113,4 @@ add_action('wp_head', function() {
     }
 
     echo '<script type="application/ld+json">' . json_encode($schema) . '</script>';
-});
+}
