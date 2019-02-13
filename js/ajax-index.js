@@ -76,6 +76,9 @@
         setTimeout(function() {
           add_height_to_thumbnail();
         }, 50);
+        
+        // Add link text that has not been place inside of links properly
+        $('.js-ajax-results a:empty').html($(this).data("link-text"));
 
         // Create a trigger for use in other scripts
         $(document).trigger('ajax-index-complete');
