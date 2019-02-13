@@ -57,7 +57,7 @@ switch ($type) {
     <h2 class="title"><?php echo $title; ?></h2>
     <span class="date"><?php echo $date; ?></span>
     <p class="text"><?php echo esc_html($text); ?></p>
-    <a class="btn" href="<?php echo esc_url($link); ?>"<?php echo $new_tab ? " target=\"blank\" rel=\"noopener noreferrer\"" : ""; ?>>
+    <a class="btn" href="<?php echo esc_url($link); ?>"<?php echo $new_tab ? " target=\"_blank\" rel=\"noopener noreferrer\"" : ""; ?>>
       <?php echo esc_html($link_text); ?>
     </a>
   </div>
