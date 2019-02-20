@@ -4,6 +4,7 @@
   transition: linear opacity 1s;
 
   &.active {
+    z-index: 2;
     visibility: visible;
     opacity: 1;
     transition: linear opacity 1s;
