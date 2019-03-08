@@ -5,6 +5,7 @@
 
 $uploads = get_home_url() . '/wp-content/uploads';
 $mobile_logo = get_field("mobile_logo", "options");
+$phone_url = get_field("mobile_phone_url", "options");
 $phone_icon = get_field("mobile_phone_icon", "options");
 $map_icon = get_field("mobile_map_icon", "options");
 $menu_icon = get_field("mobile_menu_icon", "options");
