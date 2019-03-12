@@ -22,13 +22,13 @@ if (function_exists('acf_add_options_page')) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'    => 'Theme Schema Settings',
+        'page_title'    => 'Theme Blog Settings',
         'menu_title'    => 'Blog Default',
         'parent_slug'    => 'theme-general-settings',
     ));
 
     /*acf_add_options_sub_page(array(
-        'page_title'    => 'Theme Schema Settings',
+        'page_title'    => 'Theme Blog Sidebar Settings',
         'menu_title'    => 'Blog Sidebar',
         'parent_slug'    => 'theme-general-settings',
     ));*/
