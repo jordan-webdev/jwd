@@ -26,6 +26,7 @@ function create_faq_category_hierarchical_taxonomy() {
       'show_ui' => true,
       'show_admin_column' => true,
       'query_var' => true,
+      'show_in_rest' => true,
     ));
 
 }
@@ -60,6 +61,7 @@ function create_glossary_category_taxonomy() {
       'show_ui' => true,
       'show_admin_column' => true,
       'query_var' => true,
+      'show_in_rest' => true,
     ));
 
 }
@@ -94,7 +96,6 @@ function create_blog_category_taxonomy() {
       'show_ui' => true,
       'show_admin_column' => true,
       'query_var' => true,
-      // Enable Gutenberg
       "show_in_rest" => true,
     ));
 
