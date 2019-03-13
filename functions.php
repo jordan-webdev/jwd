@@ -96,6 +96,8 @@ add_action('after_setup_theme', 'jwd_content_width', 0);
 function jwd_scripts()
 {
     wp_enqueue_style('jwd-style', get_stylesheet_uri());
+    
+    $page_template = get_page_template_slug(get_the_ID());
 
     /* ****** ASSETS ****** */
 
@@ -153,7 +155,7 @@ function jwd_scripts()
     wp_enqueue_script('jwd-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true);
 
     // Ajax Index
-    $is_ajax_index_page = is_page_template(array('template-blog.php', 'template-q-a.php')) || is_category();
+    $is_ajax_index_page = in_array($page_template, array('template-blog.php', 'template-q-a.php')) || is_category();
     if ($is_ajax_index_page){
       wp_enqueue_script('jwd-ajax-index', get_template_directory_uri() . '/js/ajax-index.js', array('jquery'), '', true);
     }
