@@ -32,6 +32,7 @@
  'exclude_from_search' => false,
  'publicly_queryable'  => true,
  'capability_type'     => 'page',
+ 'show_in_rest'        => true,
  'menu_icon'           => 'dashicons-megaphone',
  );
 
@@ -76,6 +77,7 @@
  'exclude_from_search' => false,
  'publicly_queryable'  => true,
  'capability_type'     => 'page',
+ 'show_in_rest'        => true,
  'menu_icon'           => 'dashicons-editor-help',
  // This is where we add taxonomies to our CPT
  'taxonomies'          => array( 'faq_category' ),
@@ -122,6 +124,7 @@
   'exclude_from_search' => false,
   'publicly_queryable'  => true,
   'capability_type'     => 'page',
+  'show_in_rest'        => true,
   'menu_icon'           => 'dashicons-editor-spellcheck',
   // This is where we add taxonomies to our CPT
   'taxonomies'          => array( 'glossary_category' ),
@@ -168,6 +171,7 @@
     'exclude_from_search' => false,
     'publicly_queryable'  => true,
     'capability_type'     => 'page',
+    'show_in_rest'        => true,
     'menu_icon'           => 'dashicons-welcome-write-blog',
     // This is where we add taxonomies to our CPT
     'taxonomies'          => array( 'blog_category' ),
@@ -180,4 +184,3 @@
   }
 
   add_action( 'init', 'register_blog_post', 0 );
-
