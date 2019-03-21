@@ -9,10 +9,10 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php body_class(); ?>>
+<article id="post-<?php the_ID(); ?>">
 
 	<div class="padding-site">
-	  <div class="container-site">
+	  <div class="content-wrap container-site">
 			<div class="entry-content clear">
 				<?php the_content(); ?>
 			</div><!-- .entry-content -->
