@@ -1,5 +1,6 @@
-$side_slider_link_primary: #002656;
-$side_slider_link_secondary: white;
+$side_slider_link_primary: white;
+$side_slider_link_secondary: black;
+$side_slider_link_tertiary: #d50000;
 $current_item: $side_slider_link_primary;
 $menu_width: 305px;
 $side: "right";
@@ -93,8 +94,8 @@ $is_left: if($side == "left", true, false);
       padding-bottom: 25px;
       padding-left: 15px;
       padding-right: 17px;
-      color: $side_slider_link_secondary;
-      background-color: #002656;
+      color: $side_slider_link_primary;
+      background-color: $side_slider_link_tertiary;
     }
 
     .sub-menu-back-button {
