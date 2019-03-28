@@ -99,6 +99,7 @@
       .not('[href="#"]')
       .not('[href="#0"]')
       .not('.js-no-scroll')
+      .not('[data-fancybox]')
       .click(function(event) {
         // On-page links
         if (
