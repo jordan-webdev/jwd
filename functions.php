@@ -96,7 +96,7 @@ add_action('after_setup_theme', 'jwd_content_width', 0);
 function jwd_scripts()
 {
     wp_enqueue_style('jwd-style', get_stylesheet_uri());
-    
+
     $page_template = get_page_template_slug(get_the_ID());
 
     /* ****** ASSETS ****** */
@@ -207,7 +207,7 @@ function jwd_scripts()
     $data = array(
         'templateDirectory' => get_template_directory_uri(),
         'homeURL' => home_url(),
-        'headerImage' => esc_url(get_field("logo", "options")),
+        'headerImage' => esc_url(get_field("mobile_logo", "options")['url']),
         'blogTitle' => get_bloginfo('title'),
     );
     wp_localize_script($handle, $name, $data);
