@@ -1,5 +1,4 @@
 .header-mobile {
-  background: red;
   padding-top: rem(15);
   padding-bottom: rem(18);
 
@@ -19,6 +18,11 @@
   }
 
   .icon-wrap {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .logo {
