@@ -11,12 +11,12 @@ $shift: rem(1103);
   z-index: 1;
   background-color: black;
   color: white;
-  @include flexbox;
-  @include flex-wrap(nowrap);
-  @include justify-content(flex-start);
 
   @media screen and (min-width: $shift) {
-    padding-top: 30px;
+    @include flexbox;
+    @include flex-wrap(nowrap);
+    @include justify-content(flex-start);
+    padding-top: 54px;
     padding-bottom: 46px;
   }
 
@@ -48,7 +48,6 @@ $shift: rem(1103);
     display: none;
 
     &:first-child {
-      width: 219px;
       margin-right: 72px;
 
       @media screen and (min-width: $shift) {
@@ -57,65 +56,40 @@ $shift: rem(1103);
     }
 
     &:nth-child(2) {
-      width: 274px;
+      width: 210px;
       margin-right: 79px;
 
       @media screen and (min-width: $shift) {
         display: block;
       }
 
-      p {
-        &:first-child {
-          line-height: 1.2;
-          margin-bottom: 5px;
-        }
-      }
-
-      .social-link {
-        display: inline-block;
-        margin-top: 28px;
-        margin-right: 24px;
-
-        &:last-child {
-          margin-right: 0;
-        }
+      .textwidget {
+        line-height: 28px;
       }
     }
 
     &:nth-child(3) {
-      width: 194px;
+      width: 150px;
       margin-right: 59px;
 
       @media screen and (min-width: $shift) {
         display: block;
       }
-
-      .wp-caption {
-        margin-top: 31px;
-      }
-
-      .wp-caption-text {
-        font-size: 10px;
-        line-height: 13px;
-      }
     }
 
     &:last-child {
-      @include flexbox;
+      width: 150px;
 
-      a {
-        margin-right: 10px;
-
-        &:last-child {
-          margin-right: 0;
-        }
+      @media screen and (min-width: $shift) {
+        display: block;
       }
     }
   }
 
   &__item-title {
-    font-size: 14px;
-    font-weight: 500;
+    color: #f5f5f4;
+    font-size: 28px;
+    font-family: $font__secondary;
     line-height: 1;
     margin-bottom: 24px;
   }
