@@ -22,20 +22,11 @@ get_header(); ?>
 			<?php get_template_part('template-parts/part', 'inner-hero'); ?>
 
 			<div class="page-wrapper">
-				<?php
-					while ( have_posts() ) : the_post();
-
-				    //if (is_page($login_page_id)) {
-							// Login
-							//get_template_part('template-parts/login/content', '');
-						//}
+				<?php while ( have_posts() ) : the_post();
 				
-						//else{
-							get_template_part( 'template-parts/content', 'page' );
-						//}
+						get_template_part( 'template-parts/content', 'page' );
 
-				endwhile; // End of the loop.
-				?>
+				endwhile; ?>
 			</div>
 
 		</main><!-- #main -->
