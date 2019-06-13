@@ -4,18 +4,12 @@ input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
 input[type="week"], input[type="time"], input[type="datetime"],
 input[type="datetime-local"], input[type="color"], textarea, select,
 .input-style, .date-picker {
-  color: $color__text-input;
-  border: 1px solid $color__med-grey;
-  border-radius: px-to(rem, 3);
-  padding-left: px-to(rem, 15);
-  padding-right: px-to(rem, 15);
-  padding-top: .4em;
-  padding-bottom: .4em;
-  width: 100%;
+  color: #0c0c0c;
   background-color: white;
-  line-height: 2;
-  font-size: rem(15);
   height: rem(43);
+  border: none;
+  padding: 4px;
+  width: 100%;
 
   &.btn--has-arrow {
     padding-right: rem(53);
@@ -41,9 +35,4 @@ input[type="submit"] {
 
 select {
   cursor: pointer;
-}
-
-textarea {
-  width: 100% !important;
-  height: rem(128);
 }
