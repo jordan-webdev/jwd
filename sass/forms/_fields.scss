@@ -8,9 +8,10 @@ input[type="datetime-local"], input[type="color"], textarea, select,
   background-color: white;
   height: rem(43);
   border: none;
-  padding: 4px;
+  padding: 4px 7px;
   width: 100%;
   font-size: 15px;
+  border-radius: 3px;
 
   &.btn--has-arrow {
     padding-right: rem(53);
