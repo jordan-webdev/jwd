@@ -63,8 +63,17 @@ $is_left: if($side == "left", true, false);
       padding-left: 15px;
       padding-top: 20px;
       padding-bottom: 20px;
-      border-top: 1px solid #e4e4e4;
+      border-top: 1px solid #353535;
       text-transform: uppercase;
+    }
+  }
+
+  .mobile-menu-site-link-wrap {
+    .link {
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(space-between);
+      padding-right: 10px;
     }
   }
 
@@ -107,11 +116,11 @@ $is_left: if($side == "left", true, false);
       width: 100%;
       background-color: $side_slider_link_secondary;
       color: $side_slider_link_primary;
-      border-top: 1px solid $side_slider_link_primary;
+      border-top: 1px solid #353535;
       text-transform: uppercase;
 
       &:last-child {
-        border-bottom: 1px solid $side_slider_link_primary;
+        border-bottom: 1px solid #353535;
       }
 
       &.current-menu-item {
