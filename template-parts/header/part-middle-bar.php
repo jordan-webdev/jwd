@@ -3,7 +3,6 @@
  * Middle bar for desktop nav
  */
 
-$bg = get_field("header_bg", "options");
 $logo = get_field('logo', 'options');
 $is_front_page = is_front_page();
 ?>
