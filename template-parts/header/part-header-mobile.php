@@ -25,15 +25,19 @@ $contact_page_id = 95; // Update this
       <!-- Icons -->
       <div class="icons">
         <!-- Phone -->
-        <a class="icon-wrap phone" href="<?php echo esc_url($phone_url); ?>" style="width:<?php echo esc_attr($phone_icon['width']); ?>px">
-          <?php echo wp_get_attachment_image( $phone_icon['ID'], "full", false, array("class" => "icon") ); ?>
-        </a>
+        <?php if ($phone_url): ?>
+          <a class="icon-wrap phone" href="tel:<?php echo esc_attr($phone_url); ?>" style="width:<?php echo esc_attr($phone_icon['width']); ?>px">
+            <?php echo wp_get_attachment_image( $phone_icon['ID'], "full", false, array("class" => "icon") ); ?>
+          </a>
+        <?php endif; ?>
 
         <!-- Map -->
-        <a class="icon-wrap map" href="<?php echo get_permalink($contact_page_id) ?>" style="width:<?php echo esc_attr($map_icon['width']); ?>px">
-          <?php echo wp_get_attachment_image( $map_icon['ID'], "full", false, array("class" => "icon") ); ?>
-        </a>
-
+        <?php if ($map_icon): ?>
+          <a class="icon-wrap map" href="<?php echo get_permalink($contact_page_id) ?>" style="width:<?php echo esc_attr($map_icon['width']); ?>px">
+            <?php echo wp_get_attachment_image( $map_icon['ID'], "full", false, array("class" => "icon") ); ?>
+          </a>
+        <?php endif; ?>
+        
         <!-- Menu -->
         <button id="js-mobile-menu-toggle" class="icon js-scroll-blocker" aria-controls="mobile-menu" aria-expanded="false" data-toggles="#mobile-menu" style="width:<?php echo esc_attr($menu_icon['width']); ?>px">
           <?php echo wp_get_attachment_image( $menu_icon['ID'], "full", false, array("class" => "icon", "alt" => "Toggle menu") ); ?>
