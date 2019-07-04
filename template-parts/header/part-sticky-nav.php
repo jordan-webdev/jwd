@@ -1,49 +1,54 @@
-.sticky-nav {
-  position: fixed;
-  top: 0;
-  left: -999rem;
-  right: 0;
-  width: 100%;
-  background-color: $color__white;
-  opacity: 0;
-  transition: opacity .3s, left 0s .3s;
-  padding-top: rem(12);
-  padding-bottom: rem(12);
-  z-index: $z-sticky;
-  display: none;
+<?php
+/*
+ * Sticky Navigation
+ */
 
-  @media screen and (min-width: $breakpoint__mobile-menu) {
-    display: block;
-  }
+$menu = get_navbar_items(2);
+$sticky_logo = get_field("sticky_logo", "options");
+?>
 
-  &.active {
-    left: 0;
-    opacity: 1;
-    transition: opacity .5s, left 0s;
-  }
+<div id="sticky-navigation" class="sticky-nav padding-site">
+  <div class="layout">
 
-  .layout {
-    @include flexbox;
-    @include justify-content(space-between);
-    @include align-items(center);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    <!-- Logo -->
+    <div class="logo-wrap">
+      <a href="<?php echo get_home_url(); ?>" rel="home" class="block">
+        <?php echo wp_get_attachment_image( $sticky_logo, "full", false, array("class" => "") ); ?>
+        <span class="screen-reader-text"><?php bloginfo( "name" ); ?></span>
+      </a>
+    </div>
 
-  .list {
-    @include flexbox;
-  }
+    <!-- Menu -->
+    <nav class="menu">
+      <ul class="list">
+        <?php foreach ($menu as $menu_item):
+          $classes = "link " . get_menu_classes($menu_item);
+          $child_items = $menu_item->child_items;
+        ?>
+          <li class="item">
+            <a class="<?php echo $classes; ?>" href="<?php echo esc_url($menu_item->url); ?>">
+              <?php echo esc_html($menu_item->title); ?>
+            </a>
 
-  .item {
-    margin-right: 25px;
-    color: #000;
-    font-family: $font__secondary;
-    font-size: 17px;
-    letter-spacing: .1px;
+            <?php if ($child_items): ?>
+              <div class="sub-list-wrap">
+                <ul class="sub-list">
+                  <?php foreach ($child_items as $child_item):
+                    $classes = "link " . get_menu_classes($child_item);
+                  ?>
+                    <li class="sub-item">
+                      <a class="<?php echo $classes; ?>" href="<?php echo esc_url($child_item->url); ?>">
+                        <?php echo esc_html($child_item->title); ?>
+                      </a>
+                    </li>
+                  <?php endforeach; ?>
+                </ul>
+              </div>
+            <?php endif; ?>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    </nav>
 
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
+  </div>
+</div>
