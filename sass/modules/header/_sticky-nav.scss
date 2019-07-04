@@ -31,6 +31,14 @@
     margin-right: auto;
   }
 
+  .sticky-logo-wrap {
+    display: block;
+  }
+
+  .sticky-logo {
+    display: block;
+  }
+
   .list {
     @include flexbox;
   }
