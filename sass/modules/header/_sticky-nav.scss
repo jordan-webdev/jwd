@@ -25,5 +25,25 @@
   .layout {
     @include flexbox;
     @include justify-content(space-between);
+    @include align-items(center);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .list {
+    @include flexbox;
+  }
+
+  .item {
+    margin-right: 25px;
+    color: #000;
+    font-family: $font__secondary;
+    font-size: 17px;
+    letter-spacing: .1px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
