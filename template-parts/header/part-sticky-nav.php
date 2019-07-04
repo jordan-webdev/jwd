@@ -12,8 +12,8 @@ $sticky_logo = get_field("sticky_logo", "options");
 
     <!-- Logo -->
     <div class="logo-wrap">
-      <a href="<?php echo get_home_url(); ?>" rel="home" class="block">
-        <?php echo wp_get_attachment_image( $sticky_logo, "full", false, array("class" => "") ); ?>
+      <a href="<?php echo get_home_url(); ?>" rel="home" class="sticky-logo-wrap">
+        <?php echo wp_get_attachment_image( $sticky_logo, "full", false, array("class" => "sticky-logo") ); ?>
         <span class="screen-reader-text"><?php bloginfo( "name" ); ?></span>
       </a>
     </div>
