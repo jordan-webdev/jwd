@@ -1,30 +1,49 @@
-<?php
-/*
- * Sticky Navigation
- */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: -999rem;
+  right: 0;
+  width: 100%;
+  background-color: $color__white;
+  opacity: 0;
+  transition: opacity .3s, left 0s .3s;
+  padding-top: rem(12);
+  padding-bottom: rem(12);
+  z-index: $z-sticky;
+  display: none;
 
-$sticky_logo = get_field("sticky_logo", "options");
-?>
+  @media screen and (min-width: $breakpoint__mobile-menu) {
+    display: block;
+  }
 
-<div id="sticky-navigation" class="sticky-nav padding-site">
-  <div class="container-site layout">
+  &.active {
+    left: 0;
+    opacity: 1;
+    transition: opacity .5s, left 0s;
+  }
 
-    <!-- Logo -->
-    <div class="logo-wrap">
-      <a href="<?php echo get_home_url(); ?>" rel="home" class="block">
-        <?php echo wp_get_attachment_image( $sticky_logo, "full", false, array("class" => "") ); ?>
-        <span class="screen-reader-text"><?php bloginfo( "name" ); ?></span>
-      </a>
-    </div>
+  .layout {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    <!-- Menu -->
-    <?php
-    $args = array(
-        'menu' => 11,
-        'menu_class' => 'wp-nav-menu main-nav',
-    );
-    wp_nav_menu($args);
-   ?>
+  .list {
+    @include flexbox;
+  }
 
-  </div>
-</div>
+  .item {
+    margin-right: 25px;
+    color: #000;
+    font-family: $font__secondary;
+    font-size: 17px;
+    letter-spacing: .1px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
