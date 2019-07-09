@@ -49,6 +49,29 @@ if (function_exists('acf_add_options_page')) {
 
 
 
+// Blocks
+function register_acf_block_types() {
+
+    // Case Study Info
+    /*acf_register_block_type(array(
+        'name'              => 'casestudyinfo',
+        'title'             => __('Case Study Info'),
+        'description'       => __('Text beside icons with information.'),
+        'render_template'   => 'template-parts/blocks/case_study_info.php',
+        'category'          => 'common',
+        'icon'              => 'media-document',
+        'keywords'          => array( 'case', 'study', 'info' ),
+    ));*/
+}
+
+// Check if function exists and hook into setup.
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'register_acf_block_types');
+}
+
+
+
+
 //Populate social media choices with values from options repeater field
 function acf_load_social_media_choices($field)
 {
