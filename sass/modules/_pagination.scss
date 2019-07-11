@@ -1,4 +1,4 @@
-$default_pagination_colour: #919191;
+$default_pagination_colour: black;
 $shift: rem(450);
 
 .pagination-wrapper {
@@ -43,28 +43,32 @@ $shift: rem(450);
 .pagination {
   @include flexbox;
   @include align-items(center);
+  @include justify-content(center);
   color: $default_pagination_colour;
+  margin-top: 12px;
+  margin-bottom: 45px;
 
-  .fa-caret-left {
-    margin-right: rem(5);
-  }
-
-  .fa-caret-right {
-    margin-left: rem(5);
+  @media screen and (min-width: $size__large) {
+    margin-top: 26px;
+    margin-bottom: 80px;
   }
 }
 
 .page-numbers.current, .pagination-wrapper li.current a {
-  color: $color__black;
-  font-weight: 700;
+  background-color: #f3f3f3;
+  font-size: 16px;
 }
 
 .page-numbers, .pagination-wrapper a {
-  color: $default_pagination_colour;
-  padding-left: rem(3);
-  padding-right: rem(3);
-  margin-right: 10px;
+  height: 44px;
+  width: 44px;
   @include flexbox;
   @include align-items(center);
   @include justify-content(center);
+  border: 1px solid #e4e4e4;
+  color: $default_pagination_colour;
+}
+
+.page-numbers.next, .page-numbers.prev {
+  border: none;
 }
