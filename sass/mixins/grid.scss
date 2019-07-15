@@ -12,3 +12,23 @@
   -ms-grid-rows: $rows;
   grid-template-rows: $rows;
 }
+
+@mixin grid-column-start($start) {
+  -ms-grid-column: $start;
+  grid-column-start: $start;
+}
+
+@mixin grid-column-end($end) {
+  -ms-grid-column-span: $end;
+  grid-column-end: $end;
+}
+
+@mixin grid-row-start($start) {
+  -ms-grid-row: $start;
+  grid-row-start: $start;
+}
+
+@mixin grid-row-end($end) {
+  -ms-grid-row-span: $end;
+  grid-row-end: $end;
+}
