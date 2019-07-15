@@ -24,10 +24,18 @@ get_header();
 					<!-- Categories -->
 		    	<div class="cell large-4">
 		    		<?php
-		          $sidebar = get_field("sidebar", 147);
+							$args = array(
+								'post_type' => 'page',
+								'fields' => 'ids',
+								'meta_key' => '_wp_page_template',
+    						'meta_value' => 'template-blog.php'
+							);
+							$blog_page = get_pages($args)[0];
+							$blog_page_id = $blog_page->ID;
+		          $sidebar = get_field("sidebar", $blog_page_id);
 		          $tax = "blog_category";
 		          $title = $sidebar['title'];
-							$base_link = get_permalink(147);
+							$base_link = get_permalink($blog_page_id);
 		          include(locate_template("template-parts/part-category-sidebar.php"));
 		        ?>
 		    	</div>
