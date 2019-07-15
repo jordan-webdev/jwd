@@ -4,31 +4,29 @@ input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
 input[type="week"], input[type="time"], input[type="datetime"],
 input[type="datetime-local"], input[type="color"], textarea, select,
 .input-style, .date-picker {
-  color: #0c0c0c;
-  background-color: white;
-  height: rem(43);
-  border: none;
-  padding: 4px 7px;
+  color: #000;
+  height: 45px;
+  padding: 16px 21px;
   width: 100%;
-  font-size: 15px;
+  font-size: 13px;
+  border: 1px solid #dedede;
   border-radius: 3px;
 
-  &.btn--has-arrow {
-    padding-right: rem(53);
-  }
-
   &.wpcf7-not-valid {
-    border: rem(1) solid red;
+    border: 1px solid red;
   }
 
   &:focus {
-    color: $color__text-input-focus;
+    /*color: $color__text-input-focus;*/
   }
 
   &:hover {
-    background-color: white;
-    color: $color__text-input;
+    /*background-color: white;*//*color: $color__text-input;*/
   }
+}
+
+textarea {
+  min-height: 177px;
 }
 
 input[type="submit"] {
