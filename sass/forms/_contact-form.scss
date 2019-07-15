@@ -1,4 +1,28 @@
 .contact-form {
+  .col {
+    margin-bottom: 16px;
+    @include flexbox;
+    @include justify-content(space-between);
+  }
+
+  .col-item {
+    width: 48.5%;
+
+    &.full {
+      width: 100%;
+    }
+  }
+
+  .submit {
+    height: 52px;
+    width: 222px;
+    border: 1px solid rgba(175, 0, 0, .48);
+    background-color: transparent;
+    color: #af0000;
+    font-family: $font__secondary;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
 }
 
 /* === CF7 Fixes === */
