@@ -14,7 +14,7 @@ $args = array(
 );
 $categories = get_terms($args);
 $chosen_cat = array_key_exists('cat', $_GET) ? $_GET['cat'] : false;
-$base_link = isset($base_link) ? $base_link : get_the_permalink(get_the_ID())
+$base_link = isset($base_link) ? $base_link : get_the_permalink(get_the_ID());
 ?>
 
 <aside id="secondary" class="category-sidebar">
