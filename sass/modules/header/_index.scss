@@ -4,13 +4,15 @@
 .site-header {
   position: relative;
   z-index: 2;
+  @import "colouring";
   @import "bottom-bar";
   @import "header-mobile";
   @import "middle-bar";
   @import "nav-desktop";
   @import "side-slider";/*@import "sticky-nav";*/
   @import "top-bar";
-  
+  @import "sticky-nav";
+
   @media screen and (min-width: $breakpoint__mobile-menu) {
     @import "sub-menus";
   }
