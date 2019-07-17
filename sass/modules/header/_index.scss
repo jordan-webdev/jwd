@@ -11,7 +11,6 @@
   @import "nav-desktop";
   @import "side-slider";/*@import "sticky-nav";*/
   @import "top-bar";
-  @import "sticky-nav";
 
   @media screen and (min-width: $breakpoint__mobile-menu) {
     @import "sub-menus";
