@@ -4,8 +4,8 @@
 .site-header {
   position: relative;
   z-index: 2;
-  @import "colouring";
   @import "bottom-bar";
+  @import "colouring";
   @import "header-mobile";
   @import "middle-bar";
   @import "nav-desktop";
