@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main class="padding-site">
+<main class="site-main padding-site">
   <div class="container-site">
 
     <div class="blog-index grid-x grid-margin-x">
