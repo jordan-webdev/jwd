@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<div class="padding-site">
+<main class="padding-site">
   <div class="container-site">
 
     <div class="blog-index grid-x grid-margin-x">
@@ -67,7 +67,7 @@ get_header();
     </div>
 
   </div>
-</div>
+</main>
 
 <?php
 get_footer();
