@@ -109,7 +109,7 @@
                     {
                         "key": "field_5d9cec2fb594d",
                         "label": "Next Icon",
-                        "name": "next_icon",
+                        "name": "next",
                         "type": "image",
                         "instructions": "",
                         "required": 0,
