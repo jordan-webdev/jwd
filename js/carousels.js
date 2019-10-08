@@ -5,6 +5,9 @@
 
     var main_slider = new Swiper('.main-slider', {
       loop: true,
+      effect: 'fade',
+      speed: 500,
+      keyboard: true,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
