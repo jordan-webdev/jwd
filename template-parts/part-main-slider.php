@@ -24,7 +24,7 @@ $slider = $main_slider['slider'];
 
         <!-- Video slide -->
         <?php if ($vid): ?>
-          <video class="vid" loop playsinline muted poster="">
+          <video class="vid" autoplay loop playsinline muted poster="">
             <source src="<?php echo esc_url($vid); ?>" type="video/mp4">
           </video>
         <?php endif; ?>
