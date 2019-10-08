@@ -1,0 +1,8 @@
+.main-slider {
+  position: relative;
+  height: 80vh;
+
+  .img, .vid {
+    @include object-cover();
+  }
+}
