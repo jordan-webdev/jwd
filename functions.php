@@ -116,6 +116,8 @@ function jwd_scripts()
     // Fancybox
     wp_enqueue_script('jwd-fancybox-js', get_template_directory_uri() . '/inc/assets/fancybox/jquery.fancybox.min.js', array('jquery'), '', true);
 
+    wp_enqueue_style('jwd-fancybox-css', get_template_directory_uri() . '/inc/assets/fancybox/jquery.fancybox.min.css');
+    
     // FooTable
     //wp_enqueue_script('jwd-footable-js', get_template_directory_uri() . '/inc/assets/footable/footable.js', array('jquery'), '', true);
 
