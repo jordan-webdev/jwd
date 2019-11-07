@@ -19,3 +19,9 @@
     padding-right: $size__site-padding;
   }
 }
+
+.hidden {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
