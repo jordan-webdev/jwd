@@ -195,6 +195,9 @@ function jwd_scripts()
     // Go To Top
     wp_enqueue_script('jwd-go-to-top-js', get_template_directory_uri() . '/js/go-to-top.js', array('jquery'), '', true);
 
+    // Main Popup
+    wp_enqueue_script('jwd-main-popup-js', get_template_directory_uri() . '/js/main-popup.js', array('jquery'), '', true);
+    
     // Product
     //wp_enqueue_script('jwd-product-js', get_template_directory_uri() . '/js/product.js', array('jquery'), '', true);
 
