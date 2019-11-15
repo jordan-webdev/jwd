@@ -1,14 +1,16 @@
-<?php
-/*
- * Module: Main Popup
- */
+(function($) {
 
-$main_popup = get_field("main_popup", "options");
-?>
+  var hide_popup = Cookies.get("hide_main_popup");
 
-<button class="main-popup" type="button">
-  <span class="screen-reader-text">Click to close popup</span>
-  <span class="layout">
-    <?php echo wp_get_attachment_image( $main_popup['img'], "full", false, array("class" => "img") ); ?>
-  </span>
-</button>
+  if (hide_popup == "y") {
+    $('.main-popup').remove();
+  }
+
+  $('.main-popup').on('click', function() {
+    Cookies.set("hide_main_popup", "y", {
+      expires: 1
+    });
+    $('.main-popup').remove();
+  });
+
+})(jQuery)
