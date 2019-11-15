@@ -11,4 +11,9 @@
     @include align-items(center);
     @include justify-content(center);
   }
+  display: none;
+
+  &.active {
+    display: block;
+  }
 }
