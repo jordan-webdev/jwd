@@ -37,3 +37,13 @@
   -ms-grid-row-span: $end;
   grid-row-end: $end;
 }
+
+@mixin column-gap($gap) {
+  grid-gap: $gap;
+  column-gap: $gap;
+}
+
+@mixin row-gap($gap) {
+  grid-row-gap: $gap;
+  row-gap: $gap;
+}
