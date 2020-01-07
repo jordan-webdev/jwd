@@ -3,6 +3,11 @@
   display: grid;
 }
 
+@mixin inline-grid() {
+  display: -ms-inline-grid;
+  display: inline-grid;
+}
+
 @mixin grid-template-columns($cols) {
   -ms-grid-columns: $cols;
   grid-template-columns: $cols;
