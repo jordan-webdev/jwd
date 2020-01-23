@@ -1,7 +1,7 @@
-$side_slider_link_primary: white;
-$side_slider_link_secondary: black;
-$side_slider_link_tertiary: #d50000;
-$current_item: $side_slider_link_primary;
+$side_slider_link_primary: black;
+$side_slider_link_secondary: white;
+$side_slider_link_tertiary: #b2954b;
+$current_item: $color__highlight;
 $menu_width: 305px;
 $side: "right";
 $is_left: if($side == "left", true, false);
@@ -52,7 +52,7 @@ $is_left: if($side == "left", true, false);
     z-index: 26;
     /*stack on top of fade banner*/
     padding-bottom: px-to(rem, 66);
-    border: rem(1) solid #eaeaea;
+    /*border: rem(1) solid black;*/
     box-shadow: rem(-2) rem(0) rem(11) rem(2) rgba(0, 0, 0, .1);
 
     &.active {
@@ -63,7 +63,7 @@ $is_left: if($side == "left", true, false);
       padding-left: 15px;
       padding-top: 20px;
       padding-bottom: 20px;
-      border-top: 1px solid #353535;
+      border-top: 1px solid #e6e6e6;
       text-transform: uppercase;
     }
   }
@@ -103,7 +103,7 @@ $is_left: if($side == "left", true, false);
       padding-bottom: 25px;
       padding-left: 15px;
       padding-right: 17px;
-      color: $side_slider_link_primary;
+      color: $side_slider_link_secondary;
       background-color: $side_slider_link_tertiary;
     }
 
@@ -116,11 +116,11 @@ $is_left: if($side == "left", true, false);
       width: 100%;
       background-color: $side_slider_link_secondary;
       color: $side_slider_link_primary;
-      border-top: 1px solid #353535;
+      border-top: 1px solid #e6e6e6;
       text-transform: uppercase;
 
       &:last-child {
-        border-bottom: 1px solid #353535;
+        border-bottom: 1px solid #e6e6e6;
       }
 
       &.current-menu-item {
@@ -162,7 +162,7 @@ $is_left: if($side == "left", true, false);
   }/*Colours*/
 
   a {
-    color: $side_slider_link_primary;
+    /*color: $side_slider_link_primary;*/
     font-size: rem(14);
     letter-spacing: rem(1.2);
   }
@@ -187,7 +187,7 @@ $is_left: if($side == "left", true, false);
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba($color__highlight, .5);
+  background-color: rgba(0, 0, 0, .76);
   cursor: pointer;
   z-index: 10;
 }
