@@ -17,7 +17,7 @@ input[type="datetime-local"], input[type="color"], textarea, select,
   }
 
   &:focus {
-    /*color: $color__text-input-focus;*/
+    border: 1px dotted $color__focus;
   }
 
   &:hover {
