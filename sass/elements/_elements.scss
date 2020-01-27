@@ -67,8 +67,16 @@ label {
   cursor: pointer;
 }
 
-*:focus {
-  border: 1px dotted $color__focus;
+/* Remove outline for non-keyboard :focus */
+
+*:focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* Optional: Customize .focus-visible */
+
+.focus-visible {
+  outline-color: $color__focus;
 }
 
 /*img {*/
