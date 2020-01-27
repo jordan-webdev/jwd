@@ -67,18 +67,6 @@ label {
   cursor: pointer;
 }
 
-/* Remove outline for non-keyboard :focus */
-
-*:focus:not(.focus-visible) {
-  outline: none;
-}
-
-/* Optional: Customize .focus-visible */
-
-.focus-visible {
-  outline-color: $color__focus;
-}
-
 /*img {*/
 
 /*image-rendering: -webkit-optimize-contrast;*/
