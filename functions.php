@@ -118,6 +118,9 @@ function jwd_scripts()
 
     wp_enqueue_style('jwd-fancybox-css', get_template_directory_uri() . '/inc/assets/fancybox/jquery.fancybox.min.css');
     
+    // Focus Visible
+    wp_enqueue_script('jwd-focus-visible-js', get_template_directory_uri() . '/inc/assets/focus-visible.js', array('jquery'), '', true);
+    
     // FooTable
     //wp_enqueue_script('jwd-footable-js', get_template_directory_uri() . '/inc/assets/footable/footable.js', array('jquery'), '', true);
 
