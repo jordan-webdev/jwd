@@ -146,6 +146,12 @@ function jwd_scripts()
 
 
     /* ****** Non-Asset JS ****** */
+    
+    // Modules
+    foreach( glob( get_template_directory(). '/js/modules/*.js' ) as $file ) {
+      $filename = basename($file, strrpos($file, '/') + 1);
+      wp_enqueue_script( $filename, get_template_directory_uri().'/js/modules/'.$filename);
+    }
 
     // Functions
     wp_enqueue_script('jwd-functions-js', get_template_directory_uri() . '/js/functions.js', array('jquery'), '', true);
