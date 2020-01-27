@@ -1,16 +1,26 @@
+.colour-link {
+  &:hover, &:focus {
+    color: $color__highlight;
+  }
+}
+
+.current-menu-item {
+  color: $color__highlight;
+}
+
 .is-current {
-  color: #002656;
+  color: $color__highlight;
 
   &:visited, &:hover, &:focus, &:active {
-    color: #002656;
+    color: $color__highlight;
   }
 }
 
 .is-current-parent {
-  font-weight: 700;
+  color: $color__highlight;
 
   &:visited, &:hover, &:focus, &:active {
-    font-weight: 700;
+    color: $color__highlight;
   }
 }
 
@@ -28,10 +38,10 @@ a {
   }
 
   &:focus {
-    outline: thin dotted;
+    /*outline: thin dotted;*/
   }
 
   &:hover, &:active {
-    outline: 0;
+    /*outline: 0;*/
   }
 }
