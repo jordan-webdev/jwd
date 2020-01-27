@@ -13,6 +13,18 @@ html {
   box-sizing: inherit;
 }
 
+/* Remove outline for non-keyboard :focus */
+
+*:focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* Optional: Customize .focus-visible */
+
+.focus-visible {
+  outline: 1px dotted $color__focus;
+}
+
 body {
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
@@ -67,10 +79,6 @@ button {
 ::-moz-focus-inner {
   padding: 0;
   border: 0;
-}
-
-:focus {
-  outline: 0;
 }
 
 img {
