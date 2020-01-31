@@ -68,7 +68,12 @@
 
     // Needed for close popup on outside click
     $('.js-modal').on('click', function(e) {
-      e.stopPropagation();
+      var el_type = e.target.nodeName;
+
+      if (el_type != "A") {
+        e.stopPropagation();
+      }
+
     })
 
 
